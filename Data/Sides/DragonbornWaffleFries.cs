@@ -63,6 +63,20 @@ namespace BleakwindBuffet.Data.Sides
             }
 
         }
+        public List<string> SpecialInstructions
+        {
+            get
+            {
+                List<string> instructions = new List<string>();
+
+                // return an empty list 
+
+                return instructions;
+
+
+            }
+
+        }
 
 
 
