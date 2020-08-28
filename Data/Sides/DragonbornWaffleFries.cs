@@ -8,7 +8,7 @@ using System.Text;
  * Purpose: Class used to represent the Dragonborn Waffle Fries
  */
 
-namespace BleakwindBuffet.Data.Drinks
+namespace BleakwindBuffet.Data.Sides
 {
     public class DragonbornWaffleFries
     {

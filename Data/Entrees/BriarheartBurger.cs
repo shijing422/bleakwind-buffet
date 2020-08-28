@@ -23,7 +23,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// <summary>
         ///  get the Cal of BriarheartBurger
         /// </summary>
-        public uint Calories => 732;
+        public uint Calories => 743;
         /// <summary>
         /// if hold ketchup
         /// </summary>

@@ -66,7 +66,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// if hold ice
         /// </summary>
-        public bool Ice { get; set; } = false;
+        public bool Ice { get; set; } = false;//default no ics
         /// <summary>
         /// special instructions
         /// </summary>

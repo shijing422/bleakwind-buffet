@@ -8,7 +8,7 @@ using System.Text;
  * Purpose: Class used to represent the Vokun Salad
  */
 
-namespace BleakwindBuffet.Data.Drinks
+namespace BleakwindBuffet.Data.Sides
 {
     public class VokunSalad
     {
@@ -63,10 +63,23 @@ namespace BleakwindBuffet.Data.Drinks
             }
 
         }
-      
-       
 
-        
+        public List<string> SpecialInstructions
+        {
+            get
+            {
+                List<string> instructions = new List<string>();
+
+                // return an empty list 
+
+                return instructions;
+
+
+            }
+
+        }
+
+
         /// <summary>
         /// tostring
         /// </summary>

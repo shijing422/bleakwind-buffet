@@ -8,7 +8,7 @@ using System.Text;
  * Purpose: Class used to represent the Mad Otar Grits
  */
 
-namespace BleakwindBuffet.Data.Drinks
+namespace BleakwindBuffet.Data.Sides
 {
     public class MadOtarGrits
     {
@@ -63,7 +63,20 @@ namespace BleakwindBuffet.Data.Drinks
             }
 
         }
+        public List<string> SpecialInstructions
+        {
+            get
+            {
+                List<string> instructions = new List<string>();
 
+                // return an empty list 
+
+                return instructions;
+
+
+            }
+
+        }
 
 
 
