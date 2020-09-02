@@ -93,19 +93,19 @@ namespace BleakwindBuffet.Data.Drinks
             switch (Size)
             {
                 case Size.Small:
-                    r += "[Small]";
+                    r += "Small ";
                     break;
                 case Size.Medium:
-                    r += "[Medium]";
+                    r += "Medium ";
                     break;
                 case Size.Large:
-                    r += "[Large]";
+                    r += "Large ";
                     break;
 
             }
 
 
-            r += "AretinoAppleJuice";
+            r += "Aretino Apple Juice";
             return r;
         }
 
