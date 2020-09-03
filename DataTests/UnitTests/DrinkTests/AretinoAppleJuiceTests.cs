@@ -1,5 +1,5 @@
 ﻿/*
- * Author: Zachery Brunner
+ * Author: Shijing Zhang
  * Class: AretinoAppleJuiceTests.cs
  * Purpose: Test the AretinoAppleJuice.cs class in the Data library
  */
@@ -83,7 +83,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         {
             AretinoAppleJuice a = new AretinoAppleJuice();
             a.Ice = includeIce;
-            if (includeIce) Assert.Contains("Add Ice", a.SpecialInstructions);
+            if (includeIce) Assert.Contains("Add ice", a.SpecialInstructions);
             else Assert.Empty(a.SpecialInstructions);
                 
         }

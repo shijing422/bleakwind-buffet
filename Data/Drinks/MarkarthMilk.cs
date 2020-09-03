@@ -10,16 +10,19 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Drinks
 {
+    /// <summary>
+    /// A class represent the MarkarthMilk
+    /// </summary>
     public class MarkarthMilk
     {
-        /// <summary>
-        /// size
-        /// </summary>
+        /// <value>
+        /// The size of the MarkarthMilk
+        /// </value>
         public Size Size { get; set; } = Size.Small;
 
-        /// <summary>
-        /// price
-        /// </summary>
+        /// <value>
+        /// The price of the MarkarthMilk
+        /// </value>
         public double Price
         {
             get
@@ -40,9 +43,9 @@ namespace BleakwindBuffet.Data.Drinks
             }
 
         }
-        /// <summary>
-        ///  get the Cal
-        /// </summary>
+        /// <value>
+        ///  The Calories of the MarkarthMilk
+        /// </value>
         public uint Calories
         {
             get
@@ -63,19 +66,19 @@ namespace BleakwindBuffet.Data.Drinks
             }
 
         }
-        /// <summary>
-        /// if hold ice
-        /// </summary>
+        /// <value>
+        /// if hold ice of the MarkarthMilk
+        /// </value>
         public bool Ice { get; set; } = false;//default no ics
-        /// <summary>
-        /// special instructions
-        /// </summary>
+        /// <value>
+        /// special instructions of the MarkarthMilk
+        /// </value>
         public List<string> SpecialInstructions
         {
             get
             {
                 List<string> instructions = new List<string>();
-                if (Ice) instructions.Add("Add Ice");
+                if (Ice) instructions.Add("Add ice");
 
                 return instructions;
 
@@ -84,22 +87,22 @@ namespace BleakwindBuffet.Data.Drinks
 
         }
         /// <summary>
-        /// tostring
+        /// A string of the name of the MarkarthMilk
         /// </summary>
-        /// <returns></returns>
+        /// <returns>A string represent the name of the MarkarthMilk</returns>
         public override string ToString()
         {
             string r = "";
             switch (Size)
             {
                 case Size.Small:
-                    r += "[Small]";
+                    r += "Small ";
                     break;
                 case Size.Medium:
-                    r += "[Medium]";
+                    r += "Medium ";
                     break;
                 case Size.Large:
-                    r += "[Large]";
+                    r += "Large ";
                     break;
 
             }

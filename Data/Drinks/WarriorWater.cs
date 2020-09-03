@@ -4,24 +4,26 @@ using System.Collections.Generic;
 using System.Text;
 /*
  * Author: Shijing Zhang
- * Class name: SailorSoda.cs
+ * Class name: WarriorWater.cs
  * Purpose: Class used to represent the Warrior Water	
  */
 
 namespace BleakwindBuffet.Data.Drinks
 {
-
+    /// <summary>
+    ///  A class represent the Warrior Water
+    /// </summary>
     public class WarriorWater	
     {
-        /// <summary>
-        /// size
-        /// </summary>
+        /// <value>
+        /// size of Warrior Water
+        /// </value>
         public Size Size { get; set; } = Size.Small;
 
 
-        /// <summary>
-        /// price
-        /// </summary>
+        /// <value>
+        /// price of the Warrior Water
+        /// </value>
         public double Price
         {
             get
@@ -31,9 +33,9 @@ namespace BleakwindBuffet.Data.Drinks
             }
 
         }
-        /// <summary>
-        ///  get the Cal
-        /// </summary>
+        /// <value>
+        ///  calories of the Warrior Water
+        /// </value>
         public uint Calories
         {
             get
@@ -44,21 +46,24 @@ namespace BleakwindBuffet.Data.Drinks
             }
 
         }
-        /// <summary>
-        /// if hold ice
-        /// </summary>
+        /// <value>
+        /// if hold ice of the Warrior Water
+        /// </value>
         public bool Ice { get; set; } = true;
+        /// <value>
+        /// if add lemon of the Warrior Water
+        /// </value>
         public bool Lemon { get; set; } = false;
-        /// <summary>
-        /// special instructions
-        /// </summary>
+        /// <value>
+        /// special instructions of the Warrior Water
+        /// </value>
         public List<string> SpecialInstructions
         {
             get
             {
                 List<string> instructions = new List<string>();
-                if (!Ice) instructions.Add("Hold Ice");
-                if (Lemon) instructions.Add("Add Lemon");
+                if (!Ice) instructions.Add("Hold ice");
+                if (Lemon) instructions.Add("Add lemon");
 
                 return instructions;
 
@@ -67,28 +72,28 @@ namespace BleakwindBuffet.Data.Drinks
 
         }
         /// <summary>
-        /// tostring
+        ///  create a string represent the name of the Warrior Water
         /// </summary>
-        /// <returns></returns>
+        /// <returns>A string represent the name of the Warrior Water</returns>
         public override string ToString()
         {
             string r = "";
             switch (Size)
             {
                 case Size.Small:
-                    r += "[Small]";
+                    r += "Small ";
                     break;
                 case Size.Medium:
-                    r += "[Medium]";
+                    r += "Medium ";
                     break;
                 case Size.Large:
-                    r += "[Large]";
+                    r += "Large ";
                     break;
 
             }
 
 
-            r += "Warrior Water	";
+            r += "Warrior Water";
             return r;
         }
 

@@ -10,16 +10,19 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Drinks
 {
+    /// <summary>
+    /// A class represent CandlehearthCoffee
+    /// </summary>
     public class CandlehearthCoffee
     {
-        /// <summary>
-        /// size
-        /// </summary>
+        /// <value>
+        /// The 3 sizes of the CandlehearthCoffee
+        /// </value>
         public Size Size { get; set; } = Size.Small;
 
-        /// <summary>
-        /// price
-        /// </summary>
+        /// <value>
+        /// The price of the CandlehearthCoffee by size
+        /// </value>
         public double Price
         {
             get
@@ -40,9 +43,9 @@ namespace BleakwindBuffet.Data.Drinks
             }
 
         }
-        /// <summary>
-        ///  get the Cal
-        /// </summary>
+        /// <value>
+        ///  The Calories of the CandlehearthCoffee by size
+        /// </value>
         public uint Calories
         {
             get
@@ -63,18 +66,18 @@ namespace BleakwindBuffet.Data.Drinks
             }
 
         }
-        /// <summary>
-        /// if add ice
-        /// </summary>
+        /// <value>
+        /// if add ice to the CandlehearthCoffee
+        /// </value>
         public bool Ice { get; set; } = false;
         /// <summary>
-        /// if add cream
+        /// if add cream to the CandlehearthCoffee
         /// </summary>
         public bool RoomForCream { get; set; } = false;
         public bool Decaf { get; set; } = false;
-        /// <summary>
-        /// special instructions
-        /// </summary>
+        /// <value>
+        /// special instructions of the CandlehearthCoffee
+        /// </value>
         public List<string> SpecialInstructions
         {
             get
@@ -89,7 +92,7 @@ namespace BleakwindBuffet.Data.Drinks
 
         }
         /// <summary>
-        /// tostring
+        /// The string of the name of the CandlehearthCoffee
         /// </summary>
         /// <returns></returns>
         public override string ToString()
@@ -98,13 +101,13 @@ namespace BleakwindBuffet.Data.Drinks
             switch (Size)
             {
                 case Size.Small:
-                    r += "[Small]";
+                    r += "Small ";
                     break;
                 case Size.Medium:
-                    r += "[Medium]";
+                    r += "Medium ";
                     break;
                 case Size.Large:
-                    r += "[Large]";
+                    r += "Large ";
                     break;
 
             }

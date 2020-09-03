@@ -12,17 +12,17 @@ namespace BleakwindBuffet.Data.Drinks
 {
     public class SailorSoda
     {
-        /// <summary>
-        /// size
-        /// </summary>
+        /// <value>
+        /// The size of the SailorSoda
+        /// </value>
         public Size Size { get; set; } = Size.Small;
-        /// <summary>
-        /// flavor
-        /// </summary>
+        /// <value>
+        /// flavor of the SailorSoda
+        /// </value>
         public SodaFlavor Flavor { get; set; } = SodaFlavor.Cherry;
-        /// <summary>
-        /// price
-        /// </summary>
+        /// <value>
+        /// price of the SailorSoda
+        /// </value>
         public double Price
         {
             get
@@ -43,9 +43,9 @@ namespace BleakwindBuffet.Data.Drinks
             }
 
         }
-        /// <summary>
-        ///  get the Cal
-        /// </summary>
+        /// <value>
+        ///  the calories of the SailorSoda
+        /// </value>
         public uint Calories
         {
             get
@@ -66,19 +66,19 @@ namespace BleakwindBuffet.Data.Drinks
             }
 
         }
-        /// <summary>
-        /// if hold ice
-        /// </summary>
+        /// <value>
+        /// if hold ice of the SailorSoda
+        /// </value>
         public bool Ice { get; set; } = true;
-        /// <summary>
-        /// special instructions
-        /// </summary>
+        /// <value>
+        /// special instructions of the SailorSoda
+        /// </value>
         public List<string> SpecialInstructions
         {
             get
             {
                 List<string> instructions = new List<string>();
-                if (!Ice) instructions.Add("Hold Ice");
+                if (Ice == false) instructions.Add("Hold ice");
             
                 return instructions;
 
@@ -87,44 +87,44 @@ namespace BleakwindBuffet.Data.Drinks
 
         }
         /// <summary>
-        /// tostring
+        /// string represent the name of the SailorSoda
         /// </summary>
-        /// <returns></returns>
+        /// <returns>A string represent the name of the SailorSoda</returns>
         public override string ToString()
         {
             string r = "";
             switch (Size)
             {
                 case Size.Small:
-                    r += "[Small]";
+                    r += "Small ";
                     break;
                 case Size.Medium:
-                    r += "[Medium]";
+                    r += "Medium ";
                     break;
                 case Size.Large:
-                    r += "[Large]";
+                    r += "Large ";
                     break;
 
             }
             switch (Flavor)
             {
                 case SodaFlavor.Cherry:
-                    r +="[Cherry]";
+                    r +="Cherry ";
                     break;
                 case SodaFlavor.Blackberry:
-                    r += "[Blackberry]";
+                    r += "Blackberry ";
                     break;
                 case SodaFlavor.Grapefruit:
-                    r += "[Grapefruit]";
+                    r += "Grapefruit ";
                     break;
                 case SodaFlavor.Lemon:
-                    r += "[Lemon]";
+                    r += "Lemon ";
                     break;
                 case SodaFlavor.Peach:
-                    r += "[Peach]";
+                    r += "Peach ";
                     break;
                 case SodaFlavor.Watermelon:
-                    r += "[Watermelon]";
+                    r += "Watermelon ";
                     break;
 
 
