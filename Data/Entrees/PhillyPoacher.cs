@@ -64,7 +64,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// <summary>
         /// convert the Philly Poacher to string
         /// </summary>
-        /// <returns>A string represent the name of PhillyPoacher</returns>
+        /// <returns>A string represent the name of the PhillyPoacher</returns>
         public override string ToString()
         {
             return "Philly Poacher";
