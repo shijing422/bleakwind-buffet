@@ -11,16 +11,19 @@ using System.Text;
 namespace BleakwindBuffet.Data.Sides
 
 {
+    /// <summary>
+    /// Class used to represent the Fried Miraak
+    /// </summary>
     public class FriedMiraak
     {
-        /// <summary>
-        /// size
-        /// </summary>
+        /// <value>
+        /// size of the Fried Miraak
+        /// </value>
         public Size Size { get; set; } = Size.Small;
 
-        /// <summary>
-        /// price
-        /// </summary>
+        /// <value>
+        /// price of the Fried Miraak
+        /// </value>
         public double Price
         {
             get
@@ -41,9 +44,9 @@ namespace BleakwindBuffet.Data.Sides
             }
 
         }
-        /// <summary>
-        ///  get the Cal
-        /// </summary>
+        /// <value>
+        /// the Cal of the Fried Miraak
+        /// </value>
         public uint Calories
         {
             get
@@ -64,6 +67,9 @@ namespace BleakwindBuffet.Data.Sides
             }
 
         }
+        /// <value>
+        /// The empty SpecialInstructions 
+        /// </value>
         public List<string> SpecialInstructions
         {
             get
@@ -82,22 +88,22 @@ namespace BleakwindBuffet.Data.Sides
 
 
         /// <summary>
-        /// tostring
+        /// convert Fried Miraak to string
         /// </summary>
-        /// <returns></returns>
+        /// <returns>A string represent the name of the Fried Miraak</returns>
         public override string ToString()
         {
             string r = "";
             switch (Size)
             {
                 case Size.Small:
-                    r += "[Small]";
+                    r += "Small ";
                     break;
                 case Size.Medium:
-                    r += "[Medium]";
+                    r += "Medium ";
                     break;
                 case Size.Large:
-                    r += "[Large]";
+                    r += "Large ";
                     break;
 
             }

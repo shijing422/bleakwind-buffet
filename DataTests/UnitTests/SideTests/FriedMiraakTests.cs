@@ -1,5 +1,5 @@
 ﻿/*
- * Author: Zachery Brunner
+ * Author: Shijing Zhang
  * Class: FriedMiraakTests.cs
  * Purpose: Test the FriedMiraak.cs class in the Data library
  */
@@ -7,24 +7,40 @@ using Xunit;
 
 using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Enums;
+using BleakwindBuffet.Data.Sides;
 
 namespace BleakwindBuffet.DataTests.UnitTests.SideTests
 {
+    /// <summary>
+    /// A class represent the 
+    /// </summary>
     public class FriedMiraakTests
     {
         [Fact]
         public void ShouldBeSmallByDefault()
         {
+            FriedMiraak a = new FriedMiraak();
+            Assert.Equal(Size.Small, a.Size);
         }
 
         [Fact]
         public void ShouldBeAbleToSetSize()
         {
+            FriedMiraak a = new FriedMiraak();
+            a.Size = Size.Large;
+            Assert.Equal(Size.Large, a.Size);
+            a.Size = Size.Small;
+            Assert.Equal(Size.Small, a.Size);
+            a.Size = Size.Medium;
+            Assert.Equal(Size.Medium, a.Size);
         }
 
         [Fact]
         public void ShouldReturnCorrectSpecialInstructions()
         {
+            FriedMiraak a = new FriedMiraak();
+            Assert.Empty(a.SpecialInstructions);
+
         }
 
         [Theory]
@@ -33,6 +49,10 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
         [InlineData(Size.Large, 2.88)]
         public void ShouldReturnCorrectPriceBasedOnSize(Size size, double price)
         {
+            FriedMiraak a = new FriedMiraak();
+            a.Size = size;
+            Assert.Equal(price, a.Price);
+
         }
 
         [Theory]
@@ -41,6 +61,10 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
         [InlineData(Size.Large, 306)]
         public void ShouldReturnCorrectCaloriesBasedOnSize(Size size, uint calories)
         {
+            FriedMiraak a = new FriedMiraak();
+            a.Size = size;
+            Assert.Equal(calories, a.Calories);
+
         }
 
         [Theory]
@@ -49,6 +73,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
         [InlineData(Size.Large, "Large Fried Miraak")]
         public void ShouldReturnCorrectToStringBasedOnSize(Size size, string name)
         {
+            FriedMiraak a = new FriedMiraak();
+            a.Size = size;
+            Assert.Equal(name, a.ToString());
         }
     }
 }

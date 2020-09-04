@@ -10,16 +10,19 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Sides
 {
+    /// <summary>
+    /// A class represent the Dragonborn Waffle Fries
+    /// </summary>
     public class DragonbornWaffleFries
     {
-        /// <summary>
-        /// size
-        /// </summary>
+        /// <value>
+        /// sizes of the Dragonborn Waffle Fries
+        /// </value>
         public Size Size { get; set; } = Size.Small;
 
-        /// <summary>
-        /// price
-        /// </summary>
+        /// <value>
+        /// prices of the Dragonborn Waffle Fries by sizes
+        /// </value>
         public double Price
         {
             get
@@ -40,9 +43,9 @@ namespace BleakwindBuffet.Data.Sides
             }
 
         }
-        /// <summary>
-        ///  get the Cal
-        /// </summary>
+        /// <value>
+        ///  the Cal of the Dragonborn Waffle Fries by sizes
+        /// </value>
         public uint Calories
         {
             get
@@ -63,7 +66,10 @@ namespace BleakwindBuffet.Data.Sides
             }
 
         }
-        // empty instructions
+        /// <value>
+        /// empty special instructions
+        /// </value>
+        
         public List<string> SpecialInstructions
         {
             get
@@ -83,22 +89,22 @@ namespace BleakwindBuffet.Data.Sides
 
 
         /// <summary>
-        /// tostring
+        /// convert the DragonbornWaffleFries to string
         /// </summary>
-        /// <returns></returns>
+        /// <returns> A string represent the name of the DragonbornWaffleFries</returns>
         public override string ToString()
         {
             string r = "";
             switch (Size)
             {
                 case Size.Small:
-                    r += "[Small]";
+                    r += "Small ";
                     break;
                 case Size.Medium:
-                    r += "[Medium]";
+                    r += "Medium ";
                     break;
                 case Size.Large:
-                    r += "[Large]";
+                    r += "Large ";
                     break;
 
             }

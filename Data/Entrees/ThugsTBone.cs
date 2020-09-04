@@ -10,19 +10,22 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Entrees
 {
+    /// <summary>
+    /// A class represent the ThugsTBone
+    /// </summary>
     public class ThugsTBone 
     {
-        /// <summary>
-        /// get the price
-        /// </summary>
+        /// <value>
+        /// the price of the ThugsTBone
+        /// </value>
         public double Price
         {
             get { return 6.44; }
 
         }
-        /// <summary>
-        ///  get the Cal 
-        /// </summary>
+        /// <value>
+        ///  the Cal of the ThugsTBone
+        /// </value>
         public uint Calories => 982;
 
    
@@ -43,9 +46,13 @@ namespace BleakwindBuffet.Data.Entrees
             }
 
         }
+        /// <summary>
+        /// convert  the ThugsTBone to string
+        /// </summary>
+        /// <returns>A string name of the ThugsTBone</returns>
         public override string ToString()
         {
-            return "Thugs T-Bone ";
+            return "Thugs T-Bone";
         }
 
 
