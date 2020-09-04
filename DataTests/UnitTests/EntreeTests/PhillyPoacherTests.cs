@@ -1,7 +1,7 @@
 ﻿/*
  * Author: ShijngZhang
  * Class: PhillyPoacherTests.cs
- * Purpose: Test the PhillyPoacher.cs class in the Data library
+ * Purpose: Test the PhillyPoacher.cs class in the Datalibrary
  */
 using Xunit;
 
