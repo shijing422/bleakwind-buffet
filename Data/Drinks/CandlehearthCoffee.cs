@@ -11,7 +11,7 @@ using System.Text;
 namespace BleakwindBuffet.Data.Drinks
 {
     /// <summary>
-    /// A class represent CandlehearthCoffee
+    /// A class represent CandlehearthCoffee drink
     /// </summary>
     public class CandlehearthCoffee
     {
