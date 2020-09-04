@@ -1,5 +1,5 @@
 ﻿/*
- * Author: Zachery Brunner
+ * Author: Shijng Zhang
  * Class: BriarheartBurgerTests.cs
  * Purpose: Test the BriarheartBurger.cs class in the Data library
  */

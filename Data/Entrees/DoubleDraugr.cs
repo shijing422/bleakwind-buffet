@@ -10,23 +10,26 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Entrees
 {
+    /// <summary>
+    /// A class represent Double Draugr
+    /// </summary>
     public class DoubleDraugr
     {
-        /// <summary>
-        /// get the price
-        /// </summary>
+        /// <value>
+        /// the price of Double Draugr
+        /// </value>
         public double Price
         {
             get { return 7.32; }
 
         }
-        /// <summary>
-        ///  get the Cal 
-        /// </summary>
+        /// <value>
+        /// the Cal of the Double Draugr
+        /// </value>
         public uint Calories => 843;
-        /// <summary>
-        /// if hold ketchup
-        /// </summary>
+        /// <value>
+        /// if hold ketchup to the Double Draugr
+        /// </value>
         private bool ketchup = true;
         public bool Ketchup
         {
@@ -39,56 +42,60 @@ namespace BleakwindBuffet.Data.Entrees
                 ketchup = value;
             }
         }
-        /// <summary>
-        /// if hold bun
-        /// </summary>
+        /// <value>
+        /// if hold bun to the Double Draugr
+        /// </value>
         public bool Bun { get; set; } = true;
-        /// <summary>
-        /// if hold Mustard
-        /// </summary>
+        /// <value>
+        /// if hold Mustard to the Double Draugr
+        /// </value>
         public bool Mustard { get; set; } = true;
-        /// <summary>
-        /// if hold pickle
-        /// </summary>
+        /// <value>
+        /// if hold pickle to the Double Draugr
+        /// </value>
         public bool Pickle { get; set; } = true;
-        /// <summary>
-        /// if hold cheese
-        /// </summary>
+        /// <value>
+        /// if hold cheese to the Double Draugr
+        /// </value>
         public bool Cheese { get; set; } = true;
-        /// <summary>
-        /// if hold tomato
-        /// </summary>
+        /// <value>
+        /// if hold tomato to the Double Draugr
+        /// </value>
         public bool Tomato { get; set; } = true;
-        /// <summary>
-        /// if hold lettuce
-        /// </summary>
+        /// <value>
+        /// if hold lettuce to the Double Draugr
+        /// </value>
         public bool Lettuce { get; set; } = true;
-        /// <summary>
-        /// if hold mayo
-        /// </summary>
+        /// <value>
+        /// if hold mayo to the Double Draugr
+        /// </value>
         public bool Mayo { get; set; } = true;
-        /// <summary>
+        /// <value>
         /// Setting these to false results in the addition of the corresponding instructions in the SpecialInstructions list
-        /// </summary>
+        /// </value>
         public List<string> SpecialInstructions
         {
             get
             {
                 List<string> instructions = new List<string>();
-                if (!Bun) instructions.Add("Hold Bun");
-                if (!Ketchup) instructions.Add("Hold Ketup");
-                if (!Mustard) instructions.Add("Hold Mustard");
-                if (!Pickle) instructions.Add("Hold Pickle");
-                if (!Cheese) instructions.Add("Hold Cheese");
-                if (!Tomato) instructions.Add("Hold Tomato");
-                if (!Lettuce) instructions.Add("Hold Lettuce");
-                if (!Mayo) instructions.Add("Hold Mayo");
+                if (!Bun) instructions.Add("Hold bun");
+                if (!Ketchup) instructions.Add("Hold ketchup");
+                if (!Mustard) instructions.Add("Hold mustard");
+                if (!Pickle) instructions.Add("Hold pickle");
+                if (!Cheese) instructions.Add("Hold cheese");
+                if (!Tomato) instructions.Add("Hold tomato");
+                if (!Lettuce) instructions.Add("Hold lettuce");
+                if (!Mayo) instructions.Add("Hold mayo");
                 return instructions;
 
 
             }
 
         }
+        /// <summary>
+        /// convert DoubleDraugr to string
+        /// </summary>
+        /// <returns>A string represent Double Draugr</returns>
         public override string ToString()
         {
             return "Double Draugr";

@@ -10,23 +10,26 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Entrees
 {
+    /// <summary>
+    /// A class represent the BriarheartBurger
+    /// </summary>
     public class BriarheartBurger
     {
-        /// <summary>
-        /// get the price of BriarheartBurger
-        /// </summary>
+        /// <value>
+        /// the price of BriarheartBurger
+        /// </value>
         public double Price
         {
             get { return 6.32; }
 
         }
-        /// <summary>
-        ///  get the Cal of BriarheartBurger
-        /// </summary>
+        /// <value>
+        /// the Cal of BriarheartBurger
+        /// </value>
         public uint Calories => 743;
-        /// <summary>
+        /// <value>
         /// if hold ketchup
-        /// </summary>
+        /// </value>
         private bool ketchup = true;
         public bool Ketchup
         {
@@ -39,25 +42,25 @@ namespace BleakwindBuffet.Data.Entrees
                 ketchup = value;
             }
         }
-        /// <summary>
+        /// <value>
         /// if hold bun
-        /// </summary>
+        /// </value>
         public bool Bun { get; set; } = true;
-        /// <summary>
+        /// <value>
         /// if hold Mustard
-        /// </summary>
+        /// </value>
         public bool Mustard { get; set; } = true;
-        /// <summary>
+        /// <value>
         /// if hold pickle
-        /// </summary>
+        /// </value>
         public bool Pickle { get; set; } = true;
-        /// <summary>
+        /// <value>
         /// if hold cheese
-        /// </summary>
+        /// </value>
         public bool Cheese { get; set; } = true;
-        /// <summary>
+        /// <value>
         /// Setting these to false results in the addition of the corresponding instructions in the SpecialInstructions list
-        /// </summary>
+        /// </value>
         public List<string> SpecialInstructions
         {
             get
@@ -74,6 +77,10 @@ namespace BleakwindBuffet.Data.Entrees
             }
             
         }
+        /// <summary>
+        /// create the string of the name of the BriarheartBurger
+        /// </summary>
+        /// <returns>A string represent the name of the BriarheartBurger</returns>
         public override string ToString()
         {
             return "Briarheart Burger";

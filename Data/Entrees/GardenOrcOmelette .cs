@@ -10,50 +10,53 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Entrees
 {
+    /// <summary>
+    /// a class represent the  Garden Orc Omelette
+    /// </summary>
     public class GardenOrcOmelette
     {
-        /// <summary>
-        /// get the price
-        /// </summary>
+        /// <value>
+        /// the price of the  Garden Orc Omelette
+        /// </value>
         public double Price
         {
             get { return 4.57; }
 
         }
-        /// <summary>
-        ///  get the Cal 
-        /// </summary>
+        /// <value>
+        ///  the Cal of the  Garden Orc Omelette
+        /// </value>
         public uint Calories => 404;
-        /// <summary>
 
-        /// <summary>
-        /// if hold Broccoli
-        /// </summary>
+
+        /// <value>
+        /// if hold Broccoli to the Garden Orc Omelette
+        /// </value>
         public bool Broccoli { get; set; } = true;
-        /// <summary>
-        /// if hold  Mushrooms
-        /// </summary>
+        /// <value>
+        /// if hold Mushrooms to the Garden Orc Omelette
+        /// </value>
         public bool Mushrooms { get; set; } = true;
-        /// <summary>
-        /// if hold Tomato
-        /// </summary>
+        /// <value>
+        /// if hold Tomato to the Garden Orc Omelette
+        /// </value>
         public bool Tomato { get; set; } = true;
-        /// <summary>
-        /// if hold Cheddar
-        /// </summary>
+        /// <value>
+        /// if hold Cheddar to the Garden Orc Omelette
+        /// </value>
         public bool Cheddar { get; set; } = true;
-        /// <summary>
+        /// <value>
         /// Setting these to false results in the addition of the corresponding instructions in the SpecialInstructions list
-        /// </summary>
+        /// </value>
         public List<string> SpecialInstructions
         {
             get
             {
                 List<string> instructions = new List<string>();
-                if (!Cheddar) instructions.Add("Hold Cheddar");
-                if (!Tomato) instructions.Add("Hold Tomato");
-                if (!Broccoli) instructions.Add("Hold Broccoli");
-                if (!Mushrooms) instructions.Add("Hold Mushrooms");
+                if (!Cheddar) instructions.Add("Hold cheddar");
+                if (!Tomato) instructions.Add("Hold tomato");
+                if (!Broccoli) instructions.Add("Hold broccoli");
+                if (!Mushrooms) instructions.Add("Hold mushrooms");
 
                 return instructions;
 
@@ -61,6 +64,10 @@ namespace BleakwindBuffet.Data.Entrees
             }
 
         }
+        /// <summary>
+        /// convert the Garden Orc Omelette to string
+        /// </summary>
+        /// <returns>A string represent the name of the Garden Orc Omelette</returns>
         public override string ToString()
         {
             return "Garden Orc Omelette";

@@ -10,50 +10,53 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Entrees
 {
+    /// <summary>
+    /// create a class of the Smokehouse Skeleton
+    /// </summary>
     public class SmokehouseSkeleton 
     {
-        /// <summary>
-        /// get the price
-        /// </summary>
+        /// <value>
+        /// the price of the Smokehouse Skeleton
+        /// </value>
         public double Price
         {
             get { return 5.62; }
 
         }
-        /// <summary>
-        ///  get the Cal 
-        /// </summary>
+        /// <value>
+        ///  the Cal of the Smokehouse Skeleton
+        /// </value>
         public uint Calories => 602;
-        /// <summary>
 
-        /// <summary>
-        /// if hold SausageLink
-        /// </summary>
+
+        /// <value>
+        /// if hold SausageLink to the Smokehouse Skeleton
+        /// </value>
         public bool SausageLink { get; set; } = true;
-        /// <summary>
-        /// if hold egg
-        /// </summary>
+        /// <value>
+        /// if hold egg to the Smokehouse Skeleton
+        /// </value>
         public bool Egg { get; set; } = true;
-        /// <summary>
-        /// if hold HashBrowns
-        /// </summary>
+        /// <value>
+        /// if hold HashBrowns to the Smokehouse Skeleton
+        /// </value>
         public bool HashBrowns { get; set; } = true;
-        /// <summary>
-        /// if hold Pancake
-        /// </summary>
+        /// <value>
+        /// if hold Pancake to the Smokehouse Skeleton
+        /// </value>
         public bool Pancake { get; set; } = true;
-        /// <summary>
+        /// <value>
         /// Setting these to false results in the addition of the corresponding instructions in the SpecialInstructions list
-        /// </summary>
+        /// </value>
         public List<string> SpecialInstructions
         {
             get
             {
                 List<string> instructions = new List<string>();
-                if (!Pancake) instructions.Add("Hold Pancake");
-                if (!Egg) instructions.Add("Hold Egg");
-                if (!SausageLink) instructions.Add("Hold SausageLink");
-                if (!HashBrowns) instructions.Add("Hold HashBrowns");
+                if (!Pancake) instructions.Add("Hold pancakes");
+                if (!Egg) instructions.Add("Hold eggs");
+                if (!SausageLink) instructions.Add("Hold sausage");
+                if (!HashBrowns) instructions.Add("Hold hash browns");
               
                 return instructions;
 
@@ -61,6 +64,10 @@ namespace BleakwindBuffet.Data.Entrees
             }
 
         }
+        /// <summary>
+        /// convert the Smokehouse Skeleton to string
+        /// </summary>
+        /// <returns>A string represent tha name to the Smokehouse Skeleton</returns>
         public override string ToString()
         {
             return "Smokehouse Skeleton";
