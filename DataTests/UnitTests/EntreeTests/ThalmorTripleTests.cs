@@ -11,7 +11,7 @@ using BleakwindBuffet.Data.Entrees;
 namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
 {
     /// <summary>
-    /// unit test for the ThalmorTriple.cs class
+    ///  unit test for the ThalmorTriple.cs class
     /// </summary>
     public class ThalmorTripleTests
     {
