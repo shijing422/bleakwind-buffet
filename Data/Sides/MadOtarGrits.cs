@@ -16,7 +16,7 @@ namespace BleakwindBuffet.Data.Sides
     public class MadOtarGrits
     {
         /// <value>
-        /// size of the Mad Otar Grits
+        /// size of the MadOtarGrits
         /// </value>
         public Size Size { get; set; } = Size.Small;
 
