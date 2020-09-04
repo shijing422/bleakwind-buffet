@@ -11,6 +11,9 @@ using BleakwindBuffet.Data.Sides;
 
 namespace BleakwindBuffet.DataTests.UnitTests.SideTests
 {
+    /// <summary>
+    /// unit test for the MadOtarGrits.cs class
+    /// </summary>
     public class MadOtarGritsTests
     {
         [Fact]

@@ -3,30 +3,33 @@ using System.Collections.Generic;
 using System.Text;
 /*
  * Author: Shijing Zhang
- * Class name: BriarheartBurger.cs
+ * Class name: ThalmorTriple.cs
  * Purpose: Class used to represent the Thalmor Triple entree
  */
 
 
 namespace BleakwindBuffet.Data.Entrees
 {
+    /// <summary>
+    /// A class represent the Thalmor Triple
+    /// </summary>
     public class ThalmorTriple
     {
-        /// <summary>
-        /// get the price of Thalmor Triple
-        /// </summary>
+        /// <value>
+        /// the price of Thalmor Triple
+        /// </value>
         public double Price
         {
             get { return 8.32; }
 
         }
-        /// <summary>
-        ///  get the Cal
-        /// </summary>
+        /// <value>
+        ///  the Cal of the Thalmor Triple
+        /// </value>
         public uint Calories => 943;
-        /// <summary>
+        /// <value>
         /// if hold ketchup
-        /// </summary>
+        /// </value>
         private bool ketchup = true;
         public bool Ketchup
         {
@@ -39,45 +42,45 @@ namespace BleakwindBuffet.Data.Entrees
                 ketchup = value;
             }
         }
-        /// <summary>
+        /// <value>
         /// if hold bun
-        /// </summary>
+        /// </value>
         public bool Bun { get; set; } = true;
-        /// <summary>
+        /// <value>
         /// if hold Mustard
-        /// </summary>
+        /// </value>
         public bool Mustard { get; set; } = true;
-        /// <summary>
+        /// <value>
         /// if hold pickle
-        /// </summary>
+        /// </value>
         public bool Pickle { get; set; } = true;
-        /// <summary>
+        /// <value>
         /// if hold cheese
-        /// </summary>
+        /// </value>
         public bool Cheese { get; set; } = true;
-        /// <summary>
+        /// <value>
         /// if hold tomato
-        /// </summary>
+        /// </value>
         public bool Tomato { get; set; } = true;
-        /// <summary>
+        /// <value>
         /// if hold lettuce
-        /// </summary>
+        /// </value>
         public bool Lettuce { get; set; } = true;
-        /// <summary>
+        /// <value>
         /// if hold mayo
-        /// </summary>
+        /// </value>
         public bool Mayo { get; set; } = true;
-        /// <summary>
+        /// <value>
         /// if hold bacon
-        /// </summary>
+        /// </value>
         public bool Bacon { get; set; } = true;
-        /// <summary>
+        /// <value>
         /// if hold egg
-        /// </summary>
+        /// </value>
         public bool Egg { get; set; } = true;
-        /// <summary>
+        /// <value>
         /// Setting these to false results in the addition of the corresponding instructions in the SpecialInstructions list
-        /// </summary>
+        /// </value>
         public List<string> SpecialInstructions
         {
             get
@@ -100,9 +103,9 @@ namespace BleakwindBuffet.Data.Entrees
 
         }
         /// <summary>
-        /// 
+        /// convert  thalmortriple to string
         /// </summary>
-        /// <returns></returns>
+        /// <returns>A string represent the name of thalmortriple</returns>
         public override string ToString()
         {
             return "Thalmor Triple";

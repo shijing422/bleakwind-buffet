@@ -29,9 +29,9 @@ namespace BleakwindBuffet.Data.Entrees
         public uint Calories => 982;
 
    
-        /// <summary>
+        /// <value>
         /// Setting these to false results in the addition of the corresponding instructions in the SpecialInstructions list
-        /// </summary>
+        /// </value>
         public List<string> SpecialInstructions
         {
             get

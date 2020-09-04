@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 /*
  * Author: Shijing Zhang
- * Class name: SailorSoda.cs
+ * Class name: DragonbornWaffleFries.cs
  * Purpose: Class used to represent the Dragonborn Waffle Fries
  */
 

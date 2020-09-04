@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.Text;
 /*
  * Author: Shijing Zhang
- * Class name: SailorSoda.cs
+ * Class name: MadOtarGrits.cs
  * Purpose: Class used to represent the Mad Otar Grits
  */
 
 namespace BleakwindBuffet.Data.Sides
 {
+    /// <summary>
+    /// A class represent Mad Otar Grits
+    /// </summary>
     public class MadOtarGrits
     {
-        /// <summary>
-        /// size
-        /// </summary>
+        /// <value>
+        /// size of the Mad Otar Grits
+        /// </value>
         public Size Size { get; set; } = Size.Small;
 
-        /// <summary>
-        /// price
-        /// </summary>
+        /// <value>
+        /// price of the Mad Otar Grits
+        /// </value>
         public double Price
         {
             get
@@ -40,9 +43,9 @@ namespace BleakwindBuffet.Data.Sides
             }
 
         }
-        /// <summary>
-        ///  get the Cal
-        /// </summary>
+        /// <value>
+        ///  get the Cal of the Mad Otar Grits
+        /// </value>
         public uint Calories
         {
             get
@@ -63,6 +66,9 @@ namespace BleakwindBuffet.Data.Sides
             }
 
         }
+        /// <value>
+        /// SpecialInstructions of the Mad Otar Grits
+        /// </value>
         public List<string> SpecialInstructions
         {
             get
@@ -80,10 +86,10 @@ namespace BleakwindBuffet.Data.Sides
 
 
 
-        /// <summary>
-        /// tostring
-        /// </summary>
-        /// <returns></returns>
+        /// <value>
+        /// convert Mad Otar Grits to string
+        /// </value>
+        /// <returns> A string represent the name of Mad Otar Grits</returns>
         public override string ToString()
         {
             string r = "";

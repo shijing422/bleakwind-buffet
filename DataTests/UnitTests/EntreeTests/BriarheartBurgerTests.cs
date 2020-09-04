@@ -11,6 +11,9 @@ using BleakwindBuffet.Data.Entrees;
 
 namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
 {
+    /// <summary>
+    /// unit test for the BriarheartBurger.cs class
+    /// </summary>
     public class BriarheartBurgerTests
     {
         

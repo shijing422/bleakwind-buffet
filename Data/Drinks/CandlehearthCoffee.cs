@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 /*
  * Author: Shijing Zhang
- * Class name: SailorSoda.cs
+ * Class name: CandlehearthCoffee.cs
 } * Purpose: Class used to represent the Candlehearth Coffee
  */
 
@@ -44,7 +44,7 @@ namespace BleakwindBuffet.Data.Drinks
 
         }
         /// <value>
-        ///  The Calories of the CandlehearthCoffee by size
+        ///  The Calories of the CandlehearthCoffee by sizes
         /// </value>
         public uint Calories
         {

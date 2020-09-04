@@ -12,7 +12,7 @@ using BleakwindBuffet.Data.Sides;
 namespace BleakwindBuffet.DataTests.UnitTests.SideTests
 {
     /// <summary>
-    /// A class represent the 
+    /// unit test for the FriedMiraak.cs class
     /// </summary>
     public class FriedMiraakTests
     {

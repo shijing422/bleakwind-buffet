@@ -10,6 +10,9 @@ using BleakwindBuffet.Data.Entrees;
 
 namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
 {
+    /// <summary>
+    /// unit test for the ThugsTBone.cs class
+    /// </summary>
     public class ThugsTBoneTests
     {
         [Fact]

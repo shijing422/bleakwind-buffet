@@ -86,9 +86,9 @@ namespace BleakwindBuffet.Data.Drinks
 
         }
         /// <summary>
-        /// The string of the AretinoAppleJuice
+        /// Convert the AretinoAppleJuice to string 
         /// </summary>
-        /// <returns>The string name of the AretinoAppleJuice</returns>
+        /// <returns>The string represent the name of the AretinoAppleJuice</returns>
         public override string ToString()
         {
             string r = "";

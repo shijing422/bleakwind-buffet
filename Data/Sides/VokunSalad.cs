@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.Text;
 /*
  * Author: Shijing Zhang
- * Class name: SailorSoda.cs
+ * Class name:  VokunSalad.cs
  * Purpose: Class used to represent the Vokun Salad
  */
 
 namespace BleakwindBuffet.Data.Sides
 {
+    /// <summary>
+    /// A class represent vokunsalad
+    /// </summary>
     public class VokunSalad
     {
-        /// <summary>
-        /// size
-        /// </summary>
+        /// <value>
+        /// sizes of the  Vokun Salad
+        /// </value>
         public Size Size { get; set; } = Size.Small;
 
-        /// <summary>
-        /// price
-        /// </summary>
+        /// <value>
+        /// price of the  Vokun Salad
+        /// </value>
         public double Price
         {
             get
@@ -40,9 +43,9 @@ namespace BleakwindBuffet.Data.Sides
             }
 
         }
-        /// <summary>
-        ///  get the Cal
-        /// </summary>
+        /// <value>
+        ///  get the Cal of the  Vokun Salad
+        /// </value>
         public uint Calories
         {
             get
@@ -63,7 +66,9 @@ namespace BleakwindBuffet.Data.Sides
             }
 
         }
-
+        /// <value>
+        ///  SpecialInstructions of the Vokun Salad
+        /// </value>
         public List<string> SpecialInstructions
         {
             get
@@ -81,9 +86,9 @@ namespace BleakwindBuffet.Data.Sides
 
 
         /// <summary>
-        /// tostring
+        /// convert vokunsalad to string
         /// </summary>
-        /// <returns></returns>
+        /// <returns>A string represent the name of the vokunsalad</returns>
         public override string ToString()
         {
             string r = "";

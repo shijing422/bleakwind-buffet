@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 /*
  * Author: Shijing Zhang
- * Class name: BriarheartBurger.cs
+ * Class name: Garden Orc Omelette.cs
  * Purpose: Class used to represent the Garden Orc Omelette  entree
  */
 

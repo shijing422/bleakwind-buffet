@@ -11,6 +11,9 @@ using BleakwindBuffet.Data.Drinks;
 
 namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
 {
+    /// <summary>
+    /// unit test for the AretinoAppleJuice.cs class
+    /// </summary>
     public class AretinoAppleJuiceTests
     {
         [Fact]

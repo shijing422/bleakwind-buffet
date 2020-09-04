@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 /*
  * Author: Shijing Zhang
- * Class name: BriarheartBurger.cs
+ * Class name: Philly Poacher.cs
  * Purpose: Class used to represent the Philly Poacher entree
  */
 
@@ -42,9 +42,9 @@ namespace BleakwindBuffet.Data.Entrees
         /// if hold Onion to Philly Poacher
         /// </value>
         public bool Onion { get; set; } = true;
-        /// <summary>
+        /// <value>
         /// Setting these to false results in the addition of the corresponding instructions in the SpecialInstructions list
-        /// </summary>
+        /// </value>
         public List<string> SpecialInstructions
         {
             get
