@@ -15,15 +15,16 @@ namespace BleakwindBuffet.DataTests.UnitTests
         public void MenuReturnALlEntree()
         {
             IEnumerable<IOrderItem> result = Menu.Entrees();
-          
-           
-            Assert.Contains(result, (item) => { return item.ToString().Equals("Briarheart Burger"); });
-            Assert.Contains(result, (item) => { return item.ToString().Equals("Double Draugr"); });
-            Assert.Contains(result, (item) => { return item.ToString().Equals("Garden Orc Omelette"); });
-            Assert.Contains(result, (item) => { return item.ToString().Equals("Philly Poacher"); });
-            Assert.Contains(result, (item) => { return item.ToString().Equals("Smokehouse Skeleton"); });
-            Assert.Contains(result, (item) => { return item.ToString().Equals("Thalmor Triple"); });
-            Assert.Contains(result, (item) => { return item.ToString().Equals("Thugs T-Bone"); });
+
+         
+            Assert.All(result, item => item.ToString().Contains("Briarheart Burger"));
+            Assert.All(result, item => item.ToString().Contains("Double Draugr"));
+            Assert.All(result, item => item.ToString().Contains("Garden Orc Omelette"));
+            Assert.All(result, item => item.ToString().Contains("Philly Poacher"));
+            Assert.All(result, item => item.ToString().Contains("Smokehouse Skeleton"));
+            Assert.All(result, item => item.ToString().Contains("Thalmor Triple"));
+            Assert.All(result, item => item.ToString().Contains("Thugs T-Bone"));
+         
         }
     }
 }

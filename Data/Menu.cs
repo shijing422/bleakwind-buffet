@@ -17,21 +17,21 @@ namespace BleakwindBuffet.Data
         {
             IEnumerable<IOrderItem> entrees = new List<IOrderItem>();
 
+
+
+            IOrderItem bb = new BriarheartBurger();
+           
+            IOrderItem dd = new DoubleDraugr();
          
-            Entree BB = (Entree)new BriarheartBurger();
-            IOrderItem bb = (IOrderItem)BB;
-            Entree DD = (Entree)new DoubleDraugr();
-            IOrderItem dd = (IOrderItem)DD;
-            Entree GOO = (Entree)new GardenOrcOmelette();
-            IOrderItem goo = (IOrderItem)GOO;
-            Entree PP = (Entree)new PhillyPoacher();
-            IOrderItem pp = (IOrderItem)PP;
-            Entree SS = (Entree)new SmokehouseSkeleton();
-            IOrderItem ss = (IOrderItem)SS;
-            Entree TT = (Entree)new ThalmorTriple();
-            IOrderItem tt = (IOrderItem)TT;
-            Entree TTB = (Entree)new ThugsTBone();
-            IOrderItem ttb = (IOrderItem)TTB;
+            IOrderItem goo = new GardenOrcOmelette();
+          
+            IOrderItem pp = new PhillyPoacher();
+            
+            IOrderItem ss = new SmokehouseSkeleton();
+           
+            IOrderItem tt = new ThalmorTriple();
+         
+            IOrderItem ttb = new ThugsTBone();
             entrees.ToList().Add(bb);
             entrees.ToList().Add(dd);
             entrees.ToList().Add(goo);
