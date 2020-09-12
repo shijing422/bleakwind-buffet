@@ -13,12 +13,12 @@ namespace BleakwindBuffet.Data.Entrees
     /// <summary>
     /// create a class of the Smokehouse Skeleton
     /// </summary>
-    public class SmokehouseSkeleton 
+    public class SmokehouseSkeleton : Entree, IOrderItem
     {
         /// <value>
         /// the price of the Smokehouse Skeleton
         /// </value>
-        public double Price
+        public override double Price
         {
             get { return 5.62; }
 
@@ -26,7 +26,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// <value>
         ///  the Cal of the Smokehouse Skeleton
         /// </value>
-        public uint Calories => 602;
+        public override uint Calories => 602;
 
 
         /// <value>
@@ -48,7 +48,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// <value>
         /// Setting these to false results in the addition of the corresponding instructions in the SpecialInstructions list
         /// </value>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {

@@ -11,11 +11,29 @@ using BleakwindBuffet.Data.Drinks;
 
 namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
 {
+   
     /// <summary>
     /// unit test for the AretinoAppleJuice.cs class
     /// </summary>
     public class AretinoAppleJuiceTests
     {
+
+
+        [Fact]
+        public void ShouldBeADrink()
+        {
+            AretinoAppleJuice a = new AretinoAppleJuice();
+            Assert.IsAssignableFrom<Drink>(a);
+
+        }
+        [Fact]
+        public void ShouldBeAssignToIORderItem()
+        {
+            AretinoAppleJuice a = new AretinoAppleJuice();
+
+
+            Assert.IsAssignableFrom<IOrderItem>(a);
+        }
         [Fact]
         public void ShouldNotIncludeIceByDefault()
         {

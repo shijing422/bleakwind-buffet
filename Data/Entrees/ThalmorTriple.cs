@@ -13,12 +13,12 @@ namespace BleakwindBuffet.Data.Entrees
     /// <summary>
     /// A class represent the Thalmor Triple
     /// </summary>
-    public class ThalmorTriple
+    public class ThalmorTriple: Entree, IOrderItem
     {
         /// <value>
         /// the price of Thalmor Triple
         /// </value>
-        public double Price
+        public override double Price
         {
             get { return 8.32; }
 
@@ -26,7 +26,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// <value>
         ///  the Cal of the Thalmor Triple
         /// </value>
-        public uint Calories => 943;
+        public override uint Calories => 943;
         /// <value>
         /// if hold ketchup
         /// </value>
@@ -81,7 +81,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// <value>
         /// Setting these to false results in the addition of the corresponding instructions in the SpecialInstructions list
         /// </value>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {

@@ -13,17 +13,14 @@ namespace BleakwindBuffet.Data.Sides
     /// <summary>
     /// A class represent the Dragonborn Waffle Fries
     /// </summary>
-    public class DragonbornWaffleFries
+    public class DragonbornWaffleFries: Side, IOrderItem
     {
-        /// <value>
-        /// sizes of the Dragonborn Waffle Fries
-        /// </value>
-        public Size Size { get; set; } = Size.Small;
+       
 
         /// <value>
         /// prices of the Dragonborn Waffle Fries by sizes
         /// </value>
-        public double Price
+        public override double Price
         {
             get
             {
@@ -46,7 +43,7 @@ namespace BleakwindBuffet.Data.Sides
         /// <value>
         ///  the Cal of the Dragonborn Waffle Fries by sizes
         /// </value>
-        public uint Calories
+         public override uint Calories
         {
             get
             {
@@ -70,7 +67,7 @@ namespace BleakwindBuffet.Data.Sides
         /// empty special instructions
         /// </value>
         
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {

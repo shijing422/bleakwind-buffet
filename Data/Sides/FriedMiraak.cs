@@ -14,17 +14,14 @@ namespace BleakwindBuffet.Data.Sides
     /// <summary>
     /// Class used to represent the Fried Miraak
     /// </summary>
-    public class FriedMiraak
+    public class FriedMiraak : Side, IOrderItem
     {
-        /// <value>
-        /// size of the Fried Miraak
-        /// </value>
-        public Size Size { get; set; } = Size.Small;
+       
 
         /// <value>
         /// price of the Fried Miraak
         /// </value>
-        public double Price
+        public override double Price
         {
             get
             {
@@ -47,7 +44,7 @@ namespace BleakwindBuffet.Data.Sides
         /// <value>
         /// the Cal of the Fried Miraak
         /// </value>
-        public uint Calories
+        public override uint Calories
         {
             get
             {
@@ -70,7 +67,7 @@ namespace BleakwindBuffet.Data.Sides
         /// <value>
         /// The empty SpecialInstructions 
         /// </value>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {

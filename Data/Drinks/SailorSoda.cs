@@ -10,12 +10,9 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Drinks
 {
-    public class SailorSoda
+    public class SailorSoda : Drink, IOrderItem
     {
-        /// <value>
-        /// The size of the SailorSoda
-        /// </value>
-        public Size Size { get; set; } = Size.Small;
+   
         /// <value>
         /// flavor of the SailorSoda
         /// </value>
@@ -23,7 +20,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <value>
         /// price of the SailorSoda
         /// </value>
-        public double Price
+        public override double Price
         {
             get
             {
@@ -46,7 +43,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <value>
         ///  the calories of the SailorSoda
         /// </value>
-        public uint Calories
+        public override uint Calories
         {
             get
             {
@@ -73,7 +70,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <value>
         /// special instructions of the SailorSoda
         /// </value>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {

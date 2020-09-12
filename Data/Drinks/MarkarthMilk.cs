@@ -13,17 +13,14 @@ namespace BleakwindBuffet.Data.Drinks
     /// <summary>
     /// A class represent the MarkarthMilk
     /// </summary>
-    public class MarkarthMilk
+    public class MarkarthMilk : Drink, IOrderItem
     {
-        /// <value>
-        /// The size of the MarkarthMilk
-        /// </value>
-        public Size Size { get; set; } = Size.Small;
+   
 
         /// <value>
         /// The price of the MarkarthMilk
         /// </value>
-        public double Price
+        public override double Price
         {
             get
             {
@@ -46,7 +43,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <value>
         ///  The Calories of the MarkarthMilk
         /// </value>
-        public uint Calories
+        public override uint Calories
         {
             get
             {
@@ -73,7 +70,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <value>
         /// special instructions of the MarkarthMilk
         /// </value>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {

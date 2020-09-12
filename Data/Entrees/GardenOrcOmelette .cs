@@ -13,12 +13,12 @@ namespace BleakwindBuffet.Data.Entrees
     /// <summary>
     /// a class represent the  Garden Orc Omelette
     /// </summary>
-    public class GardenOrcOmelette
+    public class GardenOrcOmelette : Entree, IOrderItem
     {
         /// <value>
         /// the price of the  Garden Orc Omelette
         /// </value>
-        public double Price
+        public override double Price
         {
             get { return 4.57; }
 
@@ -26,7 +26,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// <value>
         ///  the Cal of the  Garden Orc Omelette
         /// </value>
-        public uint Calories => 404;
+        public override uint Calories => 404;
 
 
         /// <value>
@@ -48,7 +48,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// <value>
         /// Setting these to false results in the addition of the corresponding instructions in the SpecialInstructions list
         /// </value>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {
