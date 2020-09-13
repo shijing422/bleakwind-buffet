@@ -116,6 +116,17 @@ namespace BleakwindBuffet.Data
             VokunSalad svs = new VokunSalad();
             VokunSalad mvs = new VokunSalad();
             VokunSalad lvs = new VokunSalad();
+            svs.Size = Size.Small;
+            mvs.Size = Size.Medium;
+            lvs.Size = Size.Large;
+            IOrderItem SVS = (IOrderItem)svs;
+            IOrderItem MVS = (IOrderItem)mvs;
+            IOrderItem LVS = (IOrderItem)lvs;
+            sides.ToList().Add(SVS);
+            sides.ToList().Add(MVS);
+            sides.ToList().Add(LVS);
+
+
 
 
 

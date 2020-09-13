@@ -17,7 +17,7 @@ namespace BleakwindBuffet.DataTests.UnitTests
 
             IEnumerable<IOrderItem> result = Menu.Entrees();
 
-         
+
             Assert.All(result, item => item.ToString().Contains("Briarheart Burger"));
             Assert.All(result, item => item.ToString().Contains("Double Draugr"));
             Assert.All(result, item => item.ToString().Contains("Garden Orc Omelette"));
@@ -25,7 +25,26 @@ namespace BleakwindBuffet.DataTests.UnitTests
             Assert.All(result, item => item.ToString().Contains("Smokehouse Skeleton"));
             Assert.All(result, item => item.ToString().Contains("Thalmor Triple"));
             Assert.All(result, item => item.ToString().Contains("Thugs T-Bone"));
-         
+
         }
+        [Fact]
+        public void MenuReturnALLSides()
+        {
+            IEnumerable<IOrderItem> result = Menu.Sides();
+            Assert.All(result, item => item.ToString().Contains("Small Vokun Salad"));
+            Assert.All(result, item => item.ToString().Contains("Medium Vokun Salad"));
+            Assert.All(result, item => item.ToString().Contains("Large Vokun Salad"));
+            Assert.All(result, item => item.ToString().Contains("Small Dragonborn Waffle Fries"));
+            Assert.All(result, item => item.ToString().Contains("Medium Dragonborn Waffle Fries"));
+            Assert.All(result, item => item.ToString().Contains("Large Dragonborn Waffle Fries"));
+            Assert.All(result, item => item.ToString().Contains("Small Fried Miraak"));
+            Assert.All(result, item => item.ToString().Contains("Medium Fried Miraak"));
+            Assert.All(result, item => item.ToString().Contains("Large Fried Miraak"));
+            Assert.All(result, item => item.ToString().Contains("Small Mad Otar Grits"));
+            Assert.All(result, item => item.ToString().Contains("Medium Mad Otar Grits"));
+            Assert.All(result, item => item.ToString().Contains("Large Mad Otar Grits"));
+
+
+        } 
     }
 }
