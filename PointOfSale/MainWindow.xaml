@@ -5,13 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PointOfSale"
         mc:Ignorable="d"
-        Title="Bleakwind Buffet Point of Sale" TextBlock.TextAlignment="Center" Height="650" Width="1000">
+        Title="Bleakwind Buffet Point of Sale" Background="Beige" TextBlock.TextAlignment="Center" Height="650" Width="1000">
     <Grid>
-        <TextBlock Margin="344,13,394,547" Text="Customization" FontSize="20" FontWeight="Bold">
-            
-               
+        <TextBlock Margin="344,13,394,555" Text="Customization" FontSize="20" FontWeight="Bold">
+
+
         </TextBlock>
+
         <StackPanel Name="Customization" Background="LightSalmon" Orientation="Vertical" Margin="344,53,383,3">
+
             <CheckBox Content="Small"  Click="clicksize" HorizontalAlignment="Left" Name="cSmall"></CheckBox>
             <CheckBox Content="Medium" Click="clicksize" HorizontalAlignment="Left" Name="cMedium"></CheckBox>
             <CheckBox Content="Large" Click="clicksize" HorizontalAlignment="Left" Name="cLarge"></CheckBox>
@@ -46,40 +48,43 @@
             <CheckBox Content="RoomForCream" Name="cRoomForCream"></CheckBox>
             <CheckBox Content="Decaf" Name="cDecaf"></CheckBox>
             <CheckBox Content="Lemon" Name="cLemon"></CheckBox>
-            <Button Content="OK" x:Name="cOK" FontSize="18" FontWeight="Bold" Click="ClickOK"/>
+            <Button Background="LightYellow" Content="OK" x:Name="cOK" FontSize="18" FontWeight="Bold" Click="ClickOK"/>
 
 
 
 
         </StackPanel>
         <StackPanel x:Name="menu" Background="LightBlue" Orientation="Vertical" Margin="10,60,697,10">
-            <Button Content="Briarheart Burger" Click="ClickBriarheartBurger" FontSize="18" HorizontalAlignment="Left"  ></Button>
-            <Button Content="Double Draugr" FontSize="18" HorizontalAlignment="Left" Click="ClickDoubleDraugr"></Button>
-            <Button Content="Thalmor Triple" FontSize="18" HorizontalAlignment="Left" Click="ClickThalmorTriple" ></Button>
-            <Button Content="Thugs T-Bone" FontSize="18" HorizontalAlignment="Left" Click="ClickThugsTBone" ></Button>
-            <Button Content="Philly Poacher" FontSize="18" HorizontalAlignment="Left" Click="ClickPhillyPoacher" ></Button>
-            <Button Content="Garden Orc Omelette" FontSize="18" HorizontalAlignment="Left" Click="ClickGardenOrcOmelette" ></Button>
-            <Button Content="Smokehouse Skeleton" FontSize="18" HorizontalAlignment="Left" Click="ClickSmokehouseSkeleton" ></Button>
+            <Button Background="LightYellow" Content="Briarheart Burger" Click="ClickBriarheartBurger" FontSize="18" HorizontalAlignment="Left"  ></Button>
+            <Button Background="LightYellow" Content="Double Draugr" FontSize="18" HorizontalAlignment="Left" Click="ClickDoubleDraugr"></Button>
+            <Button Background="LightYellow" Content="Thalmor Triple" FontSize="18" HorizontalAlignment="Left" Click="ClickThalmorTriple" ></Button>
+            <Button Background="LightYellow" Content="Thugs T-Bone" FontSize="18" HorizontalAlignment="Left" Click="ClickThugsTBone" ></Button>
+            <Button Background="LightYellow" Content="Philly Poacher" FontSize="18" HorizontalAlignment="Left" Click="ClickPhillyPoacher" ></Button>
+            <Button Background="LightYellow" Content="Garden Orc Omelette" FontSize="18" HorizontalAlignment="Left" Click="ClickGardenOrcOmelette" ></Button>
+            <Button Background="LightYellow" Content="Smokehouse Skeleton" FontSize="18" HorizontalAlignment="Left" Click="ClickSmokehouseSkeleton" ></Button>
 
-            <Button Content="Warrior Water" FontSize="18" HorizontalAlignment="Left" Click="ClickWater" ></Button>
-            <Button Content="Candlehearth Coffee" FontSize="18" HorizontalAlignment="Left" Click="ClickCoffee" ></Button>
-            <Button Content="Aretino Apple Juice" FontSize="18" HorizontalAlignment="Left" Click="ClickJuice" ></Button>
-            <Button Content="Markarth Milk" FontSize="18" HorizontalAlignment="Left" Click="ClickMilk" ></Button>
-            <Button Content="Sailor's Soda" FontSize="18" HorizontalAlignment="Left" Click="ClickSoda" ></Button>
+            <Button Background="LightYellow" Content="Warrior Water" FontSize="18" HorizontalAlignment="Left" Click="ClickWater" ></Button>
+            <Button Background="LightYellow" Content="Candlehearth Coffee" FontSize="18" HorizontalAlignment="Left" Click="ClickCoffee" ></Button>
+            <Button Background="LightYellow" Content="Aretino Apple Juice" FontSize="18" HorizontalAlignment="Left" Click="ClickJuice" ></Button>
+            <Button Background="LightYellow" Content="Markarth Milk" FontSize="18" HorizontalAlignment="Left" Click="ClickMilk" ></Button>
+            <Button Content="Sailor's Soda" Background="LightYellow" FontSize="18" HorizontalAlignment="Left" Click="ClickSoda" ></Button>
 
-            <Button Content="Vokun Salad" FontSize="18" HorizontalAlignment="Left" Click="ClickSalad" ></Button>
-            <Button Content="Fried Miraak" FontSize="18" HorizontalAlignment="Left" Click="ClickMiraak" ></Button>
-            <Button Content="Mad Otar Grits" FontSize="18" HorizontalAlignment="Left" Click="ClickGrits" ></Button>
-            <Button Content="Dragonborn Waffle Fries" FontSize="18" HorizontalAlignment="Left" Click="ClickFries" ></Button>
+            <Button Content="Vokun Salad" FontSize="18" Background="LightYellow" HorizontalAlignment="Left" Click="ClickSalad" ></Button>
+            <Button Content="Fried Miraak" FontSize="18" Background="LightYellow" HorizontalAlignment="Left" Click="ClickMiraak" ></Button>
+            <Button Content="Mad Otar Grits" FontSize="18" Background="LightYellow" HorizontalAlignment="Left" Click="ClickGrits" ></Button>
+            <Button Content="Dragonborn Waffle Fries" Background="LightYellow" FontSize="18" HorizontalAlignment="Left" Click="ClickFries" ></Button>
 
         </StackPanel>
-        <TextBox Name="orderlist" HorizontalContentAlignment="Stretch" Margin="655,38,17,151" IsEnabled="False" RenderTransformOrigin="0.5,0.5"/>
-        <TextBox Name="orderprice" Margin="655,484,10,54" IsEnabled="False"></TextBox>
+
+        <TextBox Name="orderlists" Margin="655,60,0,202" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible"/>
+
+
+        <TextBox Name="orderprice" Margin="655,438,10,82" IsEnabled="False"></TextBox>
 
         <TextBlock HorizontalAlignment="Left" FontWeight="Bold" FontSize="20" Height="31" Margin="51,10,0,0" Text="Add to order" TextWrapping="Wrap" VerticalAlignment="Top" Width="319"/>
         <TextBlock HorizontalAlignment="Left" FontWeight="Bold" FontSize="20" Height="22" Margin="761,13,0,0" Text="Order" TextWrapping="Wrap" VerticalAlignment="Top" Width="211" RenderTransformOrigin="2.863,0.398"/>
-        <Button Margin="822,581,0,10" Content="Place Order" FontSize="20" FontWeight="Bold" Click="ClickPlace"></Button>
-        <Button Margin="655,586,206,10" Content="Cancel Order" FontSize="20" FontWeight="Bold" RenderTransformOrigin="0.5,0.5" Click="ClickCancel">
+        <Button Background="LightYellow" Margin="822,564,0,3" Content="Place Order" FontSize="20" FontWeight="Bold" Click="ClickPlace"></Button>
+        <Button Background="LightYellow" Margin="655,564,183,3" Content="Cancel Order" FontSize="20" FontWeight="Bold" RenderTransformOrigin="0.5,0.5" Click="ClickCancel">
 
         </Button>
 

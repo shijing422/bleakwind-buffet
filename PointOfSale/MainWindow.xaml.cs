@@ -47,6 +47,7 @@ namespace PointOfSale
         public MainWindow()
         {
             InitializeComponent();
+          
             Customization.Visibility = Visibility.Hidden;
         }
         /// <summary>
@@ -111,7 +112,8 @@ namespace PointOfSale
             }
             else
             {
-                cBlackberry.IsEnabled = true;
+
+                cLemonflavor.IsEnabled = true;
                 cCherry.IsEnabled = true;
                 cGrapef.IsEnabled = true;
                 cPeach.IsEnabled=true;
@@ -155,7 +157,7 @@ namespace PointOfSale
         /// </summary>
         void initialize()
         {
-            cBlackberry.IsEnabled = true;
+            cLemonflavor.IsEnabled = true;
             cCherry.IsEnabled = true;
             cGrapef.IsEnabled = true;
             cPeach.IsEnabled = true;
@@ -249,8 +251,8 @@ namespace PointOfSale
             BriarheartBurger a = new BriarheartBurger();
             total += a.Price;
             lists.Add(a.ToString());
-            orderlist.Text = string.Join("\n", lists);
-            string tp = "Subtotal: $" + total.ToString() + "\n" + "Tax:$" + (0.09*total).ToString() + "\n" + "Total:$" + (1.09*total).ToString();
+            orderlists.Text = string.Join("\n", lists);
+            string tp = "Subtotal: $" + total.ToString() + "\n" + "Tax:$" + Math.Round((0.09*total),4).ToString() + "\n" + "Total:$" + Math.Round((1.09*total),4).ToString();
             orderprice.Text = tp;
             button = "BriarheartBurger";
             hidden();
@@ -275,8 +277,8 @@ namespace PointOfSale
             DoubleDraugr a = new DoubleDraugr();
             total += a.Price;
             lists.Add(a.ToString());
-            orderlist.Text = string.Join("\n", lists);
-            string tp = "Subtotal: $" + total.ToString() + "\n" + "Tax:$" + (0.09 * total).ToString() + "\n" + "Total:$" + (1.09 * total).ToString();
+            orderlists.Text = string.Join("\n", lists);
+            string tp = "Subtotal: $" + total.ToString() + "\n" + "Tax:$" + Math.Round((0.09*total),4).ToString() + "\n" + "Total:$" + Math.Round((1.09*total),4).ToString();
             orderprice.Text = tp;
             hidden();
             cBun.Visibility = Visibility.Visible;
@@ -304,8 +306,8 @@ namespace PointOfSale
             ThalmorTriple a = new ThalmorTriple();
             total += a.Price;
             lists.Add(a.ToString());
-            orderlist.Text = string.Join("\n", lists);
-            string tp = "Subtotal: $" + total.ToString() + "\n" + "Tax:$" + (0.09 * total).ToString() + "\n" + "Total:$" + (1.09 * total).ToString();
+            orderlists.Text = string.Join("\n", lists);
+            string tp = "Subtotal: $" + total.ToString() + "\n" + "Tax:$" + Math.Round(Math.Round((0.09*total),4),4).ToString() + "\n" + "Total:$" + Math.Round(Math.Round((1.09*total),4),4).ToString();
             orderprice.Text = tp;
             hidden();
             cBun.Visibility = Visibility.Visible;
@@ -334,8 +336,8 @@ namespace PointOfSale
             SmokehouseSkeleton a = new SmokehouseSkeleton();
             total += a.Price;
             lists.Add(a.ToString());
-            orderlist.Text = string.Join("\n", lists);
-            string tp = "Subtotal: $" + total.ToString() + "\n" + "Tax:$" + (0.09 * total).ToString() + "\n" + "Total:$" + (1.09 * total).ToString();
+            orderlists.Text = string.Join("\n", lists);
+            string tp = "Subtotal: $" + total.ToString() + "\n" + "Tax:$" + Math.Round((0.09*total),4).ToString() + "\n" + "Total:$" + Math.Round((1.09*total),4).ToString();
             orderprice.Text = tp;
             hidden();
             cSausageLink.Visibility = Visibility.Visible;
@@ -362,8 +364,8 @@ namespace PointOfSale
             GardenOrcOmelette a = new GardenOrcOmelette();
             total += a.Price;
             lists.Add(a.ToString());
-            orderlist.Text = string.Join("\n", lists);
-            string tp = "Subtotal: $" + total.ToString() + "\n" + "Tax:$" + (0.09 * total).ToString() + "\n" + "Total:$" + (1.09 * total).ToString();
+            orderlists.Text = string.Join("\n", lists);
+            string tp = "Subtotal: $" + total.ToString() + "\n" + "Tax:$" + Math.Round((0.09*total),4).ToString() + "\n" + "Total:$" + Math.Round((1.09*total),4).ToString();
             orderprice.Text = tp;
             hidden();
             cBroccoli.Visibility = Visibility.Visible;
@@ -384,8 +386,8 @@ namespace PointOfSale
             ThugsTBone a = new ThugsTBone();
             total += a.Price;
             lists.Add(a.ToString());
-            orderlist.Text = string.Join("\n", lists);
-            string tp = "Subtotal: $" + total.ToString() + "\n" + "Tax:$" + (0.09 * total).ToString() + "\n" + "Total:$" + (1.09 * total).ToString();
+            orderlists.Text = string.Join("\n", lists);
+            string tp = "Subtotal: $" + total.ToString() + "\n" + "Tax:$" + Math.Round((0.09*total),4).ToString() + "\n" + "Total:$" + Math.Round((1.09*total),4).ToString();
             orderprice.Text = tp;
 
 
@@ -404,8 +406,8 @@ namespace PointOfSale
             PhillyPoacher a = new PhillyPoacher();
             total += a.Price;
             lists.Add(a.ToString());
-            orderlist.Text = string.Join("\n", lists);
-            string tp = "Subtotal: $" + total.ToString() + "\n" + "Tax:$" + (0.09 * total).ToString() + "\n" + "Total:$" + (1.09 * total).ToString();
+            orderlists.Text = string.Join("\n", lists);
+            string tp = "Subtotal: $" + total.ToString() + "\n" + "Tax:$" + Math.Round((0.09*total),4).ToString() + "\n" + "Total:$" + Math.Round((1.09*total),4).ToString();
             orderprice.Text = tp;
             hidden();
             cSirloin.Visibility = Visibility.Visible;
@@ -423,7 +425,7 @@ namespace PointOfSale
         {
             lists.Clear();
             total = 0;
-            orderlist.Clear();
+            orderlists.Clear();
             orderprice.Clear();
         }
         /// <summary>
@@ -457,7 +459,7 @@ namespace PointOfSale
   
                 var result = lists.Concat(a.SpecialInstructions);
                 lists = result.ToList();
-                orderlist.Text = string.Join("\n", lists);
+                orderlists.Text = string.Join("\n", lists);
                 initialize();
 
             }
@@ -482,7 +484,7 @@ namespace PointOfSale
 
                 var result = lists.Concat(a.SpecialInstructions);
                 lists = result.ToList();
-                orderlist.Text = string.Join("\n", lists);
+                orderlists.Text = string.Join("\n", lists);
                 initialize();
             }
             if (string.Equals(button, "ThalmorTriple"))
@@ -507,7 +509,7 @@ namespace PointOfSale
                 if (cMayo.IsChecked == false) a.Mayo = false;
                 var result = lists.Concat(a.SpecialInstructions);
                 lists = result.ToList();
-                orderlist.Text = string.Join("\n", lists);
+                orderlists.Text = string.Join("\n", lists);
                 initialize();
             }
             if (string.Equals(button, "SmokehouseSkeleton"))
@@ -519,7 +521,7 @@ namespace PointOfSale
                 if (cEgg.IsChecked == false) a.Egg = false;
                 var result = lists.Concat(a.SpecialInstructions);
                 lists = result.ToList();
-                orderlist.Text = string.Join("\n", lists);
+                orderlists.Text = string.Join("\n", lists);
                 initialize();
             }
             if (string.Equals(button, "GardenOrcOmelette"))
@@ -531,7 +533,7 @@ namespace PointOfSale
                 if (cTomato.IsChecked == false) a.Tomato = false;
                 var result = lists.Concat(a.SpecialInstructions);
                 lists = result.ToList();
-                orderlist.Text = string.Join("\n", lists);
+                orderlists.Text = string.Join("\n", lists);
 
                 initialize();
             }
@@ -544,7 +546,7 @@ namespace PointOfSale
                 if (cRoll.IsChecked == false) a.Roll = false;
                 var result = lists.Concat(a.SpecialInstructions);
                 lists = result.ToList();
-                orderlist.Text = string.Join("\n", lists);
+                orderlists.Text = string.Join("\n", lists);
                 initialize();
 
             }
@@ -572,8 +574,8 @@ namespace PointOfSale
                 lists.Add(a.ToString());
                 var result = lists.Concat(a.SpecialInstructions);
                 lists = result.ToList();
-                orderlist.Text = string.Join("\n", lists);
-                string tp = "Subtotal: $" + total.ToString() + "\n" + "Tax:$" + (0.09 * total).ToString() + "\n" + "Total:$" + (1.09 * total).ToString();
+                orderlists.Text = string.Join("\n", lists);
+                string tp = "Subtotal: $" + total.ToString() + "\n" + "Tax:$" + Math.Round((0.09*total),4).ToString() + "\n" + "Total:$" + Math.Round((1.09*total),4).ToString();
                 orderprice.Text = tp;
                 initialize();
 
@@ -597,8 +599,8 @@ namespace PointOfSale
                 lists.Add(a.ToString());
                 var result = lists.Concat(a.SpecialInstructions);
                 lists = result.ToList();
-                orderlist.Text = string.Join("\n", lists);
-                string tp = "Subtotal: $" + total.ToString() + "\n" + "Tax:$" + (0.09 * total).ToString() + "\n" + "Total:$" + (1.09 * total).ToString();
+                orderlists.Text = string.Join("\n", lists);
+                string tp = "Subtotal: $" + total.ToString() + "\n" + "Tax:$" + Math.Round((0.09*total),4).ToString() + "\n" + "Total:$" + Math.Round((1.09*total),4).ToString();
                 orderprice.Text = tp;
                 initialize();
             }
@@ -625,8 +627,8 @@ namespace PointOfSale
                 lists.Add(a.ToString());
                 var result = lists.Concat(a.SpecialInstructions);
                 lists = result.ToList();
-                orderlist.Text = string.Join("\n", lists);
-                string tp = "Subtotal: $" + total.ToString() + "\n" + "Tax:$" + (0.09 * total).ToString() + "\n" + "Total:$" + (1.09 * total).ToString();
+                orderlists.Text = string.Join("\n", lists);
+                string tp = "Subtotal: $" + total.ToString() + "\n" + "Tax:$" + Math.Round((0.09*total),4).ToString() + "\n" + "Total:$" + Math.Round((1.09*total),4).ToString();
                 orderprice.Text = tp;
                 initialize();
             }
@@ -648,8 +650,8 @@ namespace PointOfSale
                 lists.Add(a.ToString());
                 var result = lists.Concat(a.SpecialInstructions);
                 lists = result.ToList();
-                orderlist.Text = string.Join("\n", lists);
-                string tp = "Subtotal: $" + total.ToString() + "\n" + "Tax:$" + (0.09 * total).ToString() + "\n" + "Total:$" + (1.09 * total).ToString();
+                orderlists.Text = string.Join("\n", lists);
+                string tp = "Subtotal: $" + total.ToString() + "\n" + "Tax:$" + Math.Round((0.09*total),4).ToString() + "\n" + "Total:$" + Math.Round((1.09*total),4).ToString();
                 orderprice.Text = tp;
                 initialize();
             }
@@ -672,8 +674,8 @@ namespace PointOfSale
                 lists.Add(a.ToString());
                 var result = lists.Concat(a.SpecialInstructions);
                 lists = result.ToList();
-                orderlist.Text = string.Join("\n", lists);
-                string tp = "Subtotal: $" + total.ToString() + "\n" + "Tax:$" + (0.09 * total).ToString() + "\n" + "Total:$" + (1.09 * total).ToString();
+                orderlists.Text = string.Join("\n", lists);
+                string tp = "Subtotal: $" + total.ToString() + "\n" + "Tax:$" + Math.Round((0.09*total),4).ToString() + "\n" + "Total:$" + Math.Round((1.09*total),4).ToString();
                 orderprice.Text = tp;
                 initialize();
             }
@@ -696,8 +698,8 @@ namespace PointOfSale
                 lists.Add(a.ToString());
                 var result = lists.Concat(a.SpecialInstructions);
                 lists = result.ToList();
-                orderlist.Text = string.Join("\n", lists);
-                string tp = "Subtotal: $" + total.ToString() + "\n" + "Tax:$" + (0.09 * total).ToString() + "\n" + "Total:$" + (1.09 * total).ToString();
+                orderlists.Text = string.Join("\n", lists);
+                string tp = "Subtotal: $" + total.ToString() + "\n" + "Tax:$" + Math.Round((0.09*total),4).ToString() + "\n" + "Total:$" + Math.Round((1.09*total),4).ToString();
                 orderprice.Text = tp;
                 initialize();
             }
@@ -720,8 +722,8 @@ namespace PointOfSale
                 lists.Add(a.ToString());
                 var result = lists.Concat(a.SpecialInstructions);
                 lists = result.ToList();
-                orderlist.Text = string.Join("\n", lists);
-                string tp = "Subtotal: $" + total.ToString() + "\n" + "Tax:$" + (0.09 * total).ToString() + "\n" + "Total:$" + (1.09 * total).ToString();
+                orderlists.Text = string.Join("\n", lists);
+                string tp = "Subtotal: $" + total.ToString() + "\n" + "Tax:$" + Math.Round((0.09*total),4).ToString() + "\n" + "Total:$" + Math.Round((1.09*total),4).ToString();
                 orderprice.Text = tp;
                 initialize();
             }
@@ -744,8 +746,8 @@ namespace PointOfSale
                 lists.Add(a.ToString());
                 var result = lists.Concat(a.SpecialInstructions);
                 lists = result.ToList();
-                orderlist.Text = string.Join("\n", lists);
-                string tp = "Subtotal: $" + total.ToString() + "\n" + "Tax:$" + (0.09 * total).ToString() + "\n" + "Total:$" + (1.09 * total).ToString();
+                orderlists.Text = string.Join("\n", lists);
+                string tp = "Subtotal: $" + total.ToString() + "\n" + "Tax:$" + Math.Round((0.09*total),4).ToString() + "\n" + "Total:$" + Math.Round((1.09*total),4).ToString();
                 orderprice.Text = tp;
                 initialize();
             }
@@ -768,8 +770,8 @@ namespace PointOfSale
                 lists.Add(a.ToString());
                 var result = lists.Concat(a.SpecialInstructions);
                 lists = result.ToList();
-                orderlist.Text = string.Join("\n", lists);
-                string tp = "Subtotal: $" + total.ToString() + "\n" + "Tax:$" + (0.09 * total).ToString() + "\n" + "Total:$" + (1.09 * total).ToString();
+                orderlists.Text = string.Join("\n", lists);
+                string tp = "Subtotal: $" + total.ToString() + "\n" + "Tax:$" + Math.Round((0.09*total),4).ToString() + "\n" + "Total:$" + Math.Round((1.09*total),4).ToString();
                 orderprice.Text = tp;
                 initialize();
             }
