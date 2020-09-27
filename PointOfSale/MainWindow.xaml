@@ -73,10 +73,7 @@
             <Button Content="Dragonborn Waffle Fries" FontSize="18" HorizontalAlignment="Left" Click="ClickFries" ></Button>
 
         </StackPanel>
-        <TextBox Name="orderlist" HorizontalContentAlignment="Stretch" Margin="655,38,17,151" IsEnabled="False" RenderTransformOrigin="0.5,0.5">
-            
-                
-        </TextBox>
+        <TextBox Name="orderlist" HorizontalContentAlignment="Stretch" Margin="655,38,17,151" IsEnabled="False" RenderTransformOrigin="0.5,0.5"/>
         <TextBox Name="orderprice" Margin="655,484,10,54" IsEnabled="False"></TextBox>
 
         <TextBlock HorizontalAlignment="Left" FontWeight="Bold" FontSize="20" Height="31" Margin="51,10,0,0" Text="Add to order" TextWrapping="Wrap" VerticalAlignment="Top" Width="319"/>

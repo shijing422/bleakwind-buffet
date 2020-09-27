@@ -17,7 +17,11 @@ using BleakwindBuffet.Data.Entrees;
 using BleakwindBuffet.Data.Sides;
 using BleakwindBuffet.Data.Enums;
 using Size = BleakwindBuffet.Data.Enums.Size;
-
+/*
+ * Author: Shijing Zhang
+ * Class name: MainWindow.xaml.cs
+ * Purpose: Class used for Interaction logic for MainWindow.xaml
+ */
 namespace PointOfSale
 {
     /// <summary>
@@ -25,14 +29,31 @@ namespace PointOfSale
     /// </summary>
     public partial class MainWindow : Window
     {
+        /// <value>
+        /// the total price for the order
+        /// </value>
         double total = 0;
+        /// <value>
+        /// string name from button
+        /// </value>
         string button;
+        /// <value>
+        /// list<string> contains the order lists
+        /// </value>
         List<string> lists = new List<string>();
+        /// <summary>
+        /// initialize
+        /// </summary>
         public MainWindow()
         {
             InitializeComponent();
             Customization.Visibility = Visibility.Hidden;
         }
+        /// <summary>
+        /// check for sodaflavor click, if one sodaflavor clicked, disable others
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void clickflavor(object sender, RoutedEventArgs e)
         {
             if (cCherry.IsChecked == true)
@@ -98,6 +119,11 @@ namespace PointOfSale
                 cBlackberry.IsEnabled = true;
             }
         }
+        /// <summary>
+        /// if one size clicked, disable other
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void clicksize(object sender, RoutedEventArgs e)
         {
             if (cSmall.IsChecked == true)
@@ -124,6 +150,9 @@ namespace PointOfSale
             }
 
         }
+        /// <summary>
+        /// initialize Customization
+        /// </summary>
         void initialize()
         {
             cBlackberry.IsEnabled = true;
@@ -169,6 +198,9 @@ namespace PointOfSale
             cTomato.IsChecked = true;
 
         }
+        /// <summary>
+        /// hida all Customization
+        /// </summary>
         void hidden()
         {
             cBlackberry.Visibility = Visibility.Hidden;
@@ -205,6 +237,11 @@ namespace PointOfSale
             cTomato.Visibility = Visibility.Hidden;
             
         }
+        /// <summary>
+        /// clicked BriarheartBurger button 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void ClickBriarheartBurger(object sender, RoutedEventArgs e)
         {
             menu.Visibility = Visibility.Hidden;
@@ -225,6 +262,11 @@ namespace PointOfSale
 
 
         }
+        /// <summary>
+        /// clicked doubledraugr button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void ClickDoubleDraugr(object sender, RoutedEventArgs e)
         {
             button = "DoubleDraugr";
@@ -248,6 +290,11 @@ namespace PointOfSale
 
 
         }
+        /// <summary>
+        /// click thalmorTriple button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void ClickThalmorTriple(object sender, RoutedEventArgs e)
         {
             button = "ThalmorTriple";
@@ -273,6 +320,11 @@ namespace PointOfSale
             cBacon.Visibility = Visibility.Visible;
 
         }
+        /// <summary>
+        /// Click SmokehouseSkeleton button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void ClickSmokehouseSkeleton(object sender, RoutedEventArgs e)
         {
             button = "SmokehouseSkeleton";
@@ -296,6 +348,11 @@ namespace PointOfSale
 
 
         }
+        /// <summary>
+        /// Click GardenOrcOmelette button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void ClickGardenOrcOmelette(object sender, RoutedEventArgs e)
         {
             button = "GardenOrcOmelette";
@@ -315,6 +372,11 @@ namespace PointOfSale
             cCheddar.Visibility = Visibility.Visible;
 
         }
+        /// <summary>
+        /// Click ThugsTBone
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void ClickThugsTBone(object sender, RoutedEventArgs e)
         {
             button = "ThugsTBone";
@@ -329,6 +391,11 @@ namespace PointOfSale
 
 
         }
+        /// <summary>
+        /// Click PhillyPoacher
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void ClickPhillyPoacher(object sender, RoutedEventArgs e)
         {
             button = "PhillyPoacher";
@@ -347,12 +414,17 @@ namespace PointOfSale
 
 
         }
+        /// <summary>
+        /// Click cancel button, clear all
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void ClickCancel(object sender, RoutedEventArgs e)
         {
             lists.Clear();
             total = 0;
             orderlist.Clear();
-
+            orderprice.Clear();
         }
         void ClickOK(object sender, RoutedEventArgs e)
         {
@@ -804,6 +876,7 @@ namespace PointOfSale
         {
             menu.Visibility = Visibility.Hidden;
             Customization.Visibility = Visibility.Visible;
+            hidden();
             cSmall.Visibility = Visibility.Visible;
             cMedium.Visibility = Visibility.Visible;
             cLarge.Visibility = Visibility.Visible;
@@ -822,8 +895,10 @@ namespace PointOfSale
 
         void ClickPlace(object sender, RoutedEventArgs e)
         {
-            
-           
+
+            payment pay = new payment();
+            this.Visibility = Visibility.Hidden;
+            pay.Show();
 
         }
 
