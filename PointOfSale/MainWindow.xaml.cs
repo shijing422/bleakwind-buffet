@@ -426,6 +426,11 @@ namespace PointOfSale
             orderlist.Clear();
             orderprice.Clear();
         }
+        /// <summary>
+        /// Click ok to finish Customization
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void ClickOK(object sender, RoutedEventArgs e)
         {
             menu.Visibility = Visibility.Visible;
@@ -771,6 +776,11 @@ namespace PointOfSale
 
 
         }
+        /// <summary>
+        /// click water button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void ClickWater(object sender, RoutedEventArgs e)
         {
             menu.Visibility = Visibility.Hidden;
@@ -785,6 +795,11 @@ namespace PointOfSale
             button = "WarriorWater";
 
         }
+        /// <summary>
+        /// click soda button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void ClickSoda(object sender, RoutedEventArgs e)
         {
             menu.Visibility = Visibility.Hidden;
@@ -802,6 +817,11 @@ namespace PointOfSale
             cLemonflavor.Visibility = Visibility.Visible;
             button = "SailorSoda";
         }
+        /// <summary>
+        /// click coffee button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void ClickCoffee(object sender, RoutedEventArgs e)
         {
             menu.Visibility = Visibility.Hidden;
@@ -818,6 +838,11 @@ namespace PointOfSale
 
 
         }
+        /// <summary>
+        /// click milk button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void ClickMilk(object sender, RoutedEventArgs e)
         {
             menu.Visibility = Visibility.Hidden;
@@ -831,6 +856,11 @@ namespace PointOfSale
             cIce.IsChecked = false;
 
         }
+        /// <summary>
+        /// click salad button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void ClickSalad(object sender, RoutedEventArgs e)
         {
             menu.Visibility = Visibility.Hidden;
@@ -842,6 +872,11 @@ namespace PointOfSale
             button = "VokunSalad";
 
         }
+        /// <summary>
+        /// click FriedMiraak button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void ClickMiraak(object sender, RoutedEventArgs e)
         {
             menu.Visibility = Visibility.Hidden;
@@ -852,6 +887,11 @@ namespace PointOfSale
             cLarge.Visibility = Visibility.Visible;
             button = "FriedMiraak";
         }
+        /// <summary>
+        /// DragonbornWaffleFries
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void ClickFries(object sender, RoutedEventArgs e)
         {
             menu.Visibility = Visibility.Hidden;
@@ -862,6 +902,11 @@ namespace PointOfSale
             cLarge.Visibility = Visibility.Visible;
             button = "DragonbornWaffleFries";
         }
+        /// <summary>
+        /// click MadOtarGrits button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void ClickGrits(object sender, RoutedEventArgs e)
         {
             menu.Visibility = Visibility.Hidden;
@@ -872,6 +917,11 @@ namespace PointOfSale
             cLarge.Visibility = Visibility.Visible;
             button = "MadOtarGrits";
         }
+        /// <summary>
+        /// click AretinoAppleJuice button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void ClickJuice(object sender, RoutedEventArgs e)
         {
             menu.Visibility = Visibility.Hidden;
@@ -892,7 +942,11 @@ namespace PointOfSale
 
 
 
-
+        /// <summary>
+        /// placed order, going to payment
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void ClickPlace(object sender, RoutedEventArgs e)
         {
 

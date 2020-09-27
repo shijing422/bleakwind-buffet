@@ -9,14 +9,21 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-
+/*
+ * Author: Shijing Zhang
+ * Class name: MainWindow.xaml.cs
+ * Purpose: Class used for Interaction logic for payment.xaml
+ */
 namespace PointOfSale
 {
     /// <summary>
-    /// Interaction logic for payment.xaml
+    /// Interaction logic for 
     /// </summary>
     public partial class payment : Window
     {
+        /// <summary>
+        /// a class represent future payment, nothing right now
+        /// </summary>
         public payment()
         {
             InitializeComponent();
