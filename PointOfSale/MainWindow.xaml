@@ -12,15 +12,15 @@
                
         </TextBlock>
         <StackPanel Name="Customization" Background="LightSalmon" Orientation="Vertical" Margin="344,53,383,3">
-            <CheckBox Content="Small" HorizontalAlignment="Left" Name="cSmall"></CheckBox>
-            <CheckBox Content="Medium" HorizontalAlignment="Left" Name="cMedium"></CheckBox>
-            <CheckBox Content="Large" HorizontalAlignment="Left" Name="cLarge"></CheckBox>
-            <CheckBox Content="Peach" HorizontalAlignment="Left" Name="cPeach"></CheckBox>
-            <CheckBox Content="Blackberry" Name="cBlackberry"></CheckBox>
-            <CheckBox Content="Lemon" HorizontalAlignment="Left" Name="cLemonflavor"></CheckBox>
-            <CheckBox Content="Watermelon" HorizontalAlignment="Left" Name="cWatermelon"></CheckBox>
-            <CheckBox Content="Cherry" HorizontalAlignment="Left" Name="cCherry"></CheckBox>
-            <CheckBox Content="Grapefruit" HorizontalAlignment="Left" Name="cGrapef"></CheckBox>
+            <CheckBox Content="Small"  Click="clicksize" HorizontalAlignment="Left" Name="cSmall"></CheckBox>
+            <CheckBox Content="Medium" Click="clicksize" HorizontalAlignment="Left" Name="cMedium"></CheckBox>
+            <CheckBox Content="Large" Click="clicksize" HorizontalAlignment="Left" Name="cLarge"></CheckBox>
+            <CheckBox Content="Peach" Click="clickflavor" HorizontalAlignment="Left" Name="cPeach"></CheckBox>
+            <CheckBox Content="Blackberry" Click="clickflavor" Name="cBlackberry"></CheckBox>
+            <CheckBox Content="Lemon" Click="clickflavor"  HorizontalAlignment="Left" Name="cLemonflavor"></CheckBox>
+            <CheckBox Content="Watermelon" Click="clickflavor" HorizontalAlignment="Left" Name="cWatermelon"></CheckBox>
+            <CheckBox Content="Cherry" Click="clickflavor" HorizontalAlignment="Left" Name="cCherry"></CheckBox>
+            <CheckBox Content="Grapefruit" Click="clickflavor" HorizontalAlignment="Left" Name="cGrapef"></CheckBox>
             <CheckBox Content="Ketchup" x:Name="cKetchup" IsChecked="True" ></CheckBox>
             <CheckBox Content="Bun" IsChecked="True" Name="cBun"></CheckBox>
             <CheckBox Content="Mustard" IsChecked="True" Name="cMustard"></CheckBox>
@@ -73,7 +73,7 @@
             <Button Content="Dragonborn Waffle Fries" FontSize="18" HorizontalAlignment="Left" Click="ClickFries" ></Button>
 
         </StackPanel>
-        <TextBox Name="orderlist"  Margin="655,38,17,151" IsEnabled="False" RenderTransformOrigin="0.5,0.5">
+        <TextBox Name="orderlist" HorizontalContentAlignment="Stretch" Margin="655,38,17,151" IsEnabled="False" RenderTransformOrigin="0.5,0.5">
             
                 
         </TextBox>
