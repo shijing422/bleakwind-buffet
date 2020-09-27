@@ -11,7 +11,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 /*
  * Author: Shijing Zhang
- * Class name: MainWindow.xaml.cs
+ * Class name: payment.xaml.cs
  * Purpose: Class used for Interaction logic for payment.xaml
  */
 namespace PointOfSale
