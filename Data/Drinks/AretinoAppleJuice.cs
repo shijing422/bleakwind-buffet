@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 /*
  * Author: Shijing Zhang
  * Class name: SailorSoda.cs
@@ -12,10 +13,24 @@ namespace BleakwindBuffet.Data.Drinks
 {  /// <summary>
    /// A class create  to represent AretinoAppleJuice
    /// </summary>
-    public class AretinoAppleJuice : Drink, IOrderItem
+    public class AretinoAppleJuice : Drink, IOrderItem, INotifyPropertyChanged
     {
 
+        public event PropertyChangedEventHandler PropertyChanged;
 
+        Size s = Size.Small;
+        /// <value>
+        /// the size of the drink
+        /// </value>
+        public override Size Size
+        {
+            get { return s; }
+            set
+            {
+                s = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+            }
+        }
         /// <value>
         /// The price of AretinoAppleJuice by size
         /// </value>

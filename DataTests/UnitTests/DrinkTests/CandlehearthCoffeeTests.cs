@@ -17,6 +17,25 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
     public class CandlehearthCoffeeTests
     {
         [Fact]
+        public void ChangingSizeNotifiesIceProperty()
+        {
+            var A = new CandlehearthCoffee();
+
+            Assert.PropertyChanged(A, "Size", () =>
+            {
+                A.Size = Size.Small;
+            });
+
+            Assert.PropertyChanged(A, "Size", () =>
+            {
+                A.Size = Size.Medium;
+            });
+            Assert.PropertyChanged(A, "Size", () =>
+            {
+                A.Size = Size.Large;
+            });
+        }
+        [Fact]
         public void ShouldBeADrink()
         {
             CandlehearthCoffee a = new CandlehearthCoffee();
