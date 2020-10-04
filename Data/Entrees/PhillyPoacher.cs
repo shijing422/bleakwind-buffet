@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 /*
  * Author: Shijing Zhang
  * Class name: Philly Poacher.cs
@@ -13,8 +14,9 @@ namespace BleakwindBuffet.Data.Entrees
     /// <summary>
     /// Create a class of Philly Poacher
     /// </summary>
-    public class PhillyPoacher: Entree, IOrderItem
+    public class PhillyPoacher: Entree, IOrderItem, INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
         /// <value>
         /// the price of Philly Poacher
         /// </value>
@@ -28,20 +30,58 @@ namespace BleakwindBuffet.Data.Entrees
         /// </value>
         public override uint Calories => 784;
 
-
+        private bool sirloin = true;
         /// <value>
         /// if hold Sirloin to Philly Poacher
         /// </value>
-        public bool Sirloin { get; set; } = true;
+        public bool Sirloin
+        {
+            get
+            {
+                return sirloin;
+            }
+            set
+            {
+                sirloin = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Sirloin"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
+        }
+
+        private bool roll = true;
         /// <value>
         /// if hold roll to Philly Poacher
         /// </value>
-        public bool Roll { get; set; } = true;
-
+        public bool Roll
+        {
+            get
+            {
+                return roll;
+            }
+            set
+            {
+                roll = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Roll"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
+        }
+        private bool onion = true;
         /// <value>
         /// if hold Onion to Philly Poacher
         /// </value>
-        public bool Onion { get; set; } = true;
+        public bool Onion
+        {
+            get
+            {
+                return onion;
+            }
+            set
+            {
+                onion = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Onion"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
+        }
         /// <value>
         /// Setting these to false results in the addition of the corresponding instructions in the SpecialInstructions list
         /// </value>

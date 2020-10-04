@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 /*
  * Author: Shijing Zhang
  * Class name: SailorSoda.cs
@@ -10,13 +11,35 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Drinks
 {
-    public class SailorSoda : Drink, IOrderItem
+    public class SailorSoda : Drink, IOrderItem, INotifyPropertyChanged
     {
-   
+        public event PropertyChangedEventHandler PropertyChanged;
+        Size s = Size.Small;
+        /// <value>
+        /// the size of the drink
+        /// </value>
+        public override Size Size
+        {
+            get { return s; }
+            set
+            {
+                s = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+            }
+        }
+        SodaFlavor f = SodaFlavor.Cherry;
         /// <value>
         /// flavor of the SailorSoda
         /// </value>
-        public SodaFlavor Flavor { get; set; } = SodaFlavor.Cherry;
+        public SodaFlavor Flavor
+        {
+            get { return f; }
+            set
+            {
+                f = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Flavor"));
+            }
+        }
         /// <value>
         /// price of the SailorSoda
         /// </value>
@@ -66,7 +89,17 @@ namespace BleakwindBuffet.Data.Drinks
         /// <value>
         /// if hold ice of the SailorSoda
         /// </value>
-        public bool Ice { get; set; } = true;
+        bool i = true;  
+        public bool Ice
+        {
+            get { return i; }
+            set
+            {
+                i = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ice"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
+        }
         /// <value>
         /// special instructions of the SailorSoda
         /// </value>

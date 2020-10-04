@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 /*
  * Author: Shijing Zhang
  * Class name: BriarheartBurger.cs
@@ -13,8 +14,9 @@ namespace BleakwindBuffet.Data.Entrees
     /// <summary>
     /// A class represent the ThugsTBone
     /// </summary>
-    public class ThugsTBone : Entree,IOrderItem
+    public class ThugsTBone : Entree,IOrderItem, INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
         /// <value>
         /// the price of the ThugsTBone
         /// </value>

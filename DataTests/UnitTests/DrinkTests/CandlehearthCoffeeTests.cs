@@ -17,7 +17,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
     public class CandlehearthCoffeeTests
     {
         [Fact]
-        public void ChangingSizeNotifiesIceProperty()
+        public void ChangingSizeNotifiesProperty()
         {
             var A = new CandlehearthCoffee();
 
@@ -34,6 +34,80 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             {
                 A.Size = Size.Large;
             });
+        }
+        [Fact]
+        public void ChangingIceNotifiesProperty()
+        {
+            var A = new CandlehearthCoffee();
+
+            Assert.PropertyChanged(A, "Ice", () =>
+            {
+                A.Ice = true;
+            });
+
+            Assert.PropertyChanged(A, "Ice", () =>
+            {
+                A.Ice = false;
+            });
+
+        }
+        [Fact]
+        public void ChangingRoomforCreamNotifiesProperty()
+        {
+            var A = new CandlehearthCoffee();
+
+            Assert.PropertyChanged(A, "RoomForCream", () =>
+            {
+                A.RoomForCream = true;
+            });
+
+            Assert.PropertyChanged(A, "RoomForCream", () =>
+            {
+                A.RoomForCream = false;
+            });
+
+        }
+        [Fact]
+        public void ChangingDecafNotifiesProperty()
+        {
+            var A = new CandlehearthCoffee();
+
+            Assert.PropertyChanged(A, "Decaf", () =>
+            {
+                A.Decaf = true;
+            });
+
+            Assert.PropertyChanged(A, "Decaf", () =>
+            {
+                A.Decaf = false;
+            });
+
+        }
+        [Fact]
+        public void ChangingSpecialInstructionsNotifiesProperty()
+        {
+            var A = new CandlehearthCoffee();
+
+            Assert.PropertyChanged(A, "SpecialInstructions", () =>
+            {
+                A.Ice = true;
+            });
+
+            Assert.PropertyChanged(A, "SpecialInstructions", () =>
+            {
+                A.Ice = false;
+            });
+ 
+            Assert.PropertyChanged(A, "SpecialInstructions", () =>
+            {
+                A.RoomForCream = true;
+            });
+
+            Assert.PropertyChanged(A, "SpecialInstructions", () =>
+            {
+                A.RoomForCream = false;
+            });
+
         }
         [Fact]
         public void ShouldBeADrink()

@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 /*
  * Author: Shijing Zhang
  * Class name: MadOtarGrits.cs
@@ -13,9 +14,26 @@ namespace BleakwindBuffet.Data.Sides
     /// <summary>
     /// A class represent Mad Otar Grits
     /// </summary>
-    public class MadOtarGrits : Side, IOrderItem
+    public class MadOtarGrits : Side, IOrderItem, INotifyPropertyChanged
     {
-       
+        public event PropertyChangedEventHandler PropertyChanged;
+        Size s = Size.Small;
+        /// <value>
+        /// the size of the side
+        /// </value>
+        public override Size Size
+        {
+            get { return s; }
+            set
+            {
+                s = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+            }
+        }
+
+
+
+
 
         /// <value>
         /// price of the Mad Otar Grits

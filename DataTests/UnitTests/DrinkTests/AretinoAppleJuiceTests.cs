@@ -18,7 +18,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
     public class AretinoAppleJuiceTests
     {
         [Fact]
-        public void ChangingSizeNotifiesIceProperty()
+        public void ChangingSizeNotifiesProperty()
         {
             var A = new AretinoAppleJuice();
 
@@ -35,6 +35,38 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             {
                 A.Size = Size.Large;
             });
+        }
+        [Fact]
+        public void ChangingIceNotifiesProperty()
+        {
+            var A = new AretinoAppleJuice();
+
+            Assert.PropertyChanged(A, "Ice", () =>
+            {
+                A.Ice = true;
+            });
+
+            Assert.PropertyChanged(A, "Ice", () =>
+            {
+                A.Ice = false;
+            });
+        
+        }
+        [Fact]
+        public void ChangingSpecialInstructionsNotifiesProperty()
+        {
+            var A = new AretinoAppleJuice();
+
+            Assert.PropertyChanged(A, "SpecialInstructions", () =>
+            {
+                A.Ice = true;
+            });
+
+            Assert.PropertyChanged(A, "SpecialInstructions", () =>
+            {
+                A.Ice = false;
+            });
+
         }
 
         [Fact]

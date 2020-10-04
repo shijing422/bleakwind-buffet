@@ -15,7 +15,95 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
     /// </summary>
     public class PhillyPoacherTests
     {
-            
+        [Fact]
+        public void ChangingRollNotifiesProperty()
+        {
+            var A = new PhillyPoacher();
+
+            Assert.PropertyChanged(A, "Roll", () =>
+            {
+                A.Roll = true;
+            });
+
+            Assert.PropertyChanged(A, "Roll", () =>
+            {
+                A.Roll= false;
+            });
+
+        }
+
+        [Fact]
+        public void ChangingSirloinNotifiesProperty()
+        {
+            var A = new PhillyPoacher();
+
+            Assert.PropertyChanged(A, "Sirloin", () =>
+            {
+                A.Sirloin = true;
+            });
+
+            Assert.PropertyChanged(A, "Sirloin", () =>
+            {
+                A.Sirloin = false;
+            });
+
+        }
+
+        [Fact]
+        public void ChangingOnionNotifiesProperty()
+        {
+            var A = new PhillyPoacher();
+
+            Assert.PropertyChanged(A, "Onion", () =>
+            {
+
+                A.Onion= true;
+            });
+
+            Assert.PropertyChanged(A, "Onion", () =>
+            {
+                A.Onion = false;
+            });
+
+        }
+
+
+        [Fact]
+        public void ChangingSpecialInstructionsNotifiesProperty()
+        {
+            var A = new PhillyPoacher();
+
+            Assert.PropertyChanged(A, "SpecialInstructions", () =>
+            {
+                A.Roll = true;
+            });
+
+            Assert.PropertyChanged(A, "SpecialInstructions", () =>
+            {
+                A.Roll = false;
+            });
+            Assert.PropertyChanged(A, "SpecialInstructions", () =>
+            {
+                A.Onion= true;
+            });
+
+            Assert.PropertyChanged(A, "SpecialInstructions", () =>
+            {
+                A.Onion = false;
+            });
+            Assert.PropertyChanged(A, "SpecialInstructions", () =>
+            {
+                A.Sirloin = true;
+            });
+
+            Assert.PropertyChanged(A, "SpecialInstructions", () =>
+            {
+                A.Sirloin = false;
+            });
+       
+
+        }
+
         [Fact]
         public void ShouldBeAEntree()
         {

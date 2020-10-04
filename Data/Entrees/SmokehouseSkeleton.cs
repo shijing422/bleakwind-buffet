@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 /*
  * Author: Shijing Zhang
  * Class name: SmokehouseSkeleton.cs
@@ -13,8 +14,9 @@ namespace BleakwindBuffet.Data.Entrees
     /// <summary>
     /// create a class of the Smokehouse Skeleton
     /// </summary>
-    public class SmokehouseSkeleton : Entree, IOrderItem
+    public class SmokehouseSkeleton : Entree, IOrderItem, INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
         /// <value>
         /// the price of the Smokehouse Skeleton
         /// </value>
@@ -28,23 +30,75 @@ namespace BleakwindBuffet.Data.Entrees
         /// </value>
         public override uint Calories => 602;
 
+        private bool egg = true;
+        private bool sausagelink = true;
+        private bool hashbrowns = true;
+        private bool pancake = true;
 
         /// <value>
         /// if hold SausageLink to the Smokehouse Skeleton
         /// </value>
-        public bool SausageLink { get; set; } = true;
+        public bool SausageLink
+        {
+            get
+            {
+                return sausagelink;
+            }
+            set
+            {
+                sausagelink = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SausageLink"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
+        }
         /// <value>
         /// if hold egg to the Smokehouse Skeleton
         /// </value>
-        public bool Egg { get; set; } = true;
+        public bool Egg
+        {
+            get
+            {
+                return egg;
+            }
+            set
+            {
+                egg = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Egg"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
+        }
         /// <value>
         /// if hold HashBrowns to the Smokehouse Skeleton
         /// </value>
-        public bool HashBrowns { get; set; } = true;
+        public bool HashBrowns
+        {
+            get
+            {
+                return hashbrowns;
+            }
+            set
+            {
+                hashbrowns = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("HashBrowns"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
+        }
         /// <value>
         /// if hold Pancake to the Smokehouse Skeleton
         /// </value>
-        public bool Pancake { get; set; } = true;
+        public bool Pancake
+        {
+            get
+            {
+                return pancake;
+            }
+            set
+            {
+                pancake = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Pancake"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
+        }
         /// <value>
         /// Setting these to false results in the addition of the corresponding instructions in the SpecialInstructions list
         /// </value>

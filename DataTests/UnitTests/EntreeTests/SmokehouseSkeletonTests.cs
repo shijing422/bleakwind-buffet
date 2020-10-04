@@ -15,6 +15,119 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
     /// </summary>
     public class SmokehouseSkeletonTests
     {
+
+        [Fact]
+        public void ChangingEggNotifiesProperty()
+        {
+            var A = new SmokehouseSkeleton();
+
+            Assert.PropertyChanged(A, "Egg", () =>
+            {
+                A.Egg= true;
+            });
+
+            Assert.PropertyChanged(A, "Egg", () =>
+            {
+                A.Egg = false;
+            });
+
+        }
+        [Fact]
+        public void ChangingHashBrownsNotifiesProperty()
+        {
+            var A = new SmokehouseSkeleton();
+
+            Assert.PropertyChanged(A, "HashBrowns", () =>
+            {
+                A.HashBrowns = true;
+            });
+
+            Assert.PropertyChanged(A, "HashBrowns", () =>
+            {
+                A.HashBrowns = false;
+            });
+
+        }
+
+        [Fact]
+        public void ChangingSausageLinkNotifiesProperty()
+        {
+            var A = new SmokehouseSkeleton();
+
+            Assert.PropertyChanged(A, "SausageLink", () =>
+            {
+                A.SausageLink = true;
+            });
+
+            Assert.PropertyChanged(A, "SausageLink", () =>
+            {
+                A.SausageLink = false;
+            });
+
+        }
+
+        [Fact]
+        public void ChangingPancakeNotifiesProperty()
+        {
+            var A = new SmokehouseSkeleton();
+
+            Assert.PropertyChanged(A, "Pancake", () =>
+            {
+
+                A.Pancake = true;
+            });
+
+            Assert.PropertyChanged(A, "Pancake", () =>
+            {
+                A.Pancake = false;
+            });
+
+        }
+
+
+        [Fact]
+        public void ChangingSpecialInstructionsNotifiesProperty()
+        {
+            var A = new SmokehouseSkeleton();
+
+            Assert.PropertyChanged(A, "SpecialInstructions", () =>
+            {
+                A.Pancake = true;
+            });
+
+            Assert.PropertyChanged(A, "SpecialInstructions", () =>
+            {
+                A.Pancake = false;
+            });
+            Assert.PropertyChanged(A, "SpecialInstructions", () =>
+            {
+                A.Egg= true;
+            });
+
+            Assert.PropertyChanged(A, "SpecialInstructions", () =>
+            {
+                A.Egg = false;
+            });
+            Assert.PropertyChanged(A, "SpecialInstructions", () =>
+            {
+                A.HashBrowns = true;
+            });
+
+            Assert.PropertyChanged(A, "SpecialInstructions", () =>
+            {
+                A.HashBrowns= false;
+            });
+            Assert.PropertyChanged(A, "SpecialInstructions", () =>
+            {
+                A.SausageLink= true;
+            });
+
+            Assert.PropertyChanged(A, "SpecialInstructions", () =>
+            {
+                A.SausageLink = false;
+            });
+
+        }
         [Fact]
         public void ShouldBeAEntree()
         {

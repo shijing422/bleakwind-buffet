@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 /*
  * Author: Shijing Zhang
  * Class name: Garden Orc Omelette.cs
@@ -13,8 +14,9 @@ namespace BleakwindBuffet.Data.Entrees
     /// <summary>
     /// a class represent the  Garden Orc Omelette
     /// </summary>
-    public class GardenOrcOmelette : Entree, IOrderItem
+    public class GardenOrcOmelette : Entree, IOrderItem, INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
         /// <value>
         /// the price of the  Garden Orc Omelette
         /// </value>
@@ -28,23 +30,74 @@ namespace BleakwindBuffet.Data.Entrees
         /// </value>
         public override uint Calories => 404;
 
-
+        private bool broccoli = true;
         /// <value>
         /// if hold Broccoli to the Garden Orc Omelette
         /// </value>
-        public bool Broccoli { get; set; } = true;
+        public bool Broccoli
+        {
+            get
+            {
+                return broccoli;
+            }
+            set
+            {
+                broccoli = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Broccoli"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
+        }
+        private bool mushrooms = true;
         /// <value>
         /// if hold Mushrooms to the Garden Orc Omelette
         /// </value>
-        public bool Mushrooms { get; set; } = true;
+        public bool Mushrooms
+        {
+            get
+            {
+                return mushrooms;
+            }
+            set
+            {
+                mushrooms = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Mushrooms"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
+        }
+        private bool tomato = true;
         /// <value>
-        /// if hold Tomato to the Garden Orc Omelette
+        /// if hold tomato
         /// </value>
-        public bool Tomato { get; set; } = true;
+        public bool Tomato
+        {
+            get
+            {
+                return tomato;
+            }
+            set
+            {
+                tomato = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Tomato"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
+        }
+        private bool cheddar = true;
         /// <value>
         /// if hold Cheddar to the Garden Orc Omelette
         /// </value>
-        public bool Cheddar { get; set; } = true;
+        public bool Cheddar
+        {
+            get
+            {
+                return cheddar;
+            }
+            set
+            {
+                cheddar = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Cheddar"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
+        }
         /// <value>
         /// Setting these to false results in the addition of the corresponding instructions in the SpecialInstructions list
         /// </value>

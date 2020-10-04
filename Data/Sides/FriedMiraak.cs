@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 /*
  * Author: Shijing Zhang
  * Class name: FriedMiraak.cs
@@ -14,9 +15,24 @@ namespace BleakwindBuffet.Data.Sides
     /// <summary>
     /// Class used to represent the Fried Miraak
     /// </summary>
-    public class FriedMiraak : Side, IOrderItem
+    public class FriedMiraak : Side, IOrderItem, INotifyPropertyChanged
     {
-       
+        public event PropertyChangedEventHandler PropertyChanged;
+        Size s = Size.Small;
+        /// <value>
+        /// the size of the side
+        /// </value>
+        public override Size Size
+        {
+            get { return s; }
+            set
+            {
+                s = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+            }
+        }
+
+
 
         /// <value>
         /// price of the Fried Miraak

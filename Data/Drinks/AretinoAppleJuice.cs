@@ -77,13 +77,25 @@ namespace BleakwindBuffet.Data.Drinks
             }
 
         }
+        bool i = false;
         /// <value>
         /// if add ice to the AretinoAppleJuice default false
         /// </value>
-        public bool Ice { get; set; } = false;
+        
+        public bool Ice
+        {
+            get { return i; }
+            set
+            {
+                i = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ice"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
+        }
         /// <value>
         /// special instructions of the AretinoAppleJuice
         /// </value>
+       
         public override List<string> SpecialInstructions
         {
             get

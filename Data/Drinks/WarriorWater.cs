@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 /*
  * Author: Shijing Zhang
  * Class name: WarriorWater.cs
@@ -13,9 +14,23 @@ namespace BleakwindBuffet.Data.Drinks
     /// <summary>
     ///  A class represent the Warrior Water
     /// </summary>
-    public class WarriorWater : Drink, IOrderItem
+    public class WarriorWater : Drink, IOrderItem,INotifyPropertyChanged
     {
-      
+        public event PropertyChangedEventHandler PropertyChanged;
+        Size s = Size.Small;
+        /// <value>
+        /// the size of the drink
+        /// </value>
+        public override Size Size
+        {
+            get { return s; }
+            set
+            {
+                s = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+            }
+        }
+
 
 
         /// <value>
@@ -46,11 +61,31 @@ namespace BleakwindBuffet.Data.Drinks
         /// <value>
         /// if hold ice of the Warrior Water
         /// </value>
-        public bool Ice { get; set; } = true;
+        bool i = true;
+        public bool Ice
+        {
+            get { return i; }
+            set
+            {
+                i = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ice"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
+        }
         /// <value>
         /// if add lemon of the Warrior Water
         /// </value>
-        public bool Lemon { get; set; } = false;
+        bool l = false;
+        public bool Lemon
+        {
+            get { return l; }
+            set
+            {
+                l = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Lemon"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
+        }
         /// <value>
         /// special instructions of the Warrior Water
         /// </value>

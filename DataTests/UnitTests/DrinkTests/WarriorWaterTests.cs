@@ -19,6 +19,82 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
     public class WarriorWaterTests
     {
         [Fact]
+        public void ChangingSizeNotifiesProperty()
+        {
+            var A = new WarriorWater();
+
+            Assert.PropertyChanged(A, "Size", () =>
+            {
+                A.Size = Size.Small;
+            });
+
+            Assert.PropertyChanged(A, "Size", () =>
+            {
+                A.Size = Size.Medium;
+            });
+            Assert.PropertyChanged(A, "Size", () =>
+            {
+                A.Size = Size.Large;
+            });
+        }
+        [Fact]
+        public void ChangingIceNotifiesProperty()
+        {
+            var A = new WarriorWater();
+
+            Assert.PropertyChanged(A, "Ice", () =>
+            {
+                A.Ice = true;
+            });
+
+            Assert.PropertyChanged(A, "Ice", () =>
+            {
+                A.Ice = false;
+            });
+
+        }
+        [Fact]
+        public void ChangingLemonNotifiesProperty()
+        {
+            var A = new WarriorWater();
+
+            Assert.PropertyChanged(A, "Lemon", () =>
+            {
+                A.Lemon = true;
+            });
+
+            Assert.PropertyChanged(A, "Lemon", () =>
+            {
+                A.Lemon = false;
+            });
+
+        }
+        [Fact]
+        public void ChangingSpecialInstructionsNotifiesProperty()
+        {
+            var A = new WarriorWater();
+
+            Assert.PropertyChanged(A, "SpecialInstructions", () =>
+            {
+                A.Ice = true;
+            });
+
+            Assert.PropertyChanged(A, "SpecialInstructions", () =>
+            {
+                A.Ice = false;
+            });
+            Assert.PropertyChanged(A, "SpecialInstructions", () =>
+            {
+                A.Lemon = true;
+            });
+
+            Assert.PropertyChanged(A, "SpecialInstructions", () =>
+            {
+                A.Lemon = false;
+            });
+
+        }
+        [Fact]
         public void ShouldBeADrink()
         {
             WarriorWater a = new WarriorWater();

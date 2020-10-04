@@ -19,6 +19,89 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
     public class SailorSodaTests
     {
         [Fact]
+        public void ChangingSizeNotifiesProperty()
+        {
+            var A = new SailorSoda();
+
+            Assert.PropertyChanged(A, "Size", () =>
+            {
+                A.Size = Size.Small;
+            });
+
+            Assert.PropertyChanged(A, "Size", () =>
+            {
+                A.Size = Size.Medium;
+            });
+            Assert.PropertyChanged(A, "Size", () =>
+            {
+                A.Size = Size.Large;
+            });
+        }
+        [Fact]
+        public void ChangingFlavorNotifiesProperty()
+        {
+            var A = new SailorSoda();
+
+            Assert.PropertyChanged(A, "Flavor", () =>
+            {
+                A.Flavor = SodaFlavor.Blackberry;
+            });
+
+            Assert.PropertyChanged(A, "Flavor", () =>
+            {
+                A.Flavor = SodaFlavor.Cherry;
+            });
+            Assert.PropertyChanged(A, "Flavor", () =>
+            {
+                A.Flavor = SodaFlavor.Grapefruit;
+            });
+            Assert.PropertyChanged(A, "Flavor", () =>
+            {
+                A.Flavor = SodaFlavor.Lemon;
+            });
+
+            Assert.PropertyChanged(A, "Flavor", () =>
+            {
+                A.Flavor = SodaFlavor.Peach;
+            });
+            Assert.PropertyChanged(A, "Flavor", () =>
+            {
+                A.Flavor = SodaFlavor.Watermelon;
+            });
+        }
+        [Fact]
+        public void ChangingIceNotifiesProperty()
+        {
+            var A = new SailorSoda();
+
+            Assert.PropertyChanged(A, "Ice", () =>
+            {
+                A.Ice = true;
+            });
+
+            Assert.PropertyChanged(A, "Ice", () =>
+            {
+                A.Ice = false;
+            });
+
+        }
+        [Fact]
+        public void ChangingSpecialInstructionsNotifiesProperty()
+        {
+            var A = new SailorSoda();
+
+            Assert.PropertyChanged(A, "SpecialInstructions", () =>
+            {
+                A.Ice = true;
+            });
+
+            Assert.PropertyChanged(A, "SpecialInstructions", () =>
+            {
+                A.Ice = false;
+            });
+
+        }
+        [Fact]
         public void ShouldBeADrink()
         {
             SailorSoda a = new SailorSoda();

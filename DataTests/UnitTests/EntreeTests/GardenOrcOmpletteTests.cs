@@ -15,7 +15,120 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
     /// </summary>
     public class GardenOrcOmeletteTests
     {
-            
+        [Fact]
+        public void ChangingTomatoNotifiesProperty()
+        {
+            var A = new GardenOrcOmelette();
+
+            Assert.PropertyChanged(A, "Tomato", () =>
+            {
+                A.Tomato = true;
+            });
+
+            Assert.PropertyChanged(A, "Tomato", () =>
+            {
+                A.Tomato = false;
+            });
+
+        }
+        [Fact]
+        public void ChangingCheddarNotifiesProperty()
+        {
+            var A = new GardenOrcOmelette();
+
+            Assert.PropertyChanged(A, "Cheddar", () =>
+            {
+                A.Cheddar = true;
+            });
+
+            Assert.PropertyChanged(A, "Cheddar", () =>
+            {
+                A.Cheddar = false;
+            });
+
+        }
+
+        [Fact]
+        public void ChangingBroccoliNotifiesProperty()
+        {
+            var A = new GardenOrcOmelette();
+
+            Assert.PropertyChanged(A, "Broccoli", () =>
+            {
+                A.Broccoli = true;
+            });
+
+            Assert.PropertyChanged(A, "Broccoli", () =>
+            {
+                A.Broccoli = false;
+            });
+
+        }
+
+        [Fact]
+        public void ChangingMushroomsNotifiesProperty()
+        {
+            var A = new GardenOrcOmelette();
+
+            Assert.PropertyChanged(A, "Mushrooms", () =>
+            {
+
+                A.Mushrooms = true;
+            });
+
+            Assert.PropertyChanged(A, "Mushrooms", () =>
+            {
+                A.Mushrooms = false;
+            });
+
+        }
+
+
+        [Fact]
+        public void ChangingSpecialInstructionsNotifiesProperty()
+        {
+            var A = new GardenOrcOmelette();
+
+            Assert.PropertyChanged(A, "SpecialInstructions", () =>
+            {
+                A.Mushrooms= true;
+            });
+
+            Assert.PropertyChanged(A, "SpecialInstructions", () =>
+            {
+                A.Mushrooms = false;
+            });
+            Assert.PropertyChanged(A, "SpecialInstructions", () =>
+            {
+                A.Tomato = true;
+            });
+
+            Assert.PropertyChanged(A, "SpecialInstructions", () =>
+            {
+                A.Tomato = false;
+            });
+            Assert.PropertyChanged(A, "SpecialInstructions", () =>
+            {
+                A.Cheddar = true;
+            });
+
+            Assert.PropertyChanged(A, "SpecialInstructions", () =>
+            {
+                A.Cheddar= false;
+            });
+            Assert.PropertyChanged(A, "SpecialInstructions", () =>
+            {
+                A.Broccoli = true;
+            });
+
+            Assert.PropertyChanged(A, "SpecialInstructions", () =>
+            {
+                A.Broccoli = false;
+            });
+   
+        }
+
+
         [Fact]
         public void ShouldBeAEntree()
         {

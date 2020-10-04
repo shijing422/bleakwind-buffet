@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 /*
  * Author: Shijing Zhang
  * Class name: MarkarthMilk.cs
@@ -13,9 +14,23 @@ namespace BleakwindBuffet.Data.Drinks
     /// <summary>
     /// A class represent the MarkarthMilk
     /// </summary>
-    public class MarkarthMilk : Drink, IOrderItem
+    public class MarkarthMilk : Drink, IOrderItem, INotifyPropertyChanged
     {
-   
+        public event PropertyChangedEventHandler PropertyChanged;
+        Size s = Size.Small;
+        /// <value>
+        /// the size of the drink
+        /// </value>
+        public override Size Size
+        {
+            get { return s; }
+            set
+            {
+                s = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+            }
+        }
+
 
         /// <value>
         /// The price of the MarkarthMilk
@@ -63,10 +78,21 @@ namespace BleakwindBuffet.Data.Drinks
             }
 
         }
+
+        bool i = false;
         /// <value>
-        /// if hold ice of the MarkarthMilk
-        /// </value>
-        public bool Ice { get; set; } = false;//default no ics
+        /// if add ice of the MarkarthMilk
+        /// </value>      
+        public bool Ice
+        {
+            get { return i; }
+            set
+            {
+                i = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ice"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
+        }
         /// <value>
         /// special instructions of the MarkarthMilk
         /// </value>

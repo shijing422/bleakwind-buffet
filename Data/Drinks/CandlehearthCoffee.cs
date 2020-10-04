@@ -79,15 +79,49 @@ namespace BleakwindBuffet.Data.Drinks
             }
 
         }
+        bool i = false;
         /// <value>
         /// if add ice to the CandlehearthCoffee
         /// </value>
-        public bool Ice { get; set; } = false;
+        public bool Ice
+        {
+            get { return i; }
+            set
+            {
+                i = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ice"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
+        }
+        bool c = false;
         /// <summary>
         /// if add cream to the CandlehearthCoffee
         /// </summary>
-        public bool RoomForCream { get; set; } = false;
-        public bool Decaf { get; set; } = false;
+        public bool RoomForCream
+        {
+            get { return c; }
+            set
+            {
+                c = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("RoomForCream"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
+        }
+        bool d = false;
+
+        /// <summary>
+        /// if decaf 
+        /// </summary>
+        public bool Decaf
+        {
+            get { return d; }
+            set
+            {
+                d = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Decaf"));
+              
+            }
+        }
         /// <value>
         /// special instructions of the CandlehearthCoffee
         /// </value>
