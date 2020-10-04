@@ -33,7 +33,7 @@
         
         
 
-        <TextBlock Margin="344,13,394,555" Text="Customization" FontSize="20" FontWeight="Bold">
+        <TextBlock Margin="364,10,374,735" Text="Customization" FontSize="20" FontWeight="Bold">
 
 
         </TextBlock>
@@ -81,7 +81,7 @@
 
 
         </StackPanel>
-        <StackPanel Name="menu" Background="LightBlue" Orientation="Vertical" Margin="10,26,684,0">
+        <StackPanel Name="menu" Background="LightBlue" Orientation="Vertical" Margin="10,36,661,0">
             <TextBlock FontSize="20" FontWeight="Bold">Entree:</TextBlock>
             <Button Background="LightYellow" Content="Briarheart Burger" Click="ClickBriarheartBurger" FontSize="25" HorizontalAlignment="Left"  ></Button>
             <Button Background="LightYellow" Content="Double Draugr" FontSize="25" HorizontalAlignment="Left" Click="ClickDoubleDraugr"></Button>
@@ -111,8 +111,8 @@
 
         <TextBlock HorizontalAlignment="Left" FontWeight="Bold" FontSize="20" Height="31" Margin="10,0,0,0" Text="Add to order" TextWrapping="Wrap" VerticalAlignment="Top" Width="293"/>
         <TextBlock HorizontalAlignment="Left" FontWeight="Bold" FontSize="20" Height="22" Margin="761,13,0,0" Text="Order" TextWrapping="Wrap" VerticalAlignment="Top" Width="211" RenderTransformOrigin="2.863,0.398"/>
-        <Button Background="LightYellow" Margin="822,652,0,36" Content="Place Order" FontSize="20" FontWeight="Bold" Click="ClickPlace"></Button>
-        <Button Background="LightYellow" Margin="655,652,183,36" Content="Cancel Order" FontSize="20" FontWeight="Bold" RenderTransformOrigin="0.5,0.5" Click="ClickCancel">
+        <Button Background="LightYellow" Margin="822,657,0,31" Content="Place Order" FontSize="20" FontWeight="Bold" Click="ClickPlace"></Button>
+        <Button Background="LightYellow" Margin="655,657,183,31" Content="Cancel Order" FontSize="20" FontWeight="Bold" RenderTransformOrigin="0.5,0.5" Click="ClickCancel">
 
         </Button>
 
