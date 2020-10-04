@@ -21,31 +21,38 @@ namespace BleakwindBuffet.DataTests.UnitTests
             IEnumerable<IOrderItem> result = Menu.Entrees();
 
 
-            Assert.All(result, item => item.ToString().Contains("Briarheart Burger"));
-            Assert.All(result, item => item.ToString().Contains("Double Draugr"));
-            Assert.All(result, item => item.ToString().Contains("Garden Orc Omelette"));
-            Assert.All(result, item => item.ToString().Contains("Philly Poacher"));
-            Assert.All(result, item => item.ToString().Contains("Smokehouse Skeleton"));
-            Assert.All(result, item => item.ToString().Contains("Thalmor Triple"));
-            Assert.All(result, item => item.ToString().Contains("Thugs T-Bone"));
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Briarheart Burger"); });
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Double Draugr"); });
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Garden Orc Omelette"); });
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Smokehouse Skeleton"); });
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Thugs T-Bone"); });
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Thalmor Triple"); });
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Philly Poacher"); });
+
+
+
+            
 
         }
         [Fact]
         public void MenuReturnALLSides()
         {
             IEnumerable<IOrderItem> result = Menu.Sides();
-            Assert.All(result, item => item.ToString().Contains("Small Vokun Salad"));
-            Assert.All(result, item => item.ToString().Contains("Medium Vokun Salad"));
-            Assert.All(result, item => item.ToString().Contains("Large Vokun Salad"));
-            Assert.All(result, item => item.ToString().Contains("Small Dragonborn Waffle Fries"));
-            Assert.All(result, item => item.ToString().Contains("Medium Dragonborn Waffle Fries"));
-            Assert.All(result, item => item.ToString().Contains("Large Dragonborn Waffle Fries"));
-            Assert.All(result, item => item.ToString().Contains("Small Fried Miraak"));
-            Assert.All(result, item => item.ToString().Contains("Medium Fried Miraak"));
-            Assert.All(result, item => item.ToString().Contains("Large Fried Miraak"));
-            Assert.All(result, item => item.ToString().Contains("Small Mad Otar Grits"));
-            Assert.All(result, item => item.ToString().Contains("Medium Mad Otar Grits"));
-            Assert.All(result, item => item.ToString().Contains("Large Mad Otar Grits"));
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Small Vokun Salad"); });
+
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Medium Vokun Salad"); });
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Large Vokun Salad"); });
+
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Small Dragonborn Waffle Fries"); });
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Medium Dragonborn Waffle Fries"); });
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Large Dragonborn Waffle Fries"); });
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Small Fried Miraak"); });
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Medium Fried Miraak"); });
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Large Fried Miraak"); });
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Small Mad Otar Grits"); });
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Medium Mad Otar Grits"); });
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Large Mad Otar Grits"); });
+
 
 
         }
@@ -53,119 +60,121 @@ namespace BleakwindBuffet.DataTests.UnitTests
         public void ShouldReturnAllDrinks()
         {
             IEnumerable<IOrderItem> result = Menu.Drinks();
-            Assert.All(result, item => item.ToString().Contains("Small Aretino Apple Juice"));
-            Assert.All(result, item => item.ToString().Contains("Medium Aretino Apple Juice"));
-            Assert.All(result, item => item.ToString().Contains("Large Aretino Apple Juice"));
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Small Aretino Apple Juice"); });
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Medium Aretino Apple Juice"); });
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Large Aretino Apple Juice"); });
 
-            Assert.All(result, item => item.ToString().Contains("Small Candlehearth Coffee"));
-            Assert.All(result, item => item.ToString().Contains("Medium Candlehearth Coffee"));
-            Assert.All(result, item => item.ToString().Contains("Large Candlehearth Coffee"));
-            Assert.All(result, item => item.ToString().Contains("Small Decaf Candlehearth Coffee"));
-            Assert.All(result, item => item.ToString().Contains("Medium Decaf Candlehearth Coffee"));
-            Assert.All(result, item => item.ToString().Contains("Large Decaf Candlehearth Coffee"));
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Small Candlehearth Coffee"); });
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Medium Candlehearth Coffee"); });
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Large Candlehearth Coffee"); });
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Small Decaf Candlehearth Coffee"); });
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Medium Decaf Candlehearth Coffee"); });
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Large Decaf Candlehearth Coffee"); });
 
-            Assert.All(result, item => item.ToString().Contains("Small Markarth Milk"));
-            Assert.All(result, item => item.ToString().Contains("Medium Markarth Milk"));
-            Assert.All(result, item => item.ToString().Contains("Large Markarth Milk"));
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Small Markarth Milk"); });
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Medium Markarth Milk"); });
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Large Markarth Milk"); });
 
-            Assert.All(result, item => item.ToString().Contains("Small Warrior Water"));
-            Assert.All(result, item => item.ToString().Contains("Medium Warrior Water"));
-            Assert.All(result, item => item.ToString().Contains("Large Warrior Water"));
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Small Warrior Water"); });
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Medium Warrior Water"); });
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Large Warrior Water"); });
 
-            Assert.All(result, item => item.ToString().Contains("Small Cherry Sailor Soda"));
-            Assert.All(result, item => item.ToString().Contains("Medium Cherry Sailor Soda"));
-            Assert.All(result, item => item.ToString().Contains("Large Cherry Sailor Soda"));
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Small Cherry Sailor Soda"); });
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Medium Cherry Sailor Soda"); });
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Large Cherry Sailor Soda"); });
 
-            Assert.All(result, item => item.ToString().Contains("Small Blackberry Sailor Soda"));
-            Assert.All(result, item => item.ToString().Contains("Medium Blackberry Sailor Soda"));
-            Assert.All(result, item => item.ToString().Contains("Large Blackberry Sailor Soda"));
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Small Blackberry Sailor Soda"); });
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Medium Blackberry Sailor Soda"); });
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Large Blackberry Sailor Soda"); });
 
-            Assert.All(result, item => item.ToString().Contains("Small Grapefruit Sailor Soda"));
-            Assert.All(result, item => item.ToString().Contains("Medium Grapefruit Sailor Soda"));
-            Assert.All(result, item => item.ToString().Contains("Large Grapefruit Sailor Soda"));
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Small Grapefruit Sailor Soda"); });
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Medium Grapefruit Sailor Soda"); });
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Large Grapefruit Sailor Soda"); });
 
-            Assert.All(result, item => item.ToString().Contains("Small Lemon Sailor Soda"));
-            Assert.All(result, item => item.ToString().Contains("Medium Lemon Sailor Soda"));
-            Assert.All(result, item => item.ToString().Contains("Large Lemon Sailor Soda"));
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Small Lemon Sailor Soda"); });
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Medium Lemon Sailor Soda"); });
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Large Lemon Sailor Soda"); });
 
-            Assert.All(result, item => item.ToString().Contains("Small Peach Sailor Soda"));
-            Assert.All(result, item => item.ToString().Contains("Medium Peach Sailor Soda"));
-            Assert.All(result, item => item.ToString().Contains("Large Peach Sailor Soda"));
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Small Peach Sailor Soda"); });
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Medium Peach Sailor Soda"); });
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Large Peach Sailor Soda"); });
 
-            Assert.All(result, item => item.ToString().Contains("Small Watermelon Sailor Soda"));
-            Assert.All(result, item => item.ToString().Contains("Medium Watermelon Sailor Soda"));
-            Assert.All(result, item => item.ToString().Contains("Large Watermelon Sailor Soda"));
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Small Watermelon Sailor Soda"); });
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Medium Watermelon Sailor Soda"); });
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Large Watermelon Sailor Soda"); });
 
         }
         [Fact]
         public void ShouldReturnAllItems()
         {
             IEnumerable<IOrderItem> result = Menu.FullMenu();
-            Assert.All(result, item => item.ToString().Contains("Briarheart Burger"));
-            Assert.All(result, item => item.ToString().Contains("Double Draugr"));
-            Assert.All(result, item => item.ToString().Contains("Garden Orc Omelette"));
-            Assert.All(result, item => item.ToString().Contains("Philly Poacher"));
-            Assert.All(result, item => item.ToString().Contains("Smokehouse Skeleton"));
-            Assert.All(result, item => item.ToString().Contains("Thalmor Triple"));
-            Assert.All(result, item => item.ToString().Contains("Thugs T-Bone"));
 
-            Assert.All(result, item => item.ToString().Contains("Small Vokun Salad"));
-            Assert.All(result, item => item.ToString().Contains("Medium Vokun Salad"));
-            Assert.All(result, item => item.ToString().Contains("Large Vokun Salad"));
-            Assert.All(result, item => item.ToString().Contains("Small Dragonborn Waffle Fries"));
-            Assert.All(result, item => item.ToString().Contains("Medium Dragonborn Waffle Fries"));
-            Assert.All(result, item => item.ToString().Contains("Large Dragonborn Waffle Fries"));
-            Assert.All(result, item => item.ToString().Contains("Small Fried Miraak"));
-            Assert.All(result, item => item.ToString().Contains("Medium Fried Miraak"));
-            Assert.All(result, item => item.ToString().Contains("Large Fried Miraak"));
-            Assert.All(result, item => item.ToString().Contains("Small Mad Otar Grits"));
-            Assert.All(result, item => item.ToString().Contains("Medium Mad Otar Grits"));
-            Assert.All(result, item => item.ToString().Contains("Large Mad Otar Grits"));
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Briarheart Burger"); });
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Double Draugr"); });
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Garden Orc Omelette"); });
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Smokehouse Skeleton"); });
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Thugs T-Bone"); });
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Thalmor Triple"); });
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Philly Poacher"); });
 
-            Assert.All(result, item => item.ToString().Contains("Small Aretino Apple Juice"));
-            Assert.All(result, item => item.ToString().Contains("Medium Aretino Apple Juice"));
-            Assert.All(result, item => item.ToString().Contains("Large Aretino Apple Juice"));
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Small Vokun Salad"); });
 
-            Assert.All(result, item => item.ToString().Contains("Small Candlehearth Coffee"));
-            Assert.All(result, item => item.ToString().Contains("Medium Candlehearth Coffee"));
-            Assert.All(result, item => item.ToString().Contains("Large Candlehearth Coffee"));
-            Assert.All(result, item => item.ToString().Contains("Small Decaf Candlehearth Coffee"));
-            Assert.All(result, item => item.ToString().Contains("Medium Decaf Candlehearth Coffee"));
-            Assert.All(result, item => item.ToString().Contains("Large Decaf Candlehearth Coffee"));
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Medium Vokun Salad"); });
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Large Vokun Salad"); });
 
-            Assert.All(result, item => item.ToString().Contains("Small Markarth Milk"));
-            Assert.All(result, item => item.ToString().Contains("Medium Markarth Milk"));
-            Assert.All(result, item => item.ToString().Contains("Large Markarth Milk"));
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Small Dragonborn Waffle Fries"); });
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Medium Dragonborn Waffle Fries"); });
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Large Dragonborn Waffle Fries"); });
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Small Fried Miraak"); });
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Medium Fried Miraak"); });
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Large Fried Miraak"); });
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Small Mad Otar Grits"); });
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Medium Mad Otar Grits"); });
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Large Mad Otar Grits"); });
 
-            Assert.All(result, item => item.ToString().Contains("Small Warrior Water"));
-            Assert.All(result, item => item.ToString().Contains("Medium Warrior Water"));
-            Assert.All(result, item => item.ToString().Contains("Large Warrior Water"));
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Small Aretino Apple Juice"); });
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Medium Aretino Apple Juice"); });
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Large Aretino Apple Juice"); });
 
-            Assert.All(result, item => item.ToString().Contains("Small Cherry Sailor Soda"));
-            Assert.All(result, item => item.ToString().Contains("Medium Cherry Sailor Soda"));
-            Assert.All(result, item => item.ToString().Contains("Large Cherry Sailor Soda"));
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Small Candlehearth Coffee"); });
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Medium Candlehearth Coffee"); });
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Large Candlehearth Coffee"); });
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Small Decaf Candlehearth Coffee"); });
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Medium Decaf Candlehearth Coffee"); });
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Large Decaf Candlehearth Coffee"); });
 
-            Assert.All(result, item => item.ToString().Contains("Small Blackberry Sailor Soda"));
-            Assert.All(result, item => item.ToString().Contains("Medium Blackberry Sailor Soda"));
-            Assert.All(result, item => item.ToString().Contains("Large Blackberry Sailor Soda"));
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Small Markarth Milk"); });
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Medium Markarth Milk"); });
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Large Markarth Milk"); });
 
-            Assert.All(result, item => item.ToString().Contains("Small Grapefruit Sailor Soda"));
-            Assert.All(result, item => item.ToString().Contains("Medium Grapefruit Sailor Soda"));
-            Assert.All(result, item => item.ToString().Contains("Large Grapefruit Sailor Soda"));
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Small Warrior Water"); });
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Medium Warrior Water"); });
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Large Warrior Water"); });
 
-            Assert.All(result, item => item.ToString().Contains("Small Lemon Sailor Soda"));
-            Assert.All(result, item => item.ToString().Contains("Medium Lemon Sailor Soda"));
-            Assert.All(result, item => item.ToString().Contains("Large Lemon Sailor Soda"));
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Small Cherry Sailor Soda"); });
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Medium Cherry Sailor Soda"); });
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Large Cherry Sailor Soda"); });
 
-            Assert.All(result, item => item.ToString().Contains("Small Peach Sailor Soda"));
-            Assert.All(result, item => item.ToString().Contains("Medium Peach Sailor Soda"));
-            Assert.All(result, item => item.ToString().Contains("Large Peach Sailor Soda"));
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Small Blackberry Sailor Soda"); });
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Medium Blackberry Sailor Soda"); });
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Large Blackberry Sailor Soda"); });
 
-            Assert.All(result, item => item.ToString().Contains("Small Watermelon Sailor Soda"));
-            Assert.All(result, item => item.ToString().Contains("Medium Watermelon Sailor Soda"));
-            Assert.All(result, item => item.ToString().Contains("Large Watermelon Sailor Soda"));
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Small Grapefruit Sailor Soda"); });
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Medium Grapefruit Sailor Soda"); });
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Large Grapefruit Sailor Soda"); });
+
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Small Lemon Sailor Soda"); });
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Medium Lemon Sailor Soda"); });
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Large Lemon Sailor Soda"); });
+
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Small Peach Sailor Soda"); });
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Medium Peach Sailor Soda"); });
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Large Peach Sailor Soda"); });
+
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Small Watermelon Sailor Soda"); });
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Medium Watermelon Sailor Soda"); });
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Large Watermelon Sailor Soda"); });
 
         }
-    
     }
 }

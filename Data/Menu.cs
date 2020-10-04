@@ -22,30 +22,18 @@ namespace BleakwindBuffet.Data
 
         public static IEnumerable<IOrderItem> Entrees()
         {
-            IEnumerable<IOrderItem> entrees = new List<IOrderItem>();
+            List<IOrderItem> entrees = new List<IOrderItem>();
 
 
 
-            IOrderItem bb = new BriarheartBurger();
-           
-            IOrderItem dd = new DoubleDraugr();
-         
-            IOrderItem goo = new GardenOrcOmelette();
-          
-            IOrderItem pp = new PhillyPoacher();
-            
-            IOrderItem ss = new SmokehouseSkeleton();
-           
-            IOrderItem tt = new ThalmorTriple();
-         
-            IOrderItem ttb = new ThugsTBone();
-            entrees.ToList().Add(bb);
-            entrees.ToList().Add(dd);
-            entrees.ToList().Add(goo);
-            entrees.ToList().Add(pp);
-            entrees.ToList().Add(tt);
-            entrees.ToList().Add(ss);
-            entrees.ToList().Add(ttb);
+   
+            entrees.Add(new BriarheartBurger());
+            entrees.Add(new DoubleDraugr());
+            entrees.Add(new ThugsTBone());
+            entrees.Add(new ThalmorTriple());
+            entrees.Add(new SmokehouseSkeleton());
+            entrees.Add(new PhillyPoacher());
+            entrees.Add(new GardenOrcOmelette());
 
             return entrees;
 
@@ -60,7 +48,7 @@ namespace BleakwindBuffet.Data
         /// <returns>an IEnumerable<IOrderItem> containing all available drinks offered by BleakwindBuffet. As each drink has 3 different sizes, this collection should contain a small, medium, and large instance of each. Similarly, it should contain three of each flavor of SailorSoda: one large, one medium, and one small.</returns>
         public static IEnumerable<IOrderItem> Drinks()
         {
-            IEnumerable<IOrderItem> drinks = new List<IOrderItem>();
+            List<IOrderItem> drinks = new List<IOrderItem>();
 
             AretinoAppleJuice saa = new AretinoAppleJuice();
             AretinoAppleJuice maa = new AretinoAppleJuice();
@@ -68,12 +56,11 @@ namespace BleakwindBuffet.Data
             saa.Size = Size.Small;
             maa.Size = Size.Medium;
             laa.Size = Size.Large;
-            IOrderItem SAA = (IOrderItem)saa;
-            IOrderItem MAA = (IOrderItem)maa;
-            IOrderItem LAA = (IOrderItem)laa;
-            drinks.ToList().Add(SAA);
-            drinks.ToList().Add(MAA);
-            drinks.ToList().Add(LAA);
+          
+            
+            drinks.Add(saa);
+            drinks.Add(maa);
+            drinks.Add(laa);
 
             WarriorWater sww = new WarriorWater();
             WarriorWater mww = new WarriorWater();
@@ -81,12 +68,10 @@ namespace BleakwindBuffet.Data
             sww.Size = Size.Small;
             mww.Size = Size.Medium;
             lww.Size = Size.Large;
-            IOrderItem SWW = (IOrderItem)sww;
-            IOrderItem MWW = (IOrderItem)mww;
-            IOrderItem LWW = (IOrderItem)lww;
-            drinks.ToList().Add(SWW);
-            drinks.ToList().Add(MWW);
-            drinks.ToList().Add(LWW);
+           
+            drinks.Add(sww);
+            drinks.Add(mww);
+            drinks.Add(lww);
 
             MarkarthMilk smm = new MarkarthMilk();
             MarkarthMilk mmm = new MarkarthMilk();
@@ -94,12 +79,10 @@ namespace BleakwindBuffet.Data
             smm.Size = Size.Small;
             mmm.Size = Size.Medium;
             lmm.Size = Size.Large;
-            IOrderItem SMM = (IOrderItem)smm;
-            IOrderItem MMM = (IOrderItem)mmm;
-            IOrderItem LMM = (IOrderItem)lmm;
-            drinks.ToList().Add(SMM);
-            drinks.ToList().Add(MMM);
-            drinks.ToList().Add(LMM);
+           
+            drinks.Add(smm);
+            drinks.Add(mmm);
+            drinks.Add(lmm);
 
             CandlehearthCoffee scc = new CandlehearthCoffee();
             CandlehearthCoffee mcc = new CandlehearthCoffee();
@@ -107,12 +90,10 @@ namespace BleakwindBuffet.Data
             scc.Size = Size.Small;
             mcc.Size = Size.Medium;
             lcc.Size = Size.Large;
-            IOrderItem SCC = (IOrderItem)scc;
-            IOrderItem MCC = (IOrderItem)mcc;
-            IOrderItem LCC = (IOrderItem)lcc;
-            drinks.ToList().Add(SCC);
-            drinks.ToList().Add(MCC);
-            drinks.ToList().Add(LCC);
+          
+            drinks.Add(scc);
+            drinks.Add(mcc);
+            drinks.Add(lcc);
 
             CandlehearthCoffee sdc = new CandlehearthCoffee();
             CandlehearthCoffee mdc = new CandlehearthCoffee();
@@ -123,12 +104,10 @@ namespace BleakwindBuffet.Data
             sdc.Size = Size.Small;
             mdc.Size = Size.Medium;
             ldc.Size = Size.Large;
-            IOrderItem SDC = (IOrderItem)sdc;
-            IOrderItem MDC = (IOrderItem)mdc;
-            IOrderItem LDC = (IOrderItem)ldc;
-            drinks.ToList().Add(SDC);
-            drinks.ToList().Add(MDC);
-            drinks.ToList().Add(LDC);
+            
+            drinks.Add(sdc);
+            drinks.Add(mdc);
+            drinks.Add(ldc);
 
 
             SailorSoda scherry = new SailorSoda();
@@ -137,12 +116,10 @@ namespace BleakwindBuffet.Data
             scherry.Size = Size.Small;
             mcherry.Size = Size.Medium;
             lcherry.Size = Size.Large;
-            IOrderItem SCherry = (IOrderItem)scherry;
-            IOrderItem MCherry = (IOrderItem)mcherry;
-            IOrderItem LCherry = (IOrderItem)lcherry;
-            drinks.ToList().Add(SCherry);
-            drinks.ToList().Add(MCherry);
-            drinks.ToList().Add(LCherry);
+           
+            drinks.Add(scherry);
+            drinks.Add(mcherry);
+            drinks.Add(lcherry) ;
 
 
             SailorSoda sblac = new SailorSoda();
@@ -154,12 +131,10 @@ namespace BleakwindBuffet.Data
             sblac.Flavor = SodaFlavor.Blackberry;
             mblac.Flavor = SodaFlavor.Blackberry;
             lblac.Flavor = SodaFlavor.Blackberry;
-            IOrderItem SBlac = (IOrderItem)sblac;
-            IOrderItem MBlac = (IOrderItem)mblac;
-            IOrderItem LBlac = (IOrderItem)lblac;
-            drinks.ToList().Add(SBlac);
-            drinks.ToList().Add(MBlac);
-            drinks.ToList().Add(LBlac);
+            
+            drinks.Add(sblac);
+            drinks.Add(mblac);
+            drinks.Add(lblac);
 
 
 
@@ -172,12 +147,10 @@ namespace BleakwindBuffet.Data
             sgra.Size = Size.Small;
             mgra.Size = Size.Medium;
             lgra.Size = Size.Large;
-            IOrderItem SGra = (IOrderItem)sgra;
-            IOrderItem MGra = (IOrderItem)mgra;
-            IOrderItem LGra = (IOrderItem)lgra;
-            drinks.ToList().Add(SGra);
-            drinks.ToList().Add(MGra);
-            drinks.ToList().Add(LGra);
+    
+            drinks.Add(sgra);
+            drinks.Add(mgra);
+            drinks.Add(lgra);
 
             SailorSoda slem = new SailorSoda();
             SailorSoda mlem = new SailorSoda();
@@ -188,12 +161,10 @@ namespace BleakwindBuffet.Data
             slem.Size = Size.Small;
             mlem.Size = Size.Medium;
             llem.Size = Size.Large;
-            IOrderItem SLem = (IOrderItem)slem;
-            IOrderItem MLem = (IOrderItem)mlem;
-            IOrderItem LLem = (IOrderItem)llem;
-            drinks.ToList().Add(SLem);
-            drinks.ToList().Add(MLem);
-            drinks.ToList().Add(LLem);
+          
+            drinks.Add(slem);
+            drinks.Add(mlem);
+            drinks.Add(llem);
 
             SailorSoda spea = new SailorSoda();
             SailorSoda mpea = new SailorSoda();
@@ -204,12 +175,10 @@ namespace BleakwindBuffet.Data
             spea.Flavor = SodaFlavor.Peach;
             mpea.Flavor = SodaFlavor.Peach;
             lpea.Flavor = SodaFlavor.Peach;
-            IOrderItem SPea = (IOrderItem)spea;
-            IOrderItem MPea = (IOrderItem)mpea;
-            IOrderItem LPea = (IOrderItem)lpea;
-            drinks.ToList().Add(SPea);
-            drinks.ToList().Add(MPea);
-            drinks.ToList().Add(LPea);
+          
+            drinks.Add(spea);
+            drinks.Add(mpea);
+            drinks.Add(lpea);
 
 
 
@@ -222,12 +191,10 @@ namespace BleakwindBuffet.Data
             swat.Size = Size.Small;
             mwat.Size = Size.Medium;
             lwat.Size = Size.Large;
-            IOrderItem SWat = (IOrderItem)swat;
-            IOrderItem MWat = (IOrderItem)mwat;
-            IOrderItem LWat = (IOrderItem)lwat;
-            drinks.ToList().Add(SWat);
-            drinks.ToList().Add(MWat);
-            drinks.ToList().Add(LWat);
+            
+            drinks.Add(swat);
+            drinks.Add(mwat);
+            drinks.Add(lwat);
 
 
 
@@ -243,7 +210,7 @@ namespace BleakwindBuffet.Data
         /// <returns>an IEnumerable<IOrderItem> containing an instance of all available sides offered by Bleakwind Buffet. As each side has 3 different sizes, this collection should contain a small, medium, and large instance of each.</returns>
         public static IEnumerable<IOrderItem> Sides()
         {
-            IEnumerable<IOrderItem> sides = new List<IOrderItem>();
+            List<IOrderItem> sides = new List<IOrderItem>();
 
             DragonbornWaffleFries sdw = new DragonbornWaffleFries();
             sdw.Size = Size.Small;
@@ -251,12 +218,10 @@ namespace BleakwindBuffet.Data
             DragonbornWaffleFries ldw = new DragonbornWaffleFries();
             mdw.Size = Size.Medium;
             ldw.Size = Size.Large;
-            IOrderItem SDW = (IOrderItem)sdw;
-            IOrderItem MDW = (IOrderItem)mdw;
-            IOrderItem LDW = (IOrderItem)ldw;
-            sides.ToList().Add(SDW);
-            sides.ToList().Add(MDW);
-            sides.ToList().Add(LDW);
+       
+            sides.Add(sdw);
+            sides.Add(mdw);
+            sides.Add(ldw);
 
             FriedMiraak sfm = new FriedMiraak();
             FriedMiraak mfm = new FriedMiraak();
@@ -264,13 +229,11 @@ namespace BleakwindBuffet.Data
             sfm.Size = Size.Small;
             mfm.Size = Size.Medium;
             lfm.Size = Size.Large;
-            IOrderItem SFM = (IOrderItem)sfm;
-            IOrderItem MFM = (IOrderItem)mfm;
-            IOrderItem LFM = (IOrderItem)lfm;
+            
 
-            sides.ToList().Add(SFM);
-            sides.ToList().Add(MFM);
-            sides.ToList().Add(LFM);
+            sides.Add(sfm);
+            sides.Add(mfm);
+            sides.Add(lfm);
 
             MadOtarGrits smo = new MadOtarGrits();
             MadOtarGrits mmo = new MadOtarGrits();
@@ -278,12 +241,10 @@ namespace BleakwindBuffet.Data
             smo.Size = Size.Small;
             mmo.Size = Size.Medium;
             lmo.Size = Size.Large;
-            IOrderItem SMO = (IOrderItem)smo;
-            IOrderItem MMO = (IOrderItem)mmo;
-            IOrderItem LMO = (IOrderItem)lmo;
-            sides.ToList().Add(SMO);
-            sides.ToList().Add(MMO);
-            sides.ToList().Add(LMO);
+        
+            sides.Add(smo);
+            sides.Add(mmo);
+            sides.Add(lmo);
 
             VokunSalad svs = new VokunSalad();
             VokunSalad mvs = new VokunSalad();
@@ -291,12 +252,10 @@ namespace BleakwindBuffet.Data
             svs.Size = Size.Small;
             mvs.Size = Size.Medium;
             lvs.Size = Size.Large;
-            IOrderItem SVS = (IOrderItem)svs;
-            IOrderItem MVS = (IOrderItem)mvs;
-            IOrderItem LVS = (IOrderItem)lvs;
-            sides.ToList().Add(SVS);
-            sides.ToList().Add(MVS);
-            sides.ToList().Add(LVS);
+          
+            sides.Add(svs);
+            sides.Add(mvs);
+            sides.Add(lvs);
 
 
 
