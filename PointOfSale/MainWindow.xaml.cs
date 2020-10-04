@@ -29,6 +29,7 @@ namespace PointOfSale
     /// </summary>
     public partial class MainWindow : Window
     {
+        
         /// <value>
         /// the total price for the order
         /// </value>
@@ -50,6 +51,7 @@ namespace PointOfSale
           
             Customization.Visibility = Visibility.Hidden;
         }
+       
         /// <summary>
         /// check for sodaflavor click, if one sodaflavor clicked, disable others
         /// </summary>
@@ -175,7 +177,7 @@ namespace PointOfSale
             cWatermelon.IsChecked = false;
             cPeach.IsChecked = false;
             cLemonflavor.IsChecked = false;
-            cBacon.IsChecked = true;
+            /*cBacon.IsChecked = true;
             cBroccoli.IsChecked = true;
             cBun.IsChecked = true;
             cCheddar.IsChecked = true;
@@ -198,7 +200,7 @@ namespace PointOfSale
             cSausageLink.IsChecked = true;
             cSirloin.IsChecked = true;
             cTomato.IsChecked = true;
-
+            */
         }
         /// <summary>
         /// hida all Customization
@@ -261,6 +263,8 @@ namespace PointOfSale
             cMustard.Visibility = Visibility.Visible;
             cPickle.Visibility = Visibility.Visible;
             cCheese.Visibility = Visibility.Visible;
+            
+            this.DataContext =new BriarheartBurger();
 
 
         }
@@ -289,6 +293,7 @@ namespace PointOfSale
             cTomato.Visibility = Visibility.Visible;
             cLettuce.Visibility = Visibility.Visible;
             cMayo.Visibility = Visibility.Visible;
+            this.DataContext = new DoubleDraugr();
 
 
         }
@@ -320,6 +325,7 @@ namespace PointOfSale
             cMayo.Visibility = Visibility.Visible;
             cEgg.Visibility = Visibility.Visible;
             cBacon.Visibility = Visibility.Visible;
+            this.DataContext = new ThalmorTriple();
 
         }
         /// <summary>
@@ -346,7 +352,7 @@ namespace PointOfSale
             cPancake.Visibility = Visibility.Visible;
 
 
-
+            this.DataContext = new SmokehouseSkeleton();
 
 
         }
@@ -372,6 +378,8 @@ namespace PointOfSale
             cMushrooms.Visibility = Visibility.Visible;
             cTomato.Visibility = Visibility.Visible;
             cCheddar.Visibility = Visibility.Visible;
+
+            this.DataContext = new GardenOrcOmelette();
 
         }
         /// <summary>
@@ -414,7 +422,7 @@ namespace PointOfSale
             cRoll.Visibility = Visibility.Visible;
             cOnion.Visibility = Visibility.Visible;
 
-
+            this.DataContext = new PhillyPoacher();
         }
         /// <summary>
         /// Click cancel button, clear all
@@ -439,8 +447,10 @@ namespace PointOfSale
             Customization.Visibility = Visibility.Hidden;
             if(string.Equals(button, "BriarheartBurger"))
             {
-                BriarheartBurger a = new BriarheartBurger();
 
+
+                BriarheartBurger a = new BriarheartBurger();
+                
                 if (cBun.IsChecked == false)
                 {
                     a.Bun = false;
@@ -455,6 +465,9 @@ namespace PointOfSale
                 if(cMustard.IsChecked == false) a.Mustard = false;
                 if (cPickle.IsChecked == false) a.Pickle = false;
                 if (cCheese.IsChecked == false) a.Cheese = false;
+                
+
+               
                
   
                 var result = lists.Concat(a.SpecialInstructions);
@@ -796,6 +809,8 @@ namespace PointOfSale
 
             button = "WarriorWater";
 
+            this.DataContext = new WarriorWater();
+
         }
         /// <summary>
         /// click soda button
@@ -818,6 +833,8 @@ namespace PointOfSale
             cPeach.Visibility = Visibility.Visible;
             cLemonflavor.Visibility = Visibility.Visible;
             button = "SailorSoda";
+
+            this.DataContext = new SailorSoda();
         }
         /// <summary>
         /// click coffee button
@@ -837,7 +854,7 @@ namespace PointOfSale
             cDecaf.Visibility = Visibility.Visible;
             cIce.IsChecked = false;
             cRoomForCream.Visibility = Visibility.Visible;
-
+            this.DataContext = new CandlehearthCoffee();
 
         }
         /// <summary>
@@ -856,6 +873,7 @@ namespace PointOfSale
             button = "MarkarthMilk";
             cIce.Visibility = Visibility.Visible;
             cIce.IsChecked = false;
+            this.DataContext = new MarkarthMilk();
 
         }
         /// <summary>

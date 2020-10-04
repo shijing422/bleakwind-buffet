@@ -29,31 +29,31 @@
             <CheckBox Content="Watermelon" Click="clickflavor" HorizontalAlignment="Left" Name="cWatermelon"></CheckBox>
             <CheckBox Content="Cherry" Click="clickflavor" HorizontalAlignment="Left" Name="cCherry"></CheckBox>
             <CheckBox Content="Grapefruit" Click="clickflavor" HorizontalAlignment="Left" Name="cGrapef"></CheckBox>
-            <CheckBox Content="Ketchup" x:Name="cKetchup" IsChecked="True" ></CheckBox>
-            <CheckBox Content="Bun" IsChecked="True" Name="cBun"></CheckBox>
-            <CheckBox Content="Mustard" IsChecked="True" Name="cMustard"></CheckBox>
-            <CheckBox Content="Pickle" IsChecked="True" Name="cPickle"></CheckBox>
-            <CheckBox Content="Cheese" IsChecked="True" Name="cCheese"></CheckBox>
-            <CheckBox Content="Tomato" IsChecked="True" Name="cTomato"></CheckBox>
-            <CheckBox Content="Lettuce" IsChecked="True" Name="cLettuce"></CheckBox>
-            <CheckBox Content="Mayo" IsChecked="True" Name="cMayo"></CheckBox>
-            <CheckBox Content="Bacon" IsChecked="True" Name="cBacon"></CheckBox>
-            <CheckBox Content="Egg" IsChecked="True" Name="cEgg"></CheckBox>
-            <CheckBox Content="SausageLink" Name="cSausageLink" IsChecked="True"></CheckBox>
-            <CheckBox Content="HashBrowns" Name="cHashBrowns" IsChecked="True"></CheckBox>
-            <CheckBox Content="Pancake" Name="cPancake" IsChecked="True"></CheckBox>
-            <CheckBox Content="Broccoli" Name="cBroccoli" IsChecked="True"></CheckBox>
-            <CheckBox Content="Mushrooms" Name="cMushrooms" IsChecked="True"></CheckBox>
-            <CheckBox Content="Cheddar" Name="cCheddar" IsChecked="True"></CheckBox>
-            <CheckBox Content="Roll" Name="cRoll" IsChecked="True"></CheckBox>
-            <CheckBox Content="Onion" Name="cOnion" IsChecked="True"></CheckBox>
-            <CheckBox Content="Sirloin" Name="cSirloin" IsChecked="True"></CheckBox>
+            <CheckBox Content="Ketchup" Name="cKetchup" IsChecked="{Binding Path=Ketchup}" ></CheckBox>
+            <CheckBox Content="Bun" IsChecked="{Binding Path=Bun}" Name="cBun"></CheckBox>
+            <CheckBox Content="Mustard" IsChecked="{Binding Path=Mustard}" Name="cMustard"></CheckBox>
+            <CheckBox Content="Pickle" IsChecked="{Binding Path=Pickle}" Name="cPickle"></CheckBox>
+            <CheckBox Content="Cheese" IsChecked="{Binding Path=Cheese}" Name="cCheese"></CheckBox>
+            <CheckBox Content="Tomato" IsChecked="{Binding Path=Tomato}" Name="cTomato"></CheckBox>
+            <CheckBox Content="Lettuce" IsChecked="{Binding Path=Lettuce}" Name="cLettuce"></CheckBox>
+            <CheckBox Content="Mayo" IsChecked="{Binding Path=Mayo}" Name="cMayo"></CheckBox>
+            <CheckBox Content="Bacon" IsChecked="{Binding Path=Bacon}" Name="cBacon"></CheckBox>
+            <CheckBox Content="Egg" IsChecked="{Binding Path=Egg}" Name="cEgg"></CheckBox>
+            <CheckBox Content="SausageLink" Name="cSausageLink" IsChecked="{Binding Path=SausageLink}"></CheckBox>
+            <CheckBox Content="HashBrowns" Name="cHashBrowns" IsChecked="{Binding Path=HashBrowns}"></CheckBox>
+            <CheckBox Content="Pancake" Name="cPancake" IsChecked="{Binding Path=Pancake}"></CheckBox>
+            <CheckBox Content="Broccoli" Name="cBroccoli" IsChecked="{Binding Path=Broccoli}"></CheckBox>
+            <CheckBox Content="Mushrooms" Name="cMushrooms" IsChecked="{Binding Path=Mushrooms}"></CheckBox>
+            <CheckBox Content="Cheddar" Name="cCheddar" IsChecked="{Binding Path=Cheddar}"></CheckBox>
+            <CheckBox Content="Roll" Name="cRoll" IsChecked="{Binding Path=Roll}"></CheckBox>
+            <CheckBox Content="Onion" Name="cOnion" IsChecked="{Binding Path=Onion}"></CheckBox>
+            <CheckBox Content="Sirloin" Name="cSirloin" IsChecked="{Binding Path=Sirloin}"></CheckBox>
 
 
-            <CheckBox Content="Ice" IsChecked="True" Name="cIce"></CheckBox>
-            <CheckBox Content="RoomForCream" Name="cRoomForCream"></CheckBox>
-            <CheckBox Content="Decaf" Name="cDecaf"></CheckBox>
-            <CheckBox Content="Lemon" Name="cLemon"></CheckBox>
+            <CheckBox Content="Ice" IsChecked="{Binding Path=Ice}" Name="cIce"></CheckBox>
+            <CheckBox Content="RoomForCream"  IsChecked="{Binding Path=RoomForCream}" Name="cRoomForCream"></CheckBox>
+            <CheckBox Content="Decaf"  IsChecked="{Binding Path=Decaf}" Name="cDecaf"></CheckBox>
+            <CheckBox Content="Lemon"  IsChecked="{Binding Path=Lemon}" Name="cLemon"></CheckBox>
             <Button Background="LightYellow" Content="OK"  Name="cOK" FontSize="30" FontWeight="Bold" Click="ClickOK"/>
 
 
