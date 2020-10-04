@@ -3,12 +3,36 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:PointOfSale"
-        mc:Ignorable="d"
-        Title="Bleakwind Buffet Point of Sale" Background="Beige" TextBlock.TextAlignment="Center" Height="750" Width="1000">
-    <Grid>
+        xmlns:system="clr-namespace:System;assembly=mscorlib"
+        xmlns:data="clr-namespace:BleakwindBuffet.Data.Enums;assembly=Data"
         
+        xmlns:local="clr-namespace:PointOfSale"
+        
+        mc:Ignorable="d"
+        Title="Bleakwind Buffet Point of Sale" Background="Beige" TextBlock.TextAlignment="Center" Height="800" Width="1000">
+
+    <Window.Resources>
+        <ObjectDataProvider x:Key="SelectedSize" MethodName="GetValues" ObjectType="{x:Type system:Enum}">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="data:Size"></x:Type>
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+
+
+        <ObjectDataProvider x:Key="SelectedFlavor" MethodName="GetValues" ObjectType="{x:Type system:Enum}">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="data:SodaFlavor"></x:Type>
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+
+    </Window.Resources>
+    <Grid>
        
+        
+        
+        
+        
+
         <TextBlock Margin="344,13,394,555" Text="Customization" FontSize="20" FontWeight="Bold">
 
 
@@ -17,18 +41,15 @@
         <StackPanel Name="Customization" Background="LightSalmon" Orientation="Vertical" Margin="360,53,370,3">
             <StackPanel.Resources>
                 <Style TargetType="CheckBox">
-                    <Setter Property="FontSize" Value="16"></Setter>
+                    <Setter Property="FontSize" Value="14"></Setter>
                 </Style>
             </StackPanel.Resources>
-            <CheckBox Content="Small"  Click="clicksize" HorizontalAlignment="Left" Name="cSmall"></CheckBox>
-            <CheckBox Content="Medium" Click="clicksize" HorizontalAlignment="Left" Name="cMedium"></CheckBox>
-            <CheckBox Content="Large" Click="clicksize" HorizontalAlignment="Left" Name="cLarge"></CheckBox>
-            <CheckBox Content="Peach" Click="clickflavor" HorizontalAlignment="Left" Name="cPeach"></CheckBox>
-            <CheckBox Content="Blackberry" Click="clickflavor" Name="cBlackberry"></CheckBox>
-            <CheckBox Content="Lemon" Click="clickflavor"  HorizontalAlignment="Left" Name="cLemonflavor"></CheckBox>
-            <CheckBox Content="Watermelon" Click="clickflavor" HorizontalAlignment="Left" Name="cWatermelon"></CheckBox>
-            <CheckBox Content="Cherry" Click="clickflavor" HorizontalAlignment="Left" Name="cCherry"></CheckBox>
-            <CheckBox Content="Grapefruit" Click="clickflavor" HorizontalAlignment="Left" Name="cGrapef"></CheckBox>
+            
+            <ListBox Name="sizelist" Background="LightGoldenrodYellow" ItemsSource="{Binding Source={StaticResource SelectedSize}}" SelectedItem="{Binding Path=Size}"/>
+            <ListBox Name="flvaorlist" Background="LightGoldenrodYellow" ItemsSource="{Binding Source={StaticResource SelectedFlavor}}" SelectedItem="{Binding Path=Flavor}"/>
+
+
+
             <CheckBox Content="Ketchup" Name="cKetchup" IsChecked="{Binding Path=Ketchup}" ></CheckBox>
             <CheckBox Content="Bun" IsChecked="{Binding Path=Bun}" Name="cBun"></CheckBox>
             <CheckBox Content="Mustard" IsChecked="{Binding Path=Mustard}" Name="cMustard"></CheckBox>
@@ -60,8 +81,8 @@
 
 
         </StackPanel>
-        <StackPanel Name="menu" Background="LightBlue" Orientation="Vertical" Margin="10,41,684,-6">
-            <TextBlock FontSize="26" FontWeight="Bold">Entree:</TextBlock>
+        <StackPanel Name="menu" Background="LightBlue" Orientation="Vertical" Margin="10,26,684,0">
+            <TextBlock FontSize="20" FontWeight="Bold">Entree:</TextBlock>
             <Button Background="LightYellow" Content="Briarheart Burger" Click="ClickBriarheartBurger" FontSize="25" HorizontalAlignment="Left"  ></Button>
             <Button Background="LightYellow" Content="Double Draugr" FontSize="25" HorizontalAlignment="Left" Click="ClickDoubleDraugr"></Button>
             <Button Background="LightYellow" Content="Thalmor Triple" FontSize="25" HorizontalAlignment="Left" Click="ClickThalmorTriple" ></Button>
@@ -69,13 +90,13 @@
             <Button Background="LightYellow" Content="Philly Poacher" FontSize="25" HorizontalAlignment="Left" Click="ClickPhillyPoacher" ></Button>
             <Button Background="LightYellow" Content="Garden Orc Omelette" FontSize="25" HorizontalAlignment="Left" Click="ClickGardenOrcOmelette" ></Button>
             <Button Background="LightYellow" Content="Smokehouse Skeleton" FontSize="25" HorizontalAlignment="Left" Click="ClickSmokehouseSkeleton" ></Button>
-            <TextBlock FontSize="26" FontWeight="Bold">Drink:</TextBlock>
+            <TextBlock FontSize="20" FontWeight="Bold">Drink:</TextBlock>
             <Button Background="LightYellow" Content="Warrior Water" FontSize="25" HorizontalAlignment="Left" Click="ClickWater" ></Button>
             <Button Background="LightYellow" Content="Candlehearth Coffee" FontSize="25" HorizontalAlignment="Left" Click="ClickCoffee" ></Button>
             <Button Background="LightYellow" Content="Aretino Apple Juice" FontSize="25" HorizontalAlignment="Left" Click="ClickJuice" ></Button>
             <Button Background="LightYellow" Content="Markarth Milk" FontSize="25" HorizontalAlignment="Left" Click="ClickMilk" ></Button>
             <Button Content="Sailor's Soda" Background="LightYellow" FontSize="25" HorizontalAlignment="Left" Click="ClickSoda" ></Button>
-            <TextBlock FontSize="26" FontWeight="Bold">Side:</TextBlock>
+            <TextBlock FontSize="20" FontWeight="Bold">Side:</TextBlock>
             <Button Content="Vokun Salad" FontSize="25" Background="LightYellow" HorizontalAlignment="Left" Click="ClickSalad" ></Button>
             <Button Content="Fried Miraak" FontSize="25" Background="LightYellow" HorizontalAlignment="Left" Click="ClickMiraak" ></Button>
             <Button Content="Mad Otar Grits" FontSize="25" Background="LightYellow" HorizontalAlignment="Left" Click="ClickGrits" ></Button>
@@ -83,15 +104,15 @@
 
         </StackPanel>
 
-        <TextBox Name="orderlists" Margin="655,60,0,247" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible"/>
+        <TextBox Name="orderlists" Margin="650,38,5,256" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible"/>
 
 
-        <TextBox Name="orderprice" Margin="655,488,10,124" IsEnabled="False"></TextBox>
+        <TextBox Name="orderprice" Margin="655,535,10,133" IsEnabled="False"></TextBox>
 
-        <TextBlock HorizontalAlignment="Left" FontWeight="Bold" FontSize="20" Height="31" Margin="10,10,0,0" Text="Add to order" TextWrapping="Wrap" VerticalAlignment="Top" Width="293"/>
+        <TextBlock HorizontalAlignment="Left" FontWeight="Bold" FontSize="20" Height="31" Margin="10,0,0,0" Text="Add to order" TextWrapping="Wrap" VerticalAlignment="Top" Width="293"/>
         <TextBlock HorizontalAlignment="Left" FontWeight="Bold" FontSize="20" Height="22" Margin="761,13,0,0" Text="Order" TextWrapping="Wrap" VerticalAlignment="Top" Width="211" RenderTransformOrigin="2.863,0.398"/>
-        <Button Background="LightYellow" Margin="822,616,0,3" Content="Place Order" FontSize="20" FontWeight="Bold" Click="ClickPlace"></Button>
-        <Button Background="LightYellow" Margin="655,616,183,3" Content="Cancel Order" FontSize="20" FontWeight="Bold" RenderTransformOrigin="0.5,0.5" Click="ClickCancel">
+        <Button Background="LightYellow" Margin="822,652,0,36" Content="Place Order" FontSize="20" FontWeight="Bold" Click="ClickPlace"></Button>
+        <Button Background="LightYellow" Margin="655,652,183,36" Content="Cancel Order" FontSize="20" FontWeight="Bold" RenderTransformOrigin="0.5,0.5" Click="ClickCancel">
 
         </Button>
 

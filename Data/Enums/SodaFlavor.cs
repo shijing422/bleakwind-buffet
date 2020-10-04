@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 /*
  * Author: Shijing Zhang
  * Class name: SodaFlavor.cs

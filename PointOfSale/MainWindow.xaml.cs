@@ -37,11 +37,13 @@ namespace PointOfSale
         /// <value>
         /// string name from button
         /// </value>
-        string button;
+        
         /// <value>
         /// list<string> contains the order lists
         /// </value>
         List<string> lists = new List<string>();
+
+
         /// <summary>
         /// initialize
         /// </summary>
@@ -52,7 +54,7 @@ namespace PointOfSale
             Customization.Visibility = Visibility.Hidden;
         }
        
-        /// <summary>
+       /* /// <summary>
         /// check for sodaflavor click, if one sodaflavor clicked, disable others
         /// </summary>
         /// <param name="sender"></param>
@@ -153,13 +155,16 @@ namespace PointOfSale
                 cSmall.IsEnabled = true;
             }
 
-        }
+        }*/
+
+
+
         /// <summary>
         /// initialize Customization
         /// </summary>
         void initialize()
         {
-            cLemonflavor.IsEnabled = true;
+           /* cLemonflavor.IsEnabled = true;
             cCherry.IsEnabled = true;
             cGrapef.IsEnabled = true;
             cPeach.IsEnabled = true;
@@ -177,7 +182,7 @@ namespace PointOfSale
             cWatermelon.IsChecked = false;
             cPeach.IsChecked = false;
             cLemonflavor.IsChecked = false;
-            /*cBacon.IsChecked = true;
+            cBacon.IsChecked = true;
             cBroccoli.IsChecked = true;
             cBun.IsChecked = true;
             cCheddar.IsChecked = true;
@@ -207,15 +212,9 @@ namespace PointOfSale
         /// </summary>
         void hidden()
         {
-            cBlackberry.Visibility = Visibility.Hidden;
-            cSmall.Visibility = Visibility.Hidden;
-            cMedium.Visibility = Visibility.Hidden;
-            cLarge.Visibility = Visibility.Hidden;
-            cCherry.Visibility = Visibility.Hidden;
-            cGrapef.Visibility = Visibility.Hidden;
-            cWatermelon.Visibility = Visibility.Hidden;
-            cPeach.Visibility = Visibility.Hidden;
-            cLemonflavor.Visibility = Visibility.Hidden;
+            sizelist.Visibility = Visibility.Hidden;
+            flvaorlist.Visibility = Visibility.Hidden;
+           
             cBacon.Visibility = Visibility.Hidden;
             cBroccoli.Visibility = Visibility.Hidden;
             cBun.Visibility = Visibility.Hidden;
@@ -256,7 +255,7 @@ namespace PointOfSale
             orderlists.Text = string.Join("\n", lists);
             string tp = "Subtotal: $" + total.ToString() + "\n" + "Tax:$" + Math.Round((0.09*total),4).ToString() + "\n" + "Total:$" + Math.Round((1.09*total),4).ToString();
             orderprice.Text = tp;
-            button = "BriarheartBurger";
+            
             hidden();
             cBun.Visibility = Visibility.Visible;
             cKetchup.Visibility = Visibility.Visible;
@@ -275,7 +274,7 @@ namespace PointOfSale
         /// <param name="e"></param>
         void ClickDoubleDraugr(object sender, RoutedEventArgs e)
         {
-            button = "DoubleDraugr";
+            
             menu.Visibility = Visibility.Hidden;
             Customization.Visibility = Visibility.Visible;
             DoubleDraugr a = new DoubleDraugr();
@@ -304,7 +303,7 @@ namespace PointOfSale
         /// <param name="e"></param>
         void ClickThalmorTriple(object sender, RoutedEventArgs e)
         {
-            button = "ThalmorTriple";
+        
             menu.Visibility = Visibility.Hidden;
             Customization.Visibility = Visibility.Visible;
 
@@ -335,7 +334,7 @@ namespace PointOfSale
         /// <param name="e"></param>
         void ClickSmokehouseSkeleton(object sender, RoutedEventArgs e)
         {
-            button = "SmokehouseSkeleton";
+            
             menu.Visibility = Visibility.Hidden;
             Customization.Visibility = Visibility.Visible;
 
@@ -363,7 +362,7 @@ namespace PointOfSale
         /// <param name="e"></param>
         void ClickGardenOrcOmelette(object sender, RoutedEventArgs e)
         {
-            button = "GardenOrcOmelette";
+          
             menu.Visibility = Visibility.Hidden;
             Customization.Visibility = Visibility.Visible;
 
@@ -389,8 +388,6 @@ namespace PointOfSale
         /// <param name="e"></param>
         void ClickThugsTBone(object sender, RoutedEventArgs e)
         {
-            button = "ThugsTBone";
-            
             ThugsTBone a = new ThugsTBone();
             total += a.Price;
             lists.Add(a.ToString());
@@ -408,7 +405,7 @@ namespace PointOfSale
         /// <param name="e"></param>
         void ClickPhillyPoacher(object sender, RoutedEventArgs e)
         {
-            button = "PhillyPoacher";
+            
             menu.Visibility = Visibility.Hidden;
             Customization.Visibility = Visibility.Visible;
             PhillyPoacher a = new PhillyPoacher();
@@ -445,223 +442,123 @@ namespace PointOfSale
         {
             menu.Visibility = Visibility.Visible;
             Customization.Visibility = Visibility.Hidden;
-            if(string.Equals(button, "BriarheartBurger"))
+
+            if(DataContext is BriarheartBurger bb)
             {
+                var result = lists.Concat(bb.SpecialInstructions);
+                lists = result.ToList();
+                orderlists.Text = string.Join("\n", lists);
+                initialize();
+            }
 
 
-                BriarheartBurger a = new BriarheartBurger();
-                
-                if (cBun.IsChecked == false)
-                {
-                    a.Bun = false;
-                    
-                }
-                if (cKetchup.IsChecked == false)
-                {
-                    a.Ketchup = false;
-                    
-
-                }
-                if(cMustard.IsChecked == false) a.Mustard = false;
-                if (cPickle.IsChecked == false) a.Pickle = false;
-                if (cCheese.IsChecked == false) a.Cheese = false;
+            if(DataContext is DoubleDraugr dd){
                 
 
+                var result = lists.Concat(dd.SpecialInstructions);
+                lists = result.ToList();
+                orderlists.Text = string.Join("\n", lists);
+                initialize();
+            }
+            if (DataContext is ThalmorTriple tt)
+            {
+              
+                var result = lists.Concat(tt.SpecialInstructions);
+                lists = result.ToList();
+                orderlists.Text = string.Join("\n", lists);
+                initialize();
+            }
+            if (DataContext is SmokehouseSkeleton ss)
+            {
+                
+                var result = lists.Concat(ss.SpecialInstructions);
+                lists = result.ToList();
+                orderlists.Text = string.Join("\n", lists);
+                initialize();
+            }
+            if (DataContext is  GardenOrcOmelette goo)
+            {
+                
+                var result = lists.Concat(goo.SpecialInstructions);
+                lists = result.ToList();
+                orderlists.Text = string.Join("\n", lists);
+
+                initialize();
+            }
+            if (DataContext is PhillyPoacher pp)
+            {
                
+                var result = lists.Concat(pp.SpecialInstructions);
+                lists = result.ToList();
+                orderlists.Text = string.Join("\n", lists);
+                initialize();
+
+            }
+            if (DataContext is  WarriorWater ww)
+            {
+                
+         
+      
+                total += ww.Price;
+                lists.Add(ww.ToString());
+                var result = lists.Concat(ww.SpecialInstructions);
+                lists = result.ToList();
+                orderlists.Text = string.Join("\n", lists);
+                string tp = "Subtotal: $" + total.ToString() + "\n" + "Tax:$" + Math.Round((0.09*total),4).ToString() + "\n" + "Total:$" + Math.Round((1.09*total),4).ToString();
+                orderprice.Text = tp;
+                initialize();
+
+            }
+            if (DataContext is CandlehearthCoffee cc)
+            {
+                
                
-  
-                var result = lists.Concat(a.SpecialInstructions);
+           
+                total += cc.Price;
+                lists.Add(cc.ToString());
+                var result = lists.Concat(cc.SpecialInstructions);
                 lists = result.ToList();
                 orderlists.Text = string.Join("\n", lists);
-                initialize();
-
-            }
-
-            if(string.Equals(button, "DoubleDraugr")){
-                DoubleDraugr a = new DoubleDraugr();
-                if (cBun.IsChecked == false)
-                {
-                    a.Bun = false;
-                }
-                if (cKetchup.IsChecked == false)
-                {
-                    a.Ketchup = false;
-
-                }
-                if (cMustard.IsChecked == false) a.Mustard = false;
-                if (cPickle.IsChecked == false) a.Pickle = false;
-                if (cCheese.IsChecked == false) a.Cheese = false;
-                if (cTomato.IsChecked == false) a.Tomato = false;
-                if (cLettuce.IsChecked == false) a.Lettuce = false;
-                if (cMayo.IsChecked == false) a.Mayo = false;
-
-                var result = lists.Concat(a.SpecialInstructions);
-                lists = result.ToList();
-                orderlists.Text = string.Join("\n", lists);
+                string tp = "Subtotal: $" + total.ToString() + "\n" + "Tax:$" + Math.Round((0.09*total),4).ToString() + "\n" + "Total:$" + Math.Round((1.09*total),4).ToString();
+                orderprice.Text = tp;
                 initialize();
             }
-            if (string.Equals(button, "ThalmorTriple"))
+            if (DataContext is SailorSoda soda)
             {
-                ThalmorTriple a = new ThalmorTriple();
-                if (cBun.IsChecked == false)
-                {
-                    a.Bun = false;
-                }
-                if (cKetchup.IsChecked == false)
-                {
-                    a.Ketchup = false;
-
-                }
-                if (cBacon.IsChecked == false) a.Bacon = false;
-                if (cEgg.IsChecked == false) a.Egg = false;
-                if (cMustard.IsChecked == false) a.Mustard = false;
-                if (cPickle.IsChecked == false) a.Pickle = false;
-                if (cCheese.IsChecked == false) a.Cheese = false;
-                if (cTomato.IsChecked == false) a.Tomato = false;
-                if (cLettuce.IsChecked == false) a.Lettuce = false;
-                if (cMayo.IsChecked == false) a.Mayo = false;
-                var result = lists.Concat(a.SpecialInstructions);
-                lists = result.ToList();
-                orderlists.Text = string.Join("\n", lists);
-                initialize();
-            }
-            if (string.Equals(button, "SmokehouseSkeleton"))
-            {
-                SmokehouseSkeleton a = new SmokehouseSkeleton();
-                if (cSausageLink.IsChecked == false) a.SausageLink = false;
-                if (cPancake.IsChecked == false) a.Pancake = false;
-                if (cHashBrowns.IsChecked == false) a.HashBrowns = false;
-                if (cEgg.IsChecked == false) a.Egg = false;
-                var result = lists.Concat(a.SpecialInstructions);
-                lists = result.ToList();
-                orderlists.Text = string.Join("\n", lists);
-                initialize();
-            }
-            if (string.Equals(button, "GardenOrcOmelette"))
-            {
-                GardenOrcOmelette a = new GardenOrcOmelette();
-                if (cBroccoli.IsChecked == false) a.Broccoli = false;
-                if (cCheddar.IsChecked == false) a.Cheddar = false;
-                if (cMushrooms.IsChecked == false) a.Mushrooms = false;
-                if (cTomato.IsChecked == false) a.Tomato = false;
-                var result = lists.Concat(a.SpecialInstructions);
-                lists = result.ToList();
-                orderlists.Text = string.Join("\n", lists);
-
-                initialize();
-            }
-            if (string.Equals(button, "PhillyPoacher"))
-            {
-                PhillyPoacher a = new PhillyPoacher();
                 
-                if (cOnion.IsChecked == false) a.Onion = false;
-                if (cSirloin.IsChecked == false) a.Sirloin = false;
-                if (cRoll.IsChecked == false) a.Roll = false;
-                var result = lists.Concat(a.SpecialInstructions);
-                lists = result.ToList();
-                orderlists.Text = string.Join("\n", lists);
-                initialize();
-
-            }
-            if (string.Equals(button, "WarriorWater"))
-            {
-                WarriorWater a = new WarriorWater();
-                if (cMedium.IsChecked == true)
+                /*if (cMedium.IsChecked == true)
                 {
-                    a.Size = Size.Medium;
+                    soda.Size = Size.Medium;
                 }
                 if (cLarge.IsChecked == true)
                 {
-                    a.Size = Size.Large;
+                    soda.Size = Size.Large;
 
                 }
-                if (cIce.IsChecked == false)
-                {
-                    a.Ice = false;
-                }
-                if (cLemon.IsChecked == true)
-                {
-                    a.Lemon = true;
-                }
-                total += a.Price;
-                lists.Add(a.ToString());
-                var result = lists.Concat(a.SpecialInstructions);
-                lists = result.ToList();
-                orderlists.Text = string.Join("\n", lists);
-                string tp = "Subtotal: $" + total.ToString() + "\n" + "Tax:$" + Math.Round((0.09*total),4).ToString() + "\n" + "Total:$" + Math.Round((1.09*total),4).ToString();
-                orderprice.Text = tp;
-                initialize();
-
-            }
-            if (string.Equals(button, "CandlehearthCoffee"))
-            {
-                CandlehearthCoffee a = new CandlehearthCoffee();
-                if (cMedium.IsChecked == true)
-                {
-                    a.Size = Size.Medium;
-                }
-                if (cLarge.IsChecked == true)
-                {
-                    a.Size = Size.Large;
-
-                }
-                if (cIce.IsChecked == true) a.Ice = true;
-                if (cRoomForCream.IsChecked == true) a.RoomForCream = true;
-                if (cDecaf.IsChecked == true) a.Decaf = true;
-                total += a.Price;
-                lists.Add(a.ToString());
-                var result = lists.Concat(a.SpecialInstructions);
-                lists = result.ToList();
-                orderlists.Text = string.Join("\n", lists);
-                string tp = "Subtotal: $" + total.ToString() + "\n" + "Tax:$" + Math.Round((0.09*total),4).ToString() + "\n" + "Total:$" + Math.Round((1.09*total),4).ToString();
-                orderprice.Text = tp;
-                initialize();
-            }
-            if (string.Equals(button, "SailorSoda"))
-            {
-                SailorSoda a = new SailorSoda();
-                if (cMedium.IsChecked == true)
-                {
-                    a.Size = Size.Medium;
-                }
-                if (cLarge.IsChecked == true)
-                {
-                    a.Size = Size.Large;
-
-                }
-                if (cIce.IsChecked == false) a.Ice = false;
-                if (cBlackberry.IsChecked == true) a.Flavor = SodaFlavor.Blackberry;
-                if (cGrapef.IsChecked == true) a.Flavor = SodaFlavor.Grapefruit;
-                if (cWatermelon.IsChecked == true) a.Flavor = SodaFlavor.Watermelon;
-                if (cPeach.IsChecked == true) a.Flavor = SodaFlavor.Peach;
-                if (cLemonflavor.IsChecked == true) a.Flavor = SodaFlavor.Lemon;
-
-                total += a.Price;
-                lists.Add(a.ToString());
-                var result = lists.Concat(a.SpecialInstructions);
-                lists = result.ToList();
-                orderlists.Text = string.Join("\n", lists);
-                string tp = "Subtotal: $" + total.ToString() + "\n" + "Tax:$" + Math.Round((0.09*total),4).ToString() + "\n" + "Total:$" + Math.Round((1.09*total),4).ToString();
-                orderprice.Text = tp;
-                initialize();
-            }
-            if (string.Equals(button, "MarkarthMilk"))
-            {
-                MarkarthMilk a = new MarkarthMilk();
-                if (cMedium.IsChecked == true)
-                {
-                    a.Size = Size.Medium;
-                }
-                if (cLarge.IsChecked == true)
-                {
-                    a.Size = Size.Large;
-
-                }
-                if (cIce.IsChecked == true) a.Ice = true;
                 
-                total += a.Price;
-                lists.Add(a.ToString());
-                var result = lists.Concat(a.SpecialInstructions);
+                if (cBlackberry.IsChecked == true) soda.Flavor = SodaFlavor.Blackberry;
+                if (cGrapef.IsChecked == true) soda.Flavor = SodaFlavor.Grapefruit;
+                if (cWatermelon.IsChecked == true) soda.Flavor = SodaFlavor.Watermelon;
+                if (cPeach.IsChecked == true) soda.Flavor = SodaFlavor.Peach;
+                if (cLemonflavor.IsChecked == true) soda.Flavor = SodaFlavor.Lemon;
+                */
+                total += soda.Price;
+                lists.Add(soda.ToString());
+                var result = lists.Concat(soda.SpecialInstructions);
+                lists = result.ToList();
+                orderlists.Text = string.Join("\n", lists);
+                string tp = "Subtotal: $" + total.ToString() + "\n" + "Tax:$" + Math.Round((0.09*total),4).ToString() + "\n" + "Total:$" + Math.Round((1.09*total),4).ToString();
+                orderprice.Text = tp;
+                initialize();
+            }
+            if (DataContext is MarkarthMilk mm)
+            {
+           
+              
+                
+                total += mm.Price;
+                lists.Add(mm.ToString());
+                var result = lists.Concat(mm.SpecialInstructions);
                 lists = result.ToList();
                 orderlists.Text = string.Join("\n", lists);
                 string tp = "Subtotal: $" + total.ToString() + "\n" + "Tax:$" + Math.Round((0.09*total),4).ToString() + "\n" + "Total:$" + Math.Round((1.09*total),4).ToString();
@@ -669,42 +566,26 @@ namespace PointOfSale
                 initialize();
             }
 
-            if (string.Equals(button, "AretinoAppleJuice"))
+            if (DataContext is AretinoAppleJuice aa)
             {
-                AretinoAppleJuice a = new AretinoAppleJuice();
-                if (cMedium.IsChecked == true)
-                {
-                    a.Size = Size.Medium;
-                }
-                if (cLarge.IsChecked == true)
-                {
-                    a.Size = Size.Large;
+                
+      
+               
 
-                }
-                if (cIce.IsChecked == true) a.Ice = true;
-
-                total += a.Price;
-                lists.Add(a.ToString());
-                var result = lists.Concat(a.SpecialInstructions);
+                total += aa.Price;
+                lists.Add(aa.ToString());
+                var result = lists.Concat(aa.SpecialInstructions);
                 lists = result.ToList();
                 orderlists.Text = string.Join("\n", lists);
                 string tp = "Subtotal: $" + total.ToString() + "\n" + "Tax:$" + Math.Round((0.09*total),4).ToString() + "\n" + "Total:$" + Math.Round((1.09*total),4).ToString();
                 orderprice.Text = tp;
                 initialize();
             }
-            if (string.Equals(button, "VokunSalad"))
+            if (DataContext is VokunSalad a)
             {
-                VokunSalad a = new VokunSalad();
+               
 
-                if (cMedium.IsChecked == true)
-                {
-                    a.Size = Size.Medium;
-                }
-                if (cLarge.IsChecked == true)
-                {
-                    a.Size = Size.Large;
-
-                }
+         
                 
 
                 total += a.Price;
@@ -716,72 +597,45 @@ namespace PointOfSale
                 orderprice.Text = tp;
                 initialize();
             }
-            if (string.Equals(button, "FriedMiraak"))
+            if (DataContext is  FriedMiraak f)
             {
-                FriedMiraak a = new FriedMiraak();
 
-                if (cMedium.IsChecked == true)
-                {
-                    a.Size = Size.Medium;
-                }
-                if (cLarge.IsChecked == true)
-                {
-                    a.Size = Size.Large;
+        
 
-                }
-
-
-                total += a.Price;
-                lists.Add(a.ToString());
-                var result = lists.Concat(a.SpecialInstructions);
+                total += f.Price;
+                lists.Add(f.ToString());
+                var result = lists.Concat(f.SpecialInstructions);
                 lists = result.ToList();
                 orderlists.Text = string.Join("\n", lists);
                 string tp = "Subtotal: $" + total.ToString() + "\n" + "Tax:$" + Math.Round((0.09*total),4).ToString() + "\n" + "Total:$" + Math.Round((1.09*total),4).ToString();
                 orderprice.Text = tp;
                 initialize();
             }
-            if (string.Equals(button, "DragonbornWaffleFries"))
+            if (DataContext is DragonbornWaffleFries d)
             {
-                DragonbornWaffleFries a = new DragonbornWaffleFries();
-
-                if (cMedium.IsChecked == true)
-                {
-                    a.Size = Size.Medium;
-                }
-                if (cLarge.IsChecked == true)
-                {
-                    a.Size = Size.Large;
-
-                }
+             
 
 
-                total += a.Price;
-                lists.Add(a.ToString());
-                var result = lists.Concat(a.SpecialInstructions);
+
+                total += d.Price;
+                lists.Add(d.ToString());
+                var result = lists.Concat(d.SpecialInstructions);
                 lists = result.ToList();
                 orderlists.Text = string.Join("\n", lists);
                 string tp = "Subtotal: $" + total.ToString() + "\n" + "Tax:$" + Math.Round((0.09*total),4).ToString() + "\n" + "Total:$" + Math.Round((1.09*total),4).ToString();
                 orderprice.Text = tp;
                 initialize();
             }
-            if (string.Equals(button, "MadOtarGrits"))
+            if (DataContext is MadOtarGrits m)
             {
-                MadOtarGrits a = new MadOtarGrits();
+               
 
-                if (cMedium.IsChecked == true)
-                {
-                    a.Size = Size.Medium;
-                }
-                if (cLarge.IsChecked == true)
-                {
-                    a.Size = Size.Large;
-
-                }
+       
 
 
-                total += a.Price;
-                lists.Add(a.ToString());
-                var result = lists.Concat(a.SpecialInstructions);
+                total += m.Price;
+                lists.Add(m.ToString());
+                var result = lists.Concat(m.SpecialInstructions);
                 lists = result.ToList();
                 orderlists.Text = string.Join("\n", lists);
                 string tp = "Subtotal: $" + total.ToString() + "\n" + "Tax:$" + Math.Round((0.09*total),4).ToString() + "\n" + "Total:$" + Math.Round((1.09*total),4).ToString();
@@ -801,13 +655,9 @@ namespace PointOfSale
             menu.Visibility = Visibility.Hidden;
             Customization.Visibility = Visibility.Visible;
             hidden();
-            cSmall.Visibility = Visibility.Visible;
-            cMedium.Visibility = Visibility.Visible;
-            cLarge.Visibility = Visibility.Visible;
+            sizelist.Visibility = Visibility.Visible;
             cIce.Visibility = Visibility.Visible;
             cLemon.Visibility = Visibility.Visible;
-
-            button = "WarriorWater";
 
             this.DataContext = new WarriorWater();
 
@@ -822,17 +672,11 @@ namespace PointOfSale
             menu.Visibility = Visibility.Hidden;
             Customization.Visibility = Visibility.Visible;
             hidden();
-            cSmall.Visibility = Visibility.Visible;
-            cMedium.Visibility = Visibility.Visible;
-            cLarge.Visibility = Visibility.Visible;
+            flvaorlist.Visibility = Visibility.Visible;
+            sizelist.Visibility = Visibility.Visible;
             cIce.Visibility = Visibility.Visible;
-            cCherry.Visibility = Visibility.Visible;
-            cBlackberry.Visibility = Visibility.Visible;
-            cGrapef.Visibility = Visibility.Visible;
-            cWatermelon.Visibility = Visibility.Visible;
-            cPeach.Visibility = Visibility.Visible;
-            cLemonflavor.Visibility = Visibility.Visible;
-            button = "SailorSoda";
+           
+           
 
             this.DataContext = new SailorSoda();
         }
@@ -846,10 +690,8 @@ namespace PointOfSale
             menu.Visibility = Visibility.Hidden;
             Customization.Visibility = Visibility.Visible;
             hidden();
-            cSmall.Visibility = Visibility.Visible;
-            cMedium.Visibility = Visibility.Visible;
-            cLarge.Visibility = Visibility.Visible;
-            button = "CandlehearthCoffee";
+            sizelist.Visibility = Visibility.Visible;
+
             cIce.Visibility = Visibility.Visible;
             cDecaf.Visibility = Visibility.Visible;
             cIce.IsChecked = false;
@@ -867,10 +709,8 @@ namespace PointOfSale
             menu.Visibility = Visibility.Hidden;
             Customization.Visibility = Visibility.Visible;
             hidden();
-            cSmall.Visibility = Visibility.Visible;
-            cMedium.Visibility = Visibility.Visible;
-            cLarge.Visibility = Visibility.Visible;
-            button = "MarkarthMilk";
+            sizelist.Visibility = Visibility.Visible;
+
             cIce.Visibility = Visibility.Visible;
             cIce.IsChecked = false;
             this.DataContext = new MarkarthMilk();
@@ -886,10 +726,10 @@ namespace PointOfSale
             menu.Visibility = Visibility.Hidden;
             Customization.Visibility = Visibility.Visible;
             hidden();
-            cSmall.Visibility = Visibility.Visible;
-            cMedium.Visibility = Visibility.Visible;
-            cLarge.Visibility = Visibility.Visible;
-            button = "VokunSalad";
+            sizelist.Visibility = Visibility.Visible;
+
+            this.DataContext = new VokunSalad();
+
 
         }
         /// <summary>
@@ -902,10 +742,10 @@ namespace PointOfSale
             menu.Visibility = Visibility.Hidden;
             Customization.Visibility = Visibility.Visible;
             hidden();
-            cSmall.Visibility = Visibility.Visible;
-            cMedium.Visibility = Visibility.Visible;
-            cLarge.Visibility = Visibility.Visible;
-            button = "FriedMiraak";
+            sizelist.Visibility = Visibility.Visible;
+
+
+            this.DataContext = new FriedMiraak();
         }
         /// <summary>
         /// DragonbornWaffleFries
@@ -917,10 +757,10 @@ namespace PointOfSale
             menu.Visibility = Visibility.Hidden;
             Customization.Visibility = Visibility.Visible;
             hidden();
-            cSmall.Visibility = Visibility.Visible;
-            cMedium.Visibility = Visibility.Visible;
-            cLarge.Visibility = Visibility.Visible;
-            button = "DragonbornWaffleFries";
+            sizelist.Visibility = Visibility.Visible;
+
+
+            this.DataContext = new DragonbornWaffleFries();
         }
         /// <summary>
         /// click MadOtarGrits button
@@ -932,10 +772,10 @@ namespace PointOfSale
             menu.Visibility = Visibility.Hidden;
             Customization.Visibility = Visibility.Visible;
             hidden();
-            cSmall.Visibility = Visibility.Visible;
-            cMedium.Visibility = Visibility.Visible;
-            cLarge.Visibility = Visibility.Visible;
-            button = "MadOtarGrits";
+            sizelist.Visibility = Visibility.Visible;
+
+            this.DataContext = new MadOtarGrits();
+
         }
         /// <summary>
         /// click AretinoAppleJuice button
@@ -947,12 +787,12 @@ namespace PointOfSale
             menu.Visibility = Visibility.Hidden;
             Customization.Visibility = Visibility.Visible;
             hidden();
-            cSmall.Visibility = Visibility.Visible;
-            cMedium.Visibility = Visibility.Visible;
-            cLarge.Visibility = Visibility.Visible;
+            sizelist.Visibility = Visibility.Visible;
             cIce.Visibility = Visibility.Visible;
             cIce.IsChecked = false;
-            button = "AretinoAppleJuice";
+           
+
+            this.DataContext = new AretinoAppleJuice();
 
         }
 
