@@ -9,7 +9,7 @@
         xmlns:local="clr-namespace:PointOfSale"
         
         mc:Ignorable="d"
-        Title="Bleakwind Buffet Point of Sale" Background="Beige" TextBlock.TextAlignment="Center" Height="800" Width="1000">
+        Title="Bleakwind Buffet Point of Sale" Background="Beige" TextBlock.TextAlignment="Center" Height="750" Width="1000">
 
     <Window.Resources>
         <ObjectDataProvider x:Key="SelectedSize" MethodName="GetValues" ObjectType="{x:Type system:Enum}">
@@ -75,7 +75,7 @@
             <CheckBox Content="RoomForCream"  IsChecked="{Binding Path=RoomForCream}" Name="cRoomForCream"></CheckBox>
             <CheckBox Content="Decaf"  IsChecked="{Binding Path=Decaf}" Name="cDecaf"></CheckBox>
             <CheckBox Content="Lemon"  IsChecked="{Binding Path=Lemon}" Name="cLemon"></CheckBox>
-            <Button Background="LightYellow" Content="OK"  Name="cOK" FontSize="30" FontWeight="Bold" Click="ClickOK"/>
+            <Button Background="LightYellow" Content="OK"  Name="cOK" FontSize="30" FontWeight="Bold" Click="ClickOK" Height="57"/>
 
 
 
@@ -107,12 +107,12 @@
         <TextBox Name="orderlists" Margin="650,38,5,256" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible"/>
 
 
-        <TextBox Name="orderprice" Margin="655,535,10,133" IsEnabled="False"></TextBox>
+        <TextBox Name="orderprice" Margin="650,498,15,125" IsEnabled="False"></TextBox>
 
         <TextBlock HorizontalAlignment="Left" FontWeight="Bold" FontSize="20" Height="31" Margin="10,0,0,0" Text="Add to order" TextWrapping="Wrap" VerticalAlignment="Top" Width="293"/>
         <TextBlock HorizontalAlignment="Left" FontWeight="Bold" FontSize="20" Height="22" Margin="761,13,0,0" Text="Order" TextWrapping="Wrap" VerticalAlignment="Top" Width="211" RenderTransformOrigin="2.863,0.398"/>
-        <Button Background="LightYellow" Margin="822,657,0,31" Content="Place Order" FontSize="20" FontWeight="Bold" Click="ClickPlace"></Button>
-        <Button Background="LightYellow" Margin="655,657,183,31" Content="Cancel Order" FontSize="20" FontWeight="Bold" RenderTransformOrigin="0.5,0.5" Click="ClickCancel">
+        <Button Background="LightYellow" Margin="818,633,4,34" Content="Place Order" FontSize="20" FontWeight="Bold" Click="ClickPlace"></Button>
+        <Button Background="LightYellow" Margin="655,634,183,34" Content="Cancel Order" FontSize="20" FontWeight="Bold" RenderTransformOrigin="0.5,0.5" Click="ClickCancel">
 
         </Button>
 
