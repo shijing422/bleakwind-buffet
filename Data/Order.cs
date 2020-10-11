@@ -12,12 +12,15 @@ using System.Collections;
 using System.Linq;
 /*
 * Author: Shijing Zhang
-* Class name: Combo.cs
+* Class name: Order.cs
 * Purpose: Class used to represent the order
 */
 
 namespace BleakwindBuffet.Data
 {
+    /// <summary>
+    /// clasee represent Order
+    /// </summary>
     public class Order : ICollection<IOrderItem>, INotifyPropertyChanged, INotifyCollectionChanged
     {
         IEnumerator IEnumerable.GetEnumerator()
@@ -27,6 +30,8 @@ namespace BleakwindBuffet.Data
         public void Clear()
         {
             lists.Clear();
+        
+
         }
         public int Count
         {
@@ -73,12 +78,22 @@ namespace BleakwindBuffet.Data
 
 
 
-
+        /// <summary>
+        /// PropertyChanged event
+        /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
+        /// <summary>
+        /// CollectionChanged event
+        /// </summary>
         public event NotifyCollectionChangedEventHandler CollectionChanged;
         private List<IOrderItem> lists;
+        /// <value>
+        /// The Sale Tax Rate for the order
+        /// </value>
         public double SalesTaxRate { get; set; } = 0.12;
-        
+        /// <value>
+        /// The Subtotal for the order
+        /// </value>
         public double Subtotal
         {
             get
@@ -92,7 +107,9 @@ namespace BleakwindBuffet.Data
             }
           
         }
-
+        /// <value>
+        /// The Tax for the order
+        /// </value>
         public double Tax
         {
             get
@@ -102,7 +119,9 @@ namespace BleakwindBuffet.Data
             }
 
         }
-
+        /// <value>
+        /// The Total for the order
+        /// </value>
         public double Total
         {
             get
@@ -113,7 +132,9 @@ namespace BleakwindBuffet.Data
 
         }
 
-
+        /// <value>
+        /// The total Calories for the order
+        /// </value>
         public uint Calories
         {
             get
@@ -128,7 +149,9 @@ namespace BleakwindBuffet.Data
             }
 
         }
-
+        /// <value>
+        /// The unique number for the order
+        /// </value>
         public int Number { get; }
 
         private static int nextOrderNumber = 1;
@@ -142,8 +165,11 @@ namespace BleakwindBuffet.Data
 
         }
 
-        
 
+        /// <summary>
+        /// Add IOrderItem to the Order
+        /// </summary>
+        /// <param name="item">IOrderItem add to the order</param>
         public void Add(IOrderItem item)
         {
             lists.Add(item);
@@ -151,10 +177,13 @@ namespace BleakwindBuffet.Data
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Total"));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Tax"));
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtoal"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
             CollectionChanged?.Invoke(this, new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Add));
         }
-
+        /// <summary>
+        /// Remove IOrderItem to the Order
+        /// </summary>
+        /// <param name="item">IOrderItem remove to the order</param>
         public bool Remove(IOrderItem item)
         {
             bool result = false;

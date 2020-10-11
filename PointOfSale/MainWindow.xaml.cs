@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Drinks;
 using BleakwindBuffet.Data.Entrees;
 using BleakwindBuffet.Data.Sides;
@@ -29,133 +30,124 @@ namespace PointOfSale
     /// </summary>
     public partial class MainWindow : Window
     {
-        
-        /// <value>
-        /// the total price for the order
-        /// </value>
-        double total = 0;
-        /// <value>
-        /// string name from button
-        /// </value>
-        
-        /// <value>
-        /// list<string> contains the order lists
-        /// </value>
-        List<string> lists = new List<string>();
 
 
+
+
+
+        Order Orders = new Order();
         /// <summary>
         /// initialize
         /// </summary>
         public MainWindow()
         {
             InitializeComponent();
-          
+
             Customization.Visibility = Visibility.Hidden;
         }
-       
-       /* /// <summary>
-        /// check for sodaflavor click, if one sodaflavor clicked, disable others
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        void clickflavor(object sender, RoutedEventArgs e)
-        {
-            if (cCherry.IsChecked == true)
-            {
-                cBlackberry.IsEnabled = false;
-                cGrapef.IsEnabled = false;
-                cPeach.IsEnabled = false;
-                cWatermelon.IsEnabled = false;
-                cLemonflavor.IsEnabled = false;
-            }
-            else if (cBlackberry.IsChecked == true)
-            {
-                cCherry.IsEnabled = false;
-                cGrapef.IsEnabled = false;
-                cPeach.IsEnabled = false;
-                cWatermelon.IsEnabled = false;
-                cLemonflavor.IsEnabled = false;
 
-            }
-            else if (cGrapef.IsChecked == true)
-            {
-                cCherry.IsEnabled = false;
-                cBlackberry.IsEnabled = false;
-                cPeach.IsEnabled = false;
-                cWatermelon.IsEnabled = false;
-                cLemonflavor.IsEnabled = false;
+        /* /// <summary>
+         /// check for sodaflavor click, if one sodaflavor clicked, disable others
+         /// </summary>
+         /// <param name="sender"></param>
+         /// <param name="e"></param>
+         void clickflavor(object sender, RoutedEventArgs e)
+         {
+             if (cCherry.IsChecked == true)
+             {
+                 cBlackberry.IsEnabled = false;
+                 cGrapef.IsEnabled = false;
+                 cPeach.IsEnabled = false;
+                 cWatermelon.IsEnabled = false;
+                 cLemonflavor.IsEnabled = false;
+             }
+             else if (cBlackberry.IsChecked == true)
+             {
+                 cCherry.IsEnabled = false;
+                 cGrapef.IsEnabled = false;
+                 cPeach.IsEnabled = false;
+                 cWatermelon.IsEnabled = false;
+                 cLemonflavor.IsEnabled = false;
 
-            }
-            else if (cPeach.IsChecked == true)
-            {
-                cCherry.IsEnabled = false;
-                cGrapef.IsEnabled = false;
-                cBlackberry.IsEnabled = false;
-                cWatermelon.IsEnabled = false;
-                cLemonflavor.IsEnabled = false;
+             }
+             else if (cGrapef.IsChecked == true)
+             {
+                 cCherry.IsEnabled = false;
+                 cBlackberry.IsEnabled = false;
+                 cPeach.IsEnabled = false;
+                 cWatermelon.IsEnabled = false;
+                 cLemonflavor.IsEnabled = false;
 
-            }
-            else if(cWatermelon.IsChecked == true)
-            {
-                cCherry.IsEnabled = false;
-                cGrapef.IsEnabled = false;
-                cPeach.IsEnabled = false;
-                cBlackberry.IsEnabled = false;
-                cLemonflavor.IsEnabled = false;
+             }
+             else if (cPeach.IsChecked == true)
+             {
+                 cCherry.IsEnabled = false;
+                 cGrapef.IsEnabled = false;
+                 cBlackberry.IsEnabled = false;
+                 cWatermelon.IsEnabled = false;
+                 cLemonflavor.IsEnabled = false;
 
-            }
-            else if (cLemonflavor.IsChecked == true)
-            {
-                cCherry.IsEnabled = false;
-                cGrapef.IsEnabled = false;
-                cPeach.IsEnabled = false;
-                cWatermelon.IsEnabled = false;
-                cBlackberry.IsEnabled = false;
+             }
+             else if(cWatermelon.IsChecked == true)
+             {
+                 cCherry.IsEnabled = false;
+                 cGrapef.IsEnabled = false;
+                 cPeach.IsEnabled = false;
+                 cBlackberry.IsEnabled = false;
+                 cLemonflavor.IsEnabled = false;
 
-            }
-            else
-            {
+             }
+             else if (cLemonflavor.IsChecked == true)
+             {
+                 cCherry.IsEnabled = false;
+                 cGrapef.IsEnabled = false;
+                 cPeach.IsEnabled = false;
+                 cWatermelon.IsEnabled = false;
+                 cBlackberry.IsEnabled = false;
 
-                cLemonflavor.IsEnabled = true;
-                cCherry.IsEnabled = true;
-                cGrapef.IsEnabled = true;
-                cPeach.IsEnabled=true;
-                cWatermelon.IsEnabled = true;
-                cBlackberry.IsEnabled = true;
-            }
-        }
-        /// <summary>
-        /// if one size clicked, disable other
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        void clicksize(object sender, RoutedEventArgs e)
-        {
-            if (cSmall.IsChecked == true)
-            {
-                cMedium.IsEnabled = false;
-                cLarge.IsEnabled = false;
+             }
+             else
+             {
 
-            }
-            else if (cMedium.IsChecked == true)
-            {
-                cSmall.IsEnabled = false;
-                cLarge.IsEnabled = false;
-            }
-            else if (cLarge.IsChecked == true)
-            {
-                cMedium.IsEnabled = false;
-                cSmall.IsEnabled = false;
-            }
-            else
-            {
-                cMedium.IsEnabled = true;
-                cLarge.IsEnabled = true;
-                cSmall.IsEnabled = true;
-            }
+                 cLemonflavor.IsEnabled = true;
+                 cCherry.IsEnabled = true;
+                 cGrapef.IsEnabled = true;
+                 cPeach.IsEnabled=true;
+                 cWatermelon.IsEnabled = true;
+                 cBlackberry.IsEnabled = true;
+             }
+         }
+         /// <summary>
+         /// if one size clicked, disable other
+         /// </summary>
+         /// <param name="sender"></param>
+         /// <param name="e"></param>
+         void clicksize(object sender, RoutedEventArgs e)
+         {
+             if (cSmall.IsChecked == true)
+             {
+                 cMedium.IsEnabled = false;
+                 cLarge.IsEnabled = false;
 
-        }*/
+             }
+             else if (cMedium.IsChecked == true)
+             {
+                 cSmall.IsEnabled = false;
+                 cLarge.IsEnabled = false;
+             }
+             else if (cLarge.IsChecked == true)
+             {
+                 cMedium.IsEnabled = false;
+                 cSmall.IsEnabled = false;
+             }
+             else
+             {
+                 cMedium.IsEnabled = true;
+                 cLarge.IsEnabled = true;
+                 cSmall.IsEnabled = true;
+             }
+
+         }*/
 
 
 
@@ -164,48 +156,48 @@ namespace PointOfSale
         /// </summary>
         void initialize()
         {
-           /* cLemonflavor.IsEnabled = true;
-            cCherry.IsEnabled = true;
-            cGrapef.IsEnabled = true;
-            cPeach.IsEnabled = true;
-            cWatermelon.IsEnabled = true;
-            cBlackberry.IsEnabled = true;
-            cMedium.IsEnabled = true;
-            cLarge.IsEnabled = true;
-            cSmall.IsEnabled = true;
-            cBlackberry.IsChecked = false;
-            cSmall.IsChecked = false;
-            cMedium.IsChecked = false;
-            cLarge.IsChecked = false;
-            cCherry.IsChecked = false;
-            cGrapef.IsChecked = false;
-            cWatermelon.IsChecked = false;
-            cPeach.IsChecked = false;
-            cLemonflavor.IsChecked = false;
-            cBacon.IsChecked = true;
-            cBroccoli.IsChecked = true;
-            cBun.IsChecked = true;
-            cCheddar.IsChecked = true;
-            cCheese.IsChecked = true;
-            cDecaf.IsChecked = false;
-            cEgg.IsChecked = true;
-            cHashBrowns.IsChecked = true;
-            cIce.IsChecked = true;
-            cKetchup.IsChecked = true;
-            cLemon.IsChecked = false;
-            cLettuce.IsChecked = true;
-            cMayo.IsChecked = true;
-            cMushrooms.IsChecked = true;
-            cMustard.IsChecked = true;
-            cOnion.IsChecked = true;
-            cPancake.IsChecked = true;
-            cPickle.IsChecked = true;
-            cRoll.IsChecked = true;
-            cRoomForCream.IsChecked = false;
-            cSausageLink.IsChecked = true;
-            cSirloin.IsChecked = true;
-            cTomato.IsChecked = true;
-            */
+            /* cLemonflavor.IsEnabled = true;
+             cCherry.IsEnabled = true;
+             cGrapef.IsEnabled = true;
+             cPeach.IsEnabled = true;
+             cWatermelon.IsEnabled = true;
+             cBlackberry.IsEnabled = true;
+             cMedium.IsEnabled = true;
+             cLarge.IsEnabled = true;
+             cSmall.IsEnabled = true;
+             cBlackberry.IsChecked = false;
+             cSmall.IsChecked = false;
+             cMedium.IsChecked = false;
+             cLarge.IsChecked = false;
+             cCherry.IsChecked = false;
+             cGrapef.IsChecked = false;
+             cWatermelon.IsChecked = false;
+             cPeach.IsChecked = false;
+             cLemonflavor.IsChecked = false;
+             cBacon.IsChecked = true;
+             cBroccoli.IsChecked = true;
+             cBun.IsChecked = true;
+             cCheddar.IsChecked = true;
+             cCheese.IsChecked = true;
+             cDecaf.IsChecked = false;
+             cEgg.IsChecked = true;
+             cHashBrowns.IsChecked = true;
+             cIce.IsChecked = true;
+             cKetchup.IsChecked = true;
+             cLemon.IsChecked = false;
+             cLettuce.IsChecked = true;
+             cMayo.IsChecked = true;
+             cMushrooms.IsChecked = true;
+             cMustard.IsChecked = true;
+             cOnion.IsChecked = true;
+             cPancake.IsChecked = true;
+             cPickle.IsChecked = true;
+             cRoll.IsChecked = true;
+             cRoomForCream.IsChecked = false;
+             cSausageLink.IsChecked = true;
+             cSirloin.IsChecked = true;
+             cTomato.IsChecked = true;
+             */
         }
         /// <summary>
         /// hida all Customization
@@ -214,7 +206,7 @@ namespace PointOfSale
         {
             sizelist.Visibility = Visibility.Hidden;
             flvaorlist.Visibility = Visibility.Hidden;
-           
+
             cBacon.Visibility = Visibility.Hidden;
             cBroccoli.Visibility = Visibility.Hidden;
             cBun.Visibility = Visibility.Hidden;
@@ -238,7 +230,7 @@ namespace PointOfSale
             cSausageLink.Visibility = Visibility.Hidden;
             cSirloin.Visibility = Visibility.Hidden;
             cTomato.Visibility = Visibility.Hidden;
-            
+
         }
         /// <summary>
         /// clicked BriarheartBurger button 
@@ -249,21 +241,21 @@ namespace PointOfSale
         {
             menu.Visibility = Visibility.Hidden;
             Customization.Visibility = Visibility.Visible;
-            BriarheartBurger a = new BriarheartBurger();
+            /*BriarheartBurger a = new BriarheartBurger();
             total += a.Price;
             lists.Add(a.ToString());
             orderlists.Text = string.Join("\n", lists);
             string tp = "Subtotal: $" + total.ToString() + "\n" + "Tax:$" + Math.Round((0.09*total),4).ToString() + "\n" + "Total:$" + Math.Round((1.09*total),4).ToString();
-            orderprice.Text = tp;
-            
+            orderprice.Text = tp;*/
+
             hidden();
             cBun.Visibility = Visibility.Visible;
             cKetchup.Visibility = Visibility.Visible;
             cMustard.Visibility = Visibility.Visible;
             cPickle.Visibility = Visibility.Visible;
             cCheese.Visibility = Visibility.Visible;
-            
-            this.DataContext =new BriarheartBurger();
+
+            this.DataContext = new BriarheartBurger();
 
 
         }
@@ -274,15 +266,10 @@ namespace PointOfSale
         /// <param name="e"></param>
         void ClickDoubleDraugr(object sender, RoutedEventArgs e)
         {
-            
+
             menu.Visibility = Visibility.Hidden;
             Customization.Visibility = Visibility.Visible;
-            DoubleDraugr a = new DoubleDraugr();
-            total += a.Price;
-            lists.Add(a.ToString());
-            orderlists.Text = string.Join("\n", lists);
-            string tp = "Subtotal: $" + total.ToString() + "\n" + "Tax:$" + Math.Round((0.09*total),4).ToString() + "\n" + "Total:$" + Math.Round((1.09*total),4).ToString();
-            orderprice.Text = tp;
+
             hidden();
             cBun.Visibility = Visibility.Visible;
             cKetchup.Visibility = Visibility.Visible;
@@ -303,16 +290,11 @@ namespace PointOfSale
         /// <param name="e"></param>
         void ClickThalmorTriple(object sender, RoutedEventArgs e)
         {
-        
+
             menu.Visibility = Visibility.Hidden;
             Customization.Visibility = Visibility.Visible;
 
-            ThalmorTriple a = new ThalmorTriple();
-            total += a.Price;
-            lists.Add(a.ToString());
-            orderlists.Text = string.Join("\n", lists);
-            string tp = "Subtotal: $" + total.ToString() + "\n" + "Tax:$" + Math.Round(Math.Round((0.09*total),4),4).ToString() + "\n" + "Total:$" + Math.Round(Math.Round((1.09*total),4),4).ToString();
-            orderprice.Text = tp;
+
             hidden();
             cBun.Visibility = Visibility.Visible;
             cKetchup.Visibility = Visibility.Visible;
@@ -334,16 +316,11 @@ namespace PointOfSale
         /// <param name="e"></param>
         void ClickSmokehouseSkeleton(object sender, RoutedEventArgs e)
         {
-            
+
             menu.Visibility = Visibility.Hidden;
             Customization.Visibility = Visibility.Visible;
 
-            SmokehouseSkeleton a = new SmokehouseSkeleton();
-            total += a.Price;
-            lists.Add(a.ToString());
-            orderlists.Text = string.Join("\n", lists);
-            string tp = "Subtotal: $" + total.ToString() + "\n" + "Tax:$" + Math.Round((0.09*total),4).ToString() + "\n" + "Total:$" + Math.Round((1.09*total),4).ToString();
-            orderprice.Text = tp;
+
             hidden();
             cSausageLink.Visibility = Visibility.Visible;
             cEgg.Visibility = Visibility.Visible;
@@ -362,16 +339,11 @@ namespace PointOfSale
         /// <param name="e"></param>
         void ClickGardenOrcOmelette(object sender, RoutedEventArgs e)
         {
-          
+
             menu.Visibility = Visibility.Hidden;
             Customization.Visibility = Visibility.Visible;
 
-            GardenOrcOmelette a = new GardenOrcOmelette();
-            total += a.Price;
-            lists.Add(a.ToString());
-            orderlists.Text = string.Join("\n", lists);
-            string tp = "Subtotal: $" + total.ToString() + "\n" + "Tax:$" + Math.Round((0.09*total),4).ToString() + "\n" + "Total:$" + Math.Round((1.09*total),4).ToString();
-            orderprice.Text = tp;
+
             hidden();
             cBroccoli.Visibility = Visibility.Visible;
             cMushrooms.Visibility = Visibility.Visible;
@@ -389,11 +361,8 @@ namespace PointOfSale
         void ClickThugsTBone(object sender, RoutedEventArgs e)
         {
             ThugsTBone a = new ThugsTBone();
-            total += a.Price;
-            lists.Add(a.ToString());
-            orderlists.Text = string.Join("\n", lists);
-            string tp = "Subtotal: $" + total.ToString() + "\n" + "Tax:$" + Math.Round((0.09*total),4).ToString() + "\n" + "Total:$" + Math.Round((1.09*total),4).ToString();
-            orderprice.Text = tp;
+            Orders.Add(a);
+            listviewload();
 
 
 
@@ -405,15 +374,10 @@ namespace PointOfSale
         /// <param name="e"></param>
         void ClickPhillyPoacher(object sender, RoutedEventArgs e)
         {
-            
+
             menu.Visibility = Visibility.Hidden;
             Customization.Visibility = Visibility.Visible;
-            PhillyPoacher a = new PhillyPoacher();
-            total += a.Price;
-            lists.Add(a.ToString());
-            orderlists.Text = string.Join("\n", lists);
-            string tp = "Subtotal: $" + total.ToString() + "\n" + "Tax:$" + Math.Round((0.09*total),4).ToString() + "\n" + "Total:$" + Math.Round((1.09*total),4).ToString();
-            orderprice.Text = tp;
+
             hidden();
             cSirloin.Visibility = Visibility.Visible;
             cRoll.Visibility = Visibility.Visible;
@@ -428,10 +392,11 @@ namespace PointOfSale
         /// <param name="e"></param>
         void ClickCancel(object sender, RoutedEventArgs e)
         {
-            lists.Clear();
-            total = 0;
-            orderlists.Clear();
-            orderprice.Clear();
+
+            Orders.Clear();
+            listviewload();
+
+
         }
         /// <summary>
         /// Click ok to finish Customization
@@ -443,89 +408,75 @@ namespace PointOfSale
             menu.Visibility = Visibility.Visible;
             Customization.Visibility = Visibility.Hidden;
 
-            if(DataContext is BriarheartBurger bb)
+            if (DataContext is BriarheartBurger bb)
             {
-                var result = lists.Concat(bb.SpecialInstructions);
-                lists = result.ToList();
-                orderlists.Text = string.Join("\n", lists);
+                Orders.Add(bb);
+                listviewload();
+
                 initialize();
             }
 
 
-            if(DataContext is DoubleDraugr dd){
-                
+            if (DataContext is DoubleDraugr dd)
+            {
+                Orders.Add(dd);
+                listviewload();
 
-                var result = lists.Concat(dd.SpecialInstructions);
-                lists = result.ToList();
-                orderlists.Text = string.Join("\n", lists);
+
+
                 initialize();
             }
             if (DataContext is ThalmorTriple tt)
             {
-              
-                var result = lists.Concat(tt.SpecialInstructions);
-                lists = result.ToList();
-                orderlists.Text = string.Join("\n", lists);
+                Orders.Add(tt);
+                listviewload();
+
                 initialize();
             }
             if (DataContext is SmokehouseSkeleton ss)
             {
-                
-                var result = lists.Concat(ss.SpecialInstructions);
-                lists = result.ToList();
-                orderlists.Text = string.Join("\n", lists);
+                Orders.Add(ss);
+                listviewload();
+
                 initialize();
             }
-            if (DataContext is  GardenOrcOmelette goo)
+            if (DataContext is GardenOrcOmelette goo)
             {
-                
-                var result = lists.Concat(goo.SpecialInstructions);
-                lists = result.ToList();
-                orderlists.Text = string.Join("\n", lists);
+                Orders.Add(goo);
+                listviewload();
 
                 initialize();
             }
             if (DataContext is PhillyPoacher pp)
             {
-               
-                var result = lists.Concat(pp.SpecialInstructions);
-                lists = result.ToList();
-                orderlists.Text = string.Join("\n", lists);
+                Orders.Add(pp);
+                listviewload();
+
                 initialize();
 
             }
-            if (DataContext is  WarriorWater ww)
+            if (DataContext is WarriorWater ww)
             {
-                
-         
-      
-                total += ww.Price;
-                lists.Add(ww.ToString());
-                var result = lists.Concat(ww.SpecialInstructions);
-                lists = result.ToList();
-                orderlists.Text = string.Join("\n", lists);
-                string tp = "Subtotal: $" + total.ToString() + "\n" + "Tax:$" + Math.Round((0.09*total),4).ToString() + "\n" + "Total:$" + Math.Round((1.09*total),4).ToString();
-                orderprice.Text = tp;
+
+
+                Orders.Add(ww);
+                listviewload();
+
                 initialize();
 
             }
             if (DataContext is CandlehearthCoffee cc)
             {
-                
-               
-           
-                total += cc.Price;
-                lists.Add(cc.ToString());
-                var result = lists.Concat(cc.SpecialInstructions);
-                lists = result.ToList();
-                orderlists.Text = string.Join("\n", lists);
-                string tp = "Subtotal: $" + total.ToString() + "\n" + "Tax:$" + Math.Round((0.09*total),4).ToString() + "\n" + "Total:$" + Math.Round((1.09*total),4).ToString();
-                orderprice.Text = tp;
+
+
+                Orders.Add(cc);
+                listviewload();
+
                 initialize();
             }
             if (DataContext is SailorSoda soda)
             {
-                
+
                 /*if (cMedium.IsChecked == true)
                 {
                     soda.Size = Size.Medium;
@@ -542,104 +493,77 @@ namespace PointOfSale
                 if (cPeach.IsChecked == true) soda.Flavor = SodaFlavor.Peach;
                 if (cLemonflavor.IsChecked == true) soda.Flavor = SodaFlavor.Lemon;
                 */
-                total += soda.Price;
-                lists.Add(soda.ToString());
-                var result = lists.Concat(soda.SpecialInstructions);
-                lists = result.ToList();
-                orderlists.Text = string.Join("\n", lists);
-                string tp = "Subtotal: $" + total.ToString() + "\n" + "Tax:$" + Math.Round((0.09*total),4).ToString() + "\n" + "Total:$" + Math.Round((1.09*total),4).ToString();
-                orderprice.Text = tp;
+
+                Orders.Add(soda);
+                listviewload();
+
                 initialize();
             }
             if (DataContext is MarkarthMilk mm)
             {
-           
-              
-                
-                total += mm.Price;
+
+                Orders.Add(mm);
+                listviewload();
+                /*total += mm.Price;
                 lists.Add(mm.ToString());
                 var result = lists.Concat(mm.SpecialInstructions);
                 lists = result.ToList();
                 orderlists.Text = string.Join("\n", lists);
                 string tp = "Subtotal: $" + total.ToString() + "\n" + "Tax:$" + Math.Round((0.09*total),4).ToString() + "\n" + "Total:$" + Math.Round((1.09*total),4).ToString();
-                orderprice.Text = tp;
+                orderprice.Text = tp;*/
                 initialize();
             }
 
             if (DataContext is AretinoAppleJuice aa)
             {
-                
-      
-               
 
-                total += aa.Price;
-                lists.Add(aa.ToString());
-                var result = lists.Concat(aa.SpecialInstructions);
-                lists = result.ToList();
-                orderlists.Text = string.Join("\n", lists);
-                string tp = "Subtotal: $" + total.ToString() + "\n" + "Tax:$" + Math.Round((0.09*total),4).ToString() + "\n" + "Total:$" + Math.Round((1.09*total),4).ToString();
-                orderprice.Text = tp;
+
+
+
+                Orders.Add(aa);
+                listviewload();
+
                 initialize();
             }
             if (DataContext is VokunSalad a)
             {
-               
 
-         
-                
 
-                total += a.Price;
-                lists.Add(a.ToString());
-                var result = lists.Concat(a.SpecialInstructions);
-                lists = result.ToList();
-                orderlists.Text = string.Join("\n", lists);
-                string tp = "Subtotal: $" + total.ToString() + "\n" + "Tax:$" + Math.Round((0.09*total),4).ToString() + "\n" + "Total:$" + Math.Round((1.09*total),4).ToString();
-                orderprice.Text = tp;
+
+                Orders.Add(a);
+                listviewload();
+
                 initialize();
             }
-            if (DataContext is  FriedMiraak f)
+            if (DataContext is FriedMiraak f)
             {
 
-        
 
-                total += f.Price;
-                lists.Add(f.ToString());
-                var result = lists.Concat(f.SpecialInstructions);
-                lists = result.ToList();
-                orderlists.Text = string.Join("\n", lists);
-                string tp = "Subtotal: $" + total.ToString() + "\n" + "Tax:$" + Math.Round((0.09*total),4).ToString() + "\n" + "Total:$" + Math.Round((1.09*total),4).ToString();
-                orderprice.Text = tp;
+                Orders.Add(f);
+                listviewload();
+
                 initialize();
             }
             if (DataContext is DragonbornWaffleFries d)
             {
-             
 
 
 
-                total += d.Price;
-                lists.Add(d.ToString());
-                var result = lists.Concat(d.SpecialInstructions);
-                lists = result.ToList();
-                orderlists.Text = string.Join("\n", lists);
-                string tp = "Subtotal: $" + total.ToString() + "\n" + "Tax:$" + Math.Round((0.09*total),4).ToString() + "\n" + "Total:$" + Math.Round((1.09*total),4).ToString();
-                orderprice.Text = tp;
+                Orders.Add(d);
+                listviewload();
+
                 initialize();
             }
             if (DataContext is MadOtarGrits m)
             {
-               
-
-       
 
 
-                total += m.Price;
-                lists.Add(m.ToString());
-                var result = lists.Concat(m.SpecialInstructions);
-                lists = result.ToList();
-                orderlists.Text = string.Join("\n", lists);
-                string tp = "Subtotal: $" + total.ToString() + "\n" + "Tax:$" + Math.Round((0.09*total),4).ToString() + "\n" + "Total:$" + Math.Round((1.09*total),4).ToString();
-                orderprice.Text = tp;
+
+
+                Orders.Add(m);
+                listviewload();
+
+
                 initialize();
             }
 
@@ -675,8 +599,8 @@ namespace PointOfSale
             flvaorlist.Visibility = Visibility.Visible;
             sizelist.Visibility = Visibility.Visible;
             cIce.Visibility = Visibility.Visible;
-           
-           
+
+
 
             this.DataContext = new SailorSoda();
         }
@@ -790,7 +714,7 @@ namespace PointOfSale
             sizelist.Visibility = Visibility.Visible;
             cIce.Visibility = Visibility.Visible;
             cIce.IsChecked = false;
-           
+
 
             this.DataContext = new AretinoAppleJuice();
 
@@ -816,6 +740,62 @@ namespace PointOfSale
 
         }
 
+
+        public void listviewload()
+
+        {
+            listview.Items.Clear();
+            foreach (IOrderItem i in Orders)
+            {
+                string row = i.ToString() + "  $:" + i.Price.ToString() + "\n" + string.Join("\n", i.SpecialInstructions);
+                ListViewItem lvl = new ListViewItem();
+
+                lvl.Tag = i;
+                lvl.Content = row;
+
+                listview.Items.Add(lvl);
+
+            }
+
+            string tp = "Subtotal: $" + Math.Round(Orders.Subtotal, 4).ToString() + "\n" + "Tax:$" + Math.Round(Orders.Tax, 4).ToString() + "\n" + "Total:$" + Math.Round(Orders.Total, 4).ToString();
+            orderprice.Text = tp;
+
+            string num = "Order# " + Orders.Number.ToString();
+
+            ordernum.Text = num;
+
+
+        }
+
+        void clickRemoveItem(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                ListViewItem selectedItem = (ListViewItem)listview.SelectedItem;
+                if (selectedItem != null)
+                {
+                    IOrderItem i = (IOrderItem)selectedItem.Tag;
+
+                    Orders.Remove(i);
+                    listviewload();
+                }
+
+
+
+            }
+            catch (Exception ex)
+            {
+                throw new NotImplementedException(ex.ToString());
+            }
+
+        }
+        void clickNewOrder(object sender, RoutedEventArgs e)
+        {
+            Orders = new Order();
+            listviewload();
+
+
+        }
 
 
 

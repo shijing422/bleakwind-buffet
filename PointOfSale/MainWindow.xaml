@@ -9,7 +9,7 @@
         xmlns:local="clr-namespace:PointOfSale"
         
         mc:Ignorable="d"
-        Title="Bleakwind Buffet Point of Sale" Background="Beige" TextBlock.TextAlignment="Center" Height="750" Width="1000">
+        Title="Bleakwind Buffet Point of Sale" Background="Beige" TextBlock.TextAlignment="Center" Height="750" Width="1200">
 
     <Window.Resources>
         <ObjectDataProvider x:Key="SelectedSize" MethodName="GetValues" ObjectType="{x:Type system:Enum}">
@@ -33,12 +33,12 @@
         
         
 
-        <TextBlock Margin="364,10,374,735" Text="Customization" FontSize="20" FontWeight="Bold">
+        <TextBlock Margin="364,10,374,646" Text="Customization" FontSize="20" FontWeight="Bold">
 
 
         </TextBlock>
 
-        <StackPanel Name="Customization" Background="LightSalmon" Orientation="Vertical" Margin="360,53,370,3">
+        <StackPanel Name="Customization" Background="LightSalmon" Orientation="Vertical" Margin="360,53,532,3">
             <StackPanel.Resources>
                 <Style TargetType="CheckBox">
                     <Setter Property="FontSize" Value="14"></Setter>
@@ -81,7 +81,7 @@
 
 
         </StackPanel>
-        <StackPanel Name="menu" Background="LightBlue" Orientation="Vertical" Margin="10,36,661,0">
+        <StackPanel Name="menu" Background="LightBlue" Orientation="Vertical" Margin="10,36,862,0">
             <TextBlock FontSize="20" FontWeight="Bold">Entree:</TextBlock>
             <Button Background="LightYellow" Content="Briarheart Burger" Click="ClickBriarheartBurger" FontSize="25" HorizontalAlignment="Left"  ></Button>
             <Button Background="LightYellow" Content="Double Draugr" FontSize="25" HorizontalAlignment="Left" Click="ClickDoubleDraugr"></Button>
@@ -104,17 +104,22 @@
 
         </StackPanel>
 
-        <TextBox Name="orderlists" Margin="650,38,5,256" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible"/>
-
-
-        <TextBox Name="orderprice" Margin="650,498,15,125" IsEnabled="False"></TextBox>
+       
+        <ListView Name="listview"  Margin="715,53,28,292" ScrollViewer.HorizontalScrollBarVisibility="Visible" ScrollViewer.VerticalScrollBarVisibility="Visible">
+            
+        </ListView>
+        <TextBox Name="orderprice" Margin="724,537,36,107" IsEnabled="False"></TextBox>
 
         <TextBlock HorizontalAlignment="Left" FontWeight="Bold" FontSize="20" Height="31" Margin="10,0,0,0" Text="Add to order" TextWrapping="Wrap" VerticalAlignment="Top" Width="293"/>
-        <TextBlock HorizontalAlignment="Left" FontWeight="Bold" FontSize="20" Height="22" Margin="761,13,0,0" Text="Order" TextWrapping="Wrap" VerticalAlignment="Top" Width="211" RenderTransformOrigin="2.863,0.398"/>
-        <Button Background="LightYellow" Margin="818,633,4,34" Content="Place Order" FontSize="20" FontWeight="Bold" Click="ClickPlace"></Button>
-        <Button Background="LightYellow" Margin="655,634,183,34" Content="Cancel Order" FontSize="20" FontWeight="Bold" RenderTransformOrigin="0.5,0.5" Click="ClickCancel">
+        <TextBlock Name="ordernum" HorizontalAlignment="Left" FontWeight="Bold" FontSize="20" Height="22" Margin="761,13,0,0" Text="Order" TextWrapping="Wrap" VerticalAlignment="Top" Width="211" RenderTransformOrigin="2.863,0.398"/>
+        <Button  Background="LightYellow" Margin="1043,633,4,34" Content="Place Order" FontSize="20" FontWeight="Bold" Click="ClickPlace"></Button>
+        <Button Background="LightYellow" Margin="688,634,352,34" Content="Cancel Order" FontSize="20" FontWeight="Bold" RenderTransformOrigin="0.5,0.5" Click="ClickCancel">
 
         </Button>
-
+         
+        <Button Click="clickRemoveItem"  FontSize="20" FontWeight="Bold" Content="Remove SelectedItem" Background="LightYellow" Margin="813,463,150,216"></Button>
+        <Button Click="clickNewOrder" Content="New Order" FontSize="20" FontWeight="Bold" Background="LightYellow"  Margin="866,633,178,35">
+            
+        </Button>
     </Grid>
 </Window>

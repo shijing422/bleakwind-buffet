@@ -15,13 +15,23 @@ using BleakwindBuffet.Data.Drinks;
 
 
 namespace BleakwindBuffet.Data
-{
+{        
+    /// <summary>
+    /// class represent combo
+    /// </summary>
     public class Combo : INotifyPropertyChanged, IOrderItem
     {
 
 
+
+        ///<value>
+        ///PropertyChanged event
+        ///</value>
         public event PropertyChangedEventHandler PropertyChanged;
         private Entree entree;
+        ///<value>
+        ///The Entree in the combo
+        ///</value>
         public Entree Entree
         {
             get
@@ -39,6 +49,9 @@ namespace BleakwindBuffet.Data
             }
         }
         private Drink drink;
+        ///<value>
+        ///The Drink Item in the combo
+        ///</value>
         public Drink Drink
         {
             get
@@ -56,6 +69,9 @@ namespace BleakwindBuffet.Data
             }
         }
         private Side side;
+        ///<value>
+        ///the Side item in the combo
+        ///</value>
         public Side Side
         {
             get
@@ -80,9 +96,9 @@ namespace BleakwindBuffet.Data
         ///  The the Calories ofcombo
         /// </value>
         public uint Calories => Entree.Calories + Side.Calories + Drink.Calories;
-        /// <summary>
+        /// <value>
         /// the special instructions of combo
-        /// </summary>
+        /// </value>
         public List<string> SpecialInstructions
         {
             get
