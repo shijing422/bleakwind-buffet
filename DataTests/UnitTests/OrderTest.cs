@@ -124,12 +124,78 @@ namespace BleakwindBuffet.DataTests.UnitTests
 
             });
         }
+
+
         [Fact]
-        public void AbleToAddItem()
+        public void ShouldGetCorrectCal()
         {
-            Order A = new Order();
-            BriarheartBurger a = new BriarheartBurger();
-            A.Add(a);
+            Order a = new Order();
+            BriarheartBurger b = new BriarheartBurger();
+            SailorSoda s = new SailorSoda();
+            FriedMiraak f = new FriedMiraak();
+            a.Add(b);
+            a.Add(s);
+            a.Add(f);
+            Assert.Equal(f.Calories + s.Calories + b.Calories, a.Calories);
+
+
+        }
+
+        [Fact]
+        public void ShouldGetCorrectSubtotalPrice()
+        {
+            Order a = new Order();
+            BriarheartBurger b = new BriarheartBurger();
+            SailorSoda s = new SailorSoda();
+            FriedMiraak f = new FriedMiraak();
+            a.Add(b);
+            a.Add(s);
+            a.Add(f);
+            Assert.Equal(f.Price + s.Price + b.Price, a.Subtotal);
+
+
+        }
+
+        [Fact]
+        public void SalesTaxRatedefault()
+        {
+            Order a = new Order();
+            
+            Assert.Equal(0.12, a.SalesTaxRate);
+
+
+        }
+
+        [Fact]
+        public void CheckTax()
+        {
+            Order a = new Order();
+            BriarheartBurger b = new BriarheartBurger();
+            SailorSoda s = new SailorSoda();
+            FriedMiraak f = new FriedMiraak();
+            a.Add(b);
+            a.Add(s);
+            a.Add(f);
+            double p = (f.Price + s.Price + b.Price) * a.SalesTaxRate;
+            Assert.Equal(p, a.Tax);
+
+
+        }
+
+
+        [Fact]
+        public void CheckTotal()
+        {
+            Order a = new Order();
+            BriarheartBurger b = new BriarheartBurger();
+            SailorSoda s = new SailorSoda();
+            FriedMiraak f = new FriedMiraak();
+            a.Add(b);
+            a.Add(s);
+            a.Add(f);
+            double p = (f.Price + s.Price + b.Price) * (1+a.SalesTaxRate) ;
+            Assert.Equal(p, a.Total);
+
 
         }
 
