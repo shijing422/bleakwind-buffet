@@ -1,0 +1,199 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+/* Provide sufficient contrast against white background */
+a {
+  color: #0366d6;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px; /* Vertically center the text there */
+}
+
+
+/*--------------------------------------------*/
+
+
+ul.Entreelist{
+    padding: 0;
+    margin: 0;
+    border-top: 1px solid gray;
+}
+
+ul.Entreelist > li {
+        list-style-type: none;
+        border-bottom: 1px solid lightgray;
+        margin: 10px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        min-height: 50px;
+ }
+
+.Ename {
+    color: darkslategray;
+    font-size: 1.2rem;
+    margin: 0;
+}
+.Eprice, .Ecalories {
+    color: slategray;
+
+}
+
+ul.Entreelist h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0;
+    color: darkslategray;
+}
+/*-------------------------------------*/
+ul.Sidelist {
+    padding: 0;
+    margin: 0;
+    border-top: 1px solid gray;
+}
+ul.Sidelist > li {
+    list-style-type: none;
+    border-bottom: 1px solid lightgray;
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    min-height: 50px;
+}
+
+.Sname {
+    color: darkslategray;
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.Sprice, .Scalories {
+    color: slategray;
+}
+
+ul.Sidelist h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0;
+    color: darkslategray;
+}
+
+/*----------------------------*/
+ul.Drinklist {
+    padding: 0;
+    margin: 0;
+    border-top: 1px solid gray;
+}
+ul.Drinklist > li {
+    list-style-type: none;
+    border-bottom: 1px solid lightgray;
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    min-height: 50px;
+}
+
+.Dname {
+    color: darkslategray;
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.Dprice, .Dcalories {
+    color: slategray;
+}
+
+ul.Drinklist h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0;
+    color: darkslategray;
+}
+
+/*------------------------*/
+
+
+
+.Fname {
+    color: cadetblue;
+    font-size: 1rem;
+    margin: 0;
+
+}
+
+.combo{
+    color: seagreen;
+}
+.Flavor{
+    color: cadetblue;
+}
+
+.display-4{
+    color: darkred;
+}
+
+.message{
+    color: indianred;
+}
