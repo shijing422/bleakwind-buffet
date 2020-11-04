@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using System.Text;
 using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Enums;
 using BleakwindBuffet.Data.Entrees;
 using BleakwindBuffet.Data.Sides;
 using BleakwindBuffet.Data.Drinks;
-using System.Linq;
+using System.IO;
+using System.Runtime.CompilerServices;
 
 namespace BleakwindBuffet.Data
 {
@@ -289,5 +292,93 @@ namespace BleakwindBuffet.Data
             return full;
 
         }
+
+
+        public static IEnumerable<IOrderItem> SearchEntrees(string terms)
+        {
+            List<IOrderItem> results = new List<IOrderItem>();
+
+            //null check
+            if (terms == null)
+            {
+                return Entrees();
+            }
+
+            foreach (IOrderItem i in Entrees())
+            {
+                string name = i.ToString();
+                
+                // add if title is a match
+                if (name != null && name.ToLower().Contains(terms.ToLower()))
+                {
+
+                
+                    results.Add(i);
+                }
+            }
+
+            return results;
+
+            
+        }
+
+        public static IEnumerable<IOrderItem> SearchSides(string terms)
+        {
+            List<IOrderItem> results = new List<IOrderItem>();
+
+            //null check
+            if (terms == null)
+            {
+                return Sides();
+            }
+
+            foreach (IOrderItem i in Sides())
+            {
+                string name = i.ToString();
+
+                // add if title is a match
+                if (name != null && name.ToLower().Contains(terms.ToLower()))
+                {
+
+
+                    results.Add(i);
+                }
+            }
+
+            return results;
+
+
+        }
+
+
+        public static IEnumerable<IOrderItem> SearchDrinks(string terms)
+        {
+            List<IOrderItem> results = new List<IOrderItem>();
+
+            //null check
+            if (terms == null)
+            {
+                return Drinks();
+            }
+
+            foreach (IOrderItem i in Drinks())
+            {
+                string name = i.ToString();
+
+                // add if title is a match
+                if (name != null && name.ToLower().Contains(terms.ToLower()))
+                {
+
+
+                    results.Add(i);
+                }
+            }
+
+            return results;
+
+
+        }
+
+
     }
 }

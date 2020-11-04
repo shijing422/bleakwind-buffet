@@ -5,73 +5,79 @@
 }
 
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
+    <div class="text-center">
+        <h1 class="display-4">Welcome</h1>
 
-    <p class="message">We at Bleakwind Buffet are proud to bring you authentic fantasy meals straight from the world of Skyrim. Shake the blood off your sword and sake your thirst with one of our old-fashioned sailor sodas. Hack into a Smokehouse Skeleton with your dagger. Or vanquish the the mighty Thalmor Triple Burger! You’ve had a hard adventure and earned your loot, so spend it with us!.</p>
+        <p class="message">We at Bleakwind Buffet are proud to bring you authentic fantasy meals straight from the world of Skyrim. Shake the blood off your sword and sake your thirst with one of our old-fashioned sailor sodas. Hack into a Smokehouse Skeleton with your dagger. Or vanquish the the mighty Thalmor Triple Burger! You’ve had a hard adventure and earned your loot, so spend it with us!.</p>
 
-    <h2>Entrees</h2>
-
-    <ul class="Entreelist">
-        @foreach (BleakwindBuffet.Data.IOrderItem item in BleakwindBuffet.Data.Menu.Entrees())
-        {
-            <li>
-                <div class="Edetails">
-                    <h3 class="Ename">@item.ToString()</h3>
-                    <div class="Eprice">Price: $@item.Price</div>
-                    <div class="Ecalories">Calories: @item.Calories</div>
-                </div>
+        <form>
+            <input type="text" name="SearchTerms" value="@Model.SearchTerms" />
+            <input type="submit" name="Search" />
+        </form>
 
 
-            </li>
-        }
+        <h2>Entrees</h2>
 
-    </ul>
-
-    <h2>Sides</h2>
-    <ul class="Sidelist">
-        @foreach (BleakwindBuffet.Data.IOrderItem item in BleakwindBuffet.Data.Menu.Sides())
-        {
-            <li>
-                <div class="Sdetails">
-                    <h3 class="Sname">@item.ToString()</h3>
-                    <div class="Sprice">Price: $@item.Price</div>
-                    <div class="Scalories">Calories: @item.Calories</div>
-                </div>
+        <ul class="Entreelist">
+            @foreach (BleakwindBuffet.Data.IOrderItem item in Model.Entrees)
+            {
+                <li>
+                    <div class="Edetails">
+                        <h3 class="Ename">@item.ToString()</h3>
+                        <div class="Eprice">Price: $@item.Price</div>
+                        <div class="Ecalories">Calories: @item.Calories</div>
+                    </div>
 
 
-            </li>
-        }
+                </li>
+            }
 
-    </ul>
+        </ul>
 
-    <h2>Drinks</h2>
-    <ul class="Drinklist">
-        @foreach (BleakwindBuffet.Data.IOrderItem item in BleakwindBuffet.Data.Menu.Drinks())
-        {
-            <li>
-                <div class="Ddetails">
-                    <h3 class="Dname">@item.ToString()</h3>
-                    <div class="Dprice">Price: $@item.Price</div>
-                    <div class="Dcalories">Calories: @item.Calories</div>
-                </div>
-
-            </li>
-        }
-
-    </ul>
-
-    <h3 class="combo">Special Combo: Any entree, side, and drink can be combined into a Combo with a $1 discount.</h3>
-    <h3 class="Flavor">Flavors available for the Sailor Soda</h3>
-    <ul class="Flavorlist">
-        @foreach (BleakwindBuffet.Data.Enums.SodaFlavor item in Enum.GetValues(typeof(BleakwindBuffet.Data.Enums.SodaFlavor)))
-        {
-            <li>
-                <h3 class="Fname">@item.ToString()</h3>
+        <h2>Sides</h2>
+        <ul class="Sidelist">
+            @foreach (BleakwindBuffet.Data.IOrderItem item in Model.Sides)
+            {
+                <li>
+                    <div class="Sdetails">
+                        <h3 class="Sname">@item.ToString()</h3>
+                        <div class="Sprice">Price: $@item.Price</div>
+                        <div class="Scalories">Calories: @item.Calories</div>
+                    </div>
 
 
-            </li>
-        }
+                </li>
+            }
 
-    </ul>
-</div>
+        </ul>
+
+        <h2>Drinks</h2>
+        <ul class="Drinklist">
+            @foreach (BleakwindBuffet.Data.IOrderItem item in Model.Drinks)
+            {
+                <li>
+                    <div class="Ddetails">
+                        <h3 class="Dname">@item.ToString()</h3>
+                        <div class="Dprice">Price: $@item.Price</div>
+                        <div class="Dcalories">Calories: @item.Calories</div>
+                    </div>
+
+                </li>
+            }
+
+        </ul>
+
+        <h3 class="combo">Special Combo: Any entree, side, and drink can be combined into a Combo with a $1 discount.</h3>
+        <h3 class="Flavor">Flavors available for the Sailor Soda</h3>
+        <ul class="Flavorlist">
+            @foreach (BleakwindBuffet.Data.Enums.SodaFlavor item in Enum.GetValues(typeof(BleakwindBuffet.Data.Enums.SodaFlavor)))
+            {
+                <li>
+                    <h3 class="Fname">@item.ToString()</h3>
+
+
+                </li>
+            }
+
+        </ul>
+    </div>

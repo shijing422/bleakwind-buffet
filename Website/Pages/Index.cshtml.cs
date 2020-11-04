@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
+using BleakwindBuffet.Data;
 
 namespace Website.Pages
 {
@@ -16,10 +17,16 @@ namespace Website.Pages
         {
             _logger = logger;
         }
-
+        public string SearchTerms { get; set; }
+        public IEnumerable<IOrderItem> Entrees { get; set; }
+        public IEnumerable<IOrderItem> Drinks { get; set; }
+        public IEnumerable<IOrderItem> Sides { get; set; }
         public void OnGet()
         {
-
+            SearchTerms = Request.Query["SearchTerms"];
+            Entrees = Menu.SearchEntrees(SearchTerms);
+            Drinks = Menu.SearchDrinks(SearchTerms);
+            Sides = Menu.SearchSides(SearchTerms);
         }
     }
 }
