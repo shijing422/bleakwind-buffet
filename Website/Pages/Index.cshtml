@@ -10,62 +10,69 @@
 
         <p class="message">We at Bleakwind Buffet are proud to bring you authentic fantasy meals straight from the world of Skyrim. Shake the blood off your sword and sake your thirst with one of our old-fashioned sailor sodas. Hack into a Smokehouse Skeleton with your dagger. Or vanquish the the mighty Thalmor Triple Burger! You’ve had a hard adventure and earned your loot, so spend it with us!.</p>
 
-        <form>
-            <input type="text" name="SearchTerms" value="@Model.SearchTerms" />
-            <input type="submit" name="Search" />
+        <form id="Database">
+            <div id="search">
+                <input type="text" name="SearchTerms" value="@Model.SearchTerms" />
+                <input type="submit" name="Search" />
+            </div>
+            <div id="filters">
+                <h4>Types</h4>
+                @foreach (string t in BleakwindBuffet.Data.Menu.Types)
+                {
+                    <label>
+                        <input type="checkbox" name="Types" value="@t" checked="@Model.Types.Contains(t)" />
+                        @t
+                    </label>
+                }
+                <h4>Price Range</h4>
+                <div>
+                    Between
+                    <input name="PriceMin" type="number" min="0" max="100" step="0.1" placeholder="min" value="@Model.PriceMin" />
+                    and
+                    <input name="PriceMax" type="number" min="0" max="100" step="0.1" placeholder="max" value="@Model.PriceMax" />
+                </div>
+                <h4>Calories Range</h4>
+
+                <div>
+                    Between
+                    <input name="CalMin" type="number" min="0" max="3000" step="1" placeholder="min" value="@Model.CalMin" />
+                    and
+                    <input name="CalMax" type="number" min="0" max="3000" step="1" placeholder="max" value="@Model.CalMax" />
+                </div>
+
+
+
+
+            </div>
+
+            <div id="results">
+
+                <ul class="Menulist">
+                    @foreach (BleakwindBuffet.Data.IOrderItem item in Model.Menus)
+                    {
+                        <li>
+                            <div class="details">
+                                <h3 class="name">@item.ToString()</h3>
+                                <div class="price">Price: $@item.Price</div>
+                                <div class="calories">Calories: @item.Calories</div>
+                            </div>
+
+
+                        </li>
+                    }
+
+                </ul>
+
+            </div>
+
+
+
         </form>
 
 
-        <h2>Entrees</h2>
-
-        <ul class="Entreelist">
-            @foreach (BleakwindBuffet.Data.IOrderItem item in Model.Entrees)
-            {
-                <li>
-                    <div class="Edetails">
-                        <h3 class="Ename">@item.ToString()</h3>
-                        <div class="Eprice">Price: $@item.Price</div>
-                        <div class="Ecalories">Calories: @item.Calories</div>
-                    </div>
 
 
-                </li>
-            }
 
-        </ul>
-
-        <h2>Sides</h2>
-        <ul class="Sidelist">
-            @foreach (BleakwindBuffet.Data.IOrderItem item in Model.Sides)
-            {
-                <li>
-                    <div class="Sdetails">
-                        <h3 class="Sname">@item.ToString()</h3>
-                        <div class="Sprice">Price: $@item.Price</div>
-                        <div class="Scalories">Calories: @item.Calories</div>
-                    </div>
-
-
-                </li>
-            }
-
-        </ul>
-
-        <h2>Drinks</h2>
-        <ul class="Drinklist">
-            @foreach (BleakwindBuffet.Data.IOrderItem item in Model.Drinks)
-            {
-                <li>
-                    <div class="Ddetails">
-                        <h3 class="Dname">@item.ToString()</h3>
-                        <div class="Dprice">Price: $@item.Price</div>
-                        <div class="Dcalories">Calories: @item.Calories</div>
-                    </div>
-
-                </li>
-            }
-
-        </ul>
 
         <h3 class="combo">Special Combo: Any entree, side, and drink can be combined into a Combo with a $1 discount.</h3>
         <h3 class="Flavor">Flavors available for the Sailor Soda</h3>

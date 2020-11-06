@@ -294,17 +294,22 @@ namespace BleakwindBuffet.Data
         }
 
 
-        public static IEnumerable<IOrderItem> SearchEntrees(string terms)
+        /// <summary>
+        /// Search Menus with given name 
+        /// </summary>
+        /// <param name="terms">a string represent the search term name </param>
+        /// <returns>a list of items that contains the search term name </returns>
+        public static IEnumerable<IOrderItem> Search(string terms)
         {
             List<IOrderItem> results = new List<IOrderItem>();
 
             //null check
             if (terms == null)
             {
-                return Entrees();
+                return FullMenu();
             }
 
-            foreach (IOrderItem i in Entrees())
+            foreach (IOrderItem i in FullMenu())
             {
                 string name = i.ToString();
                 
@@ -321,63 +326,150 @@ namespace BleakwindBuffet.Data
 
             
         }
+       
 
-        public static IEnumerable<IOrderItem> SearchSides(string terms)
+        /// <summary>
+        /// gets the possibleitem types
+        /// </summary>
+        public static string[] Types
         {
-            List<IOrderItem> results = new List<IOrderItem>();
-
-            //null check
-            if (terms == null)
+            get => new string[]
             {
-                return Sides();
-            }
+             
+                "Entree",
+                "Side",
+               
+                "Drink"
 
-            foreach (IOrderItem i in Sides())
-            {
-                string name = i.ToString();
-
-                // add if title is a match
-                if (name != null && name.ToLower().Contains(terms.ToLower()))
-                {
-
-
-                    results.Add(i);
-                }
-            }
-
-            return results;
-
+            };
 
         }
 
-
-        public static IEnumerable<IOrderItem> SearchDrinks(string terms)
+        /// <summary>
+        /// Filter By Type
+        /// </summary>
+        /// <param name="items">a IOrderItem list of menu terms to filter</param>
+        /// <param name="types">a string list of the types</param>
+        /// <returns>a IOrderItem list of menu terms after filter</returns>
+        public static IEnumerable<IOrderItem> FilterByType(IEnumerable<IOrderItem> items, IEnumerable<string> types)
         {
+            if (types == null || types.Count() == 0)
+            {
+                return items;
+            }
             List<IOrderItem> results = new List<IOrderItem>();
-
-            //null check
-            if (terms == null)
+            if (types.Contains("Entree"))
             {
-                return Drinks();
-            }
-
-            foreach (IOrderItem i in Drinks())
-            {
-                string name = i.ToString();
-
-                // add if title is a match
-                if (name != null && name.ToLower().Contains(terms.ToLower()))
+                foreach (IOrderItem i in items)
                 {
+                    if(i is Entree)
+                    {
+                        results.Add(i);
 
-
-                    results.Add(i);
+                    }
                 }
+
             }
+            if (types.Contains("Side"))
+            {
+                foreach (IOrderItem i in items)
+                {
+                    if (i is Side)
+                    {
+                        results.Add(i);
+
+                    }
+                }
+
+            }
+
+            if (types.Contains("Drink"))
+            {
+                foreach (IOrderItem i in items)
+                {
+                    if (i is Drink)
+                    {
+                        results.Add(i);
+
+                    }
+                }
+
+            }
+
 
             return results;
-
-
         }
+
+
+
+        public static IEnumerable<IOrderItem> FilterByPrice(IEnumerable<IOrderItem> items
+            , double? min, double? max)
+        {
+            if (min == null && max == null)
+            {
+                return items;
+            }
+            var results = new List<IOrderItem>();
+            if (min == null)
+            {
+                foreach (IOrderItem i in items)
+                {
+                    if (i.Price <= max) results.Add(i);
+                }
+                return results;
+            }
+            if (max == null)
+            {
+                foreach (IOrderItem i in items)
+                {
+                    if (i.Price >= min) results.Add(i);
+                }
+                return results;
+            }
+
+            foreach (IOrderItem i in items)
+            {
+                if (i.Price <= max && i.Price >= min) results.Add(i);
+            }
+            return results;
+        }
+
+
+
+        public static IEnumerable<IOrderItem> FilterByCal(IEnumerable<IOrderItem> items
+    , uint? min, uint? max)
+        {
+            if (min == null && max == null)
+            {
+                return items;
+            }
+            var results = new List<IOrderItem>();
+            if (min == null)
+            {
+                foreach (IOrderItem i in items)
+                {
+                    if (i.Calories <= max) results.Add(i);
+                }
+                return results;
+            }
+            if (max == null)
+            {
+                foreach (IOrderItem i in items)
+                {
+                    if (i.Calories >= min) results.Add(i);
+                }
+                return results;
+            }
+
+            foreach (IOrderItem i in items)
+            {
+                if (i.Calories <= max && i.Calories >= min) results.Add(i);
+            }
+            return results;
+        }
+
+
+
 
 
     }

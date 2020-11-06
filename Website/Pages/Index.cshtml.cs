@@ -18,15 +18,43 @@ namespace Website.Pages
             _logger = logger;
         }
         public string SearchTerms { get; set; }
-        public IEnumerable<IOrderItem> Entrees { get; set; }
-        public IEnumerable<IOrderItem> Drinks { get; set; }
-        public IEnumerable<IOrderItem> Sides { get; set; }
+        public IEnumerable<IOrderItem> Menus { get; set; }
+        public string[] Types { get; set; }
+        public double PriceMin { get; set; } = 0;
+        public double PriceMax { get; set; } = 100;
+        public uint CalMin { get; set; } = 0;
+        public uint CalMax { get; set; } = 3000;
+
         public void OnGet()
         {
             SearchTerms = Request.Query["SearchTerms"];
-            Entrees = Menu.SearchEntrees(SearchTerms);
-            Drinks = Menu.SearchDrinks(SearchTerms);
-            Sides = Menu.SearchSides(SearchTerms);
+            Menus = Menu.Search(SearchTerms);
+            Types = Request.Query["Types"];
+            string pmin = Request.Query["PriceMin"];
+            string pmax = Request.Query["PriceMax"];
+            string cmin = Request.Query["CalMin"];
+            string cmax = Request.Query["CalMax"];
+            if (!String.IsNullOrEmpty(pmin))
+            {
+                PriceMin = double.Parse(pmin);
+            }
+            if (!String.IsNullOrEmpty(pmax))
+            {
+                PriceMax = double.Parse(pmax);
+            }
+
+            if (!String.IsNullOrEmpty(cmin))
+            {
+                CalMin = uint.Parse(cmin);
+            }
+            if (!String.IsNullOrEmpty(cmax))
+            {
+               CalMax = uint.Parse(cmax);
+            }
+
+            Menus = Menu.FilterByType(Menus,Types);
+            Menus = Menu.FilterByPrice(Menus, PriceMin, PriceMax);
+            Menus = Menu.FilterByCal(Menus, CalMin, CalMax);
         }
     }
 }
