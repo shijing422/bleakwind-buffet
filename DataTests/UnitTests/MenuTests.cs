@@ -8,6 +8,7 @@ using BleakwindBuffet.Data.Entrees;
 using Xunit;
 using System.Linq;
 using BleakwindBuffet.Data.Drinks;
+using Microsoft.VisualBasic;
 
 namespace BleakwindBuffet.DataTests.UnitTests
 {
@@ -184,6 +185,10 @@ namespace BleakwindBuffet.DataTests.UnitTests
         {
             string s = null;
             IEnumerable<IOrderItem> result = Menu.Search(s);
+            IEnumerable<IOrderItem> correctresult = Menu.FullMenu();
+        
+            
+
             Assert.Contains(result, (item) => { return item.ToString().Equals("Briarheart Burger"); });
             Assert.Contains(result, (item) => { return item.ToString().Equals("Double Draugr"); });
             Assert.Contains(result, (item) => { return item.ToString().Equals("Garden Orc Omelette"); });
@@ -251,7 +256,7 @@ namespace BleakwindBuffet.DataTests.UnitTests
             Assert.Contains(result, (item) => { return item.ToString().Equals("Large Watermelon Sailor Soda"); });
 
 
-
+   
 
         }
 
@@ -288,6 +293,55 @@ namespace BleakwindBuffet.DataTests.UnitTests
             Assert.Contains(results, (item) => { return item.ToString().Equals("Philly Poacher"); });
 
         }
+
+        [Fact]
+        public void ShouldReturnCorrectItemswithFilterByType()
+        {
+            List<string> s = new List<string>();
+            s.Add("Entree");
+            IEnumerable<IOrderItem> result = Menu.FullMenu();
+            IEnumerable<IOrderItem> results = Menu.FilterByType(result, s);
+            Assert.Contains(results, (item) => { return item.ToString().Equals("Briarheart Burger"); });
+            Assert.Contains(results, (item) => { return item.ToString().Equals("Double Draugr"); });
+            Assert.Contains(results, (item) => { return item.ToString().Equals("Garden Orc Omelette"); });
+            Assert.Contains(results, (item) => { return item.ToString().Equals("Smokehouse Skeleton"); });
+            Assert.Contains(results, (item) => { return item.ToString().Equals("Thugs T-Bone"); });
+            Assert.Contains(results, (item) => { return item.ToString().Equals("Thalmor Triple"); });
+            Assert.Contains(results, (item) => { return item.ToString().Equals("Philly Poacher"); });
+
+
+        }
+
+        [Fact]
+        public void ShouldReturnCorrectItemswithFilterByPrice()
+        {
+            IEnumerable<IOrderItem> result = Menu.FullMenu();
+            double min = 0;
+            double max = 0;
+            IEnumerable<IOrderItem> results = Menu.FilterByPrice(result, min, max);
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Small Warrior Water"); });
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Medium Warrior Water"); });
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Large Warrior Water"); });
+
+
+
+        }
+        [Fact]
+        public void ShouldReturnCorrectItemswithFilterByCal()
+        {
+            IEnumerable<IOrderItem> result = Menu.FullMenu();
+            uint min = 0;
+            uint max = 0;
+            IEnumerable<IOrderItem> results = Menu.FilterByPrice(result, min, max);
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Small Warrior Water"); });
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Medium Warrior Water"); });
+            Assert.Contains(result, (item) => { return item.ToString().Equals("Large Warrior Water"); });
+
+            
+
+        }
+
+
 
 
     }
