@@ -338,7 +338,6 @@ namespace BleakwindBuffet.Data
              
                 "Entree",
                 "Side",
-               
                 "Drink"
 
             };
