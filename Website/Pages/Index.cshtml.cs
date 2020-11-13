@@ -25,7 +25,7 @@ namespace Website.Pages
             _logger = logger;
         }
         /// <value>
-        /// A string represent the Search Term
+        /// A string represent the Search Terms 
         /// </value>
         public string SearchTerms { get; set; }
         /// <value>
@@ -37,7 +37,7 @@ namespace Website.Pages
         /// </value>
         public string[] Types { get; set; }
         /// <value>
-        /// A string[] list represent the terms from SearchTerms if multiple search terms are included
+        /// A string[] list represent the terms from SearchTerms in case multiple search terms are included
         /// </value>
         public string[] SearchTermArray { get; set; }
         /// <value>
