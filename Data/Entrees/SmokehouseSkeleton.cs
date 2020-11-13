@@ -26,6 +26,17 @@ namespace BleakwindBuffet.Data.Entrees
 
         }
         /// <value>
+        /// The description of this item
+        /// </value>
+        public override string Description
+        {
+            get
+            {
+                string s = "Put some meat on those bones with a small stack of pancakes. Includes sausage links, eggs, and hash browns on the side. Topped with the syrup of your choice.";
+                return s;
+            }
+        }
+        /// <value>
         ///  the Cal of the Smokehouse Skeleton
         /// </value>
         public override uint Calories => 602;

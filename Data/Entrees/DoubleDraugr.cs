@@ -27,6 +27,17 @@ namespace BleakwindBuffet.Data.Entrees
 
         }
         /// <value>
+        /// The description of this item
+        /// </value>
+        public override string Description
+        {
+            get
+            {
+                string s = "Double patty burger on a brioche bun. Comes with ketchup, mustard, pickle, cheese, tomato, lettuce, and mayo.";
+                return s;
+            }
+        }
+        /// <value>
         /// the Cal of the Double Draugr
         /// </value>
         public override uint Calories => 843;

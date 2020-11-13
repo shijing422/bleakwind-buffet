@@ -14,6 +14,14 @@ namespace BleakwindBuffet.Data.Drinks
     public class SailorSoda : Drink, IOrderItem, INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
+        public override string Description
+        {
+            get
+            {
+                string s = "An old-fashioned jerked soda, carbonated water and flavored syrup poured over a bed of crushed ice.";
+                return s;
+            }
+        }
         Size s = Size.Small;
         /// <value>
         /// the size of the drink

@@ -100,6 +100,9 @@ ul.Menulist > li {
     color: slategray;
 
 }
+.description{
+    color: steelblue;
+}
 
 ul.Menulist h3 {
     font-size: 1.2rem;
@@ -161,3 +164,35 @@ form#Database {
     #filters h4 {
         margin-bottom: 0.2rem;
     }
+
+
+
+/*.Menulist {
+   
+   -webkit-column-count: 3;
+   -moz-column-count:3;
+   column-count: 3;
+   
+
+}*/
+.item{
+    display: inline-block;
+    width: 33.3%;
+    float: left;
+
+}
+
+
+@media(max-width: 490px) {
+    /*.Menulist {
+        -webkit-column-count: 1;
+        -moz-column-count: 1;
+        column-count: 1;
+    }*/
+
+    .item {
+       
+        width: 100%;
+        float: none;
+    }
+}

@@ -17,6 +17,15 @@ namespace BleakwindBuffet.Data.Drinks
     public class MarkarthMilk : Drink, IOrderItem, INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
+
+        public override string Description
+        {
+            get
+            {
+                string s = "Hormone-free organic 2% milk.";
+                return s;
+            }
+        }
         Size s = Size.Small;
         /// <value>
         /// the size of the drink

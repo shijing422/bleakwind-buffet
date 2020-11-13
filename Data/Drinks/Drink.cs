@@ -10,9 +10,12 @@ namespace BleakwindBuffet.Data.Drinks
     /// </summary>
     public abstract class Drink
     {
-        
 
-        
+        /// <value>
+        /// The description of the entree
+        /// </value>
+        public abstract string Description { get; }
+
         /// <value>
         /// the size of the drink
         /// </value>

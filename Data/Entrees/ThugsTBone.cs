@@ -17,6 +17,19 @@ namespace BleakwindBuffet.Data.Entrees
     public class ThugsTBone : Entree,IOrderItem, INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
+
+
+        /// <value>
+        /// The description of this item
+        /// </value>
+        public override string Description
+        {
+            get
+            {
+                string s = "Juicy T-Bone, not much else to say.";
+                return s;
+            }
+        }
         /// <value>
         /// the price of the ThugsTBone
         /// </value>

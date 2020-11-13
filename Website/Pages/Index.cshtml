@@ -48,13 +48,15 @@
             <div id="results">
 
                 <ul class="Menulist">
+                    
                     @foreach (BleakwindBuffet.Data.IOrderItem item in Model.Menus)
                     {
-                        <li>
+                        <li class="item">
                             <div class="details">
                                 <h3 class="name">@item.ToString()</h3>
                                 <div class="price">Price: $@item.Price</div>
                                 <div class="calories">Calories: @item.Calories</div>
+                                <div class="description">@item.Description</div>
                             </div>
 
 

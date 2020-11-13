@@ -17,7 +17,14 @@ namespace BleakwindBuffet.Data.Drinks
     {
 
         public event PropertyChangedEventHandler PropertyChanged;
-
+        public override string Description
+        {
+            get
+            {
+                string s = "Fresh squeezed apple juice.";
+                return s;
+            }
+        }
         Size s = Size.Small;
         /// <value>
         /// the size of the drink

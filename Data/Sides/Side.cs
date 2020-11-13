@@ -20,6 +20,10 @@ namespace BleakwindBuffet.Data.Sides
         /// </value>
         public abstract uint Calories { get; }
         /// <value>
+        /// The description of the side
+        /// </value>
+        public abstract string Description { get; }
+        /// <value>
         /// the specialinstructions of the side
         /// </value>
         public abstract List<String> SpecialInstructions { get; }

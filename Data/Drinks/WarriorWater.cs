@@ -17,6 +17,14 @@ namespace BleakwindBuffet.Data.Drinks
     public class WarriorWater : Drink, IOrderItem,INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
+        public override string Description
+        {
+            get
+            {
+                string s = "It’s water. Just water.";
+                return s;
+            }
+        }
         Size s = Size.Small;
         /// <value>
         /// the size of the drink

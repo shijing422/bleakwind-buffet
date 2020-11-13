@@ -31,7 +31,17 @@ namespace BleakwindBuffet.Data.Sides
             }
         }
 
-
+        /// <value>
+        /// The description of this item
+        /// </value>
+        public override string Description
+        {
+            get
+            {
+                string s = "Crispy fried potato waffle fries.";
+                return s;
+            }
+        }
         /// <value>
         /// prices of the Dragonborn Waffle Fries by sizes
         /// </value>

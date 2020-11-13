@@ -28,6 +28,17 @@ namespace BleakwindBuffet.Data
         ///PropertyChanged event
         ///</value>
         public event PropertyChangedEventHandler PropertyChanged;
+        /// <value>
+        /// The description of this combo
+        /// </value>
+        public string Description
+        {
+            get
+            {
+                string s = "A combo with $1 discount";
+                return s;
+            }
+        }
         private Entree entree;
         ///<value>
         ///The Entree in the combo
