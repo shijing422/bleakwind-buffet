@@ -175,11 +175,10 @@ form#Database {
    
 
 }*/
-.item{
+.item {
     display: inline-block;
-    width: 33.3%;
+    width: 25%;
     float: left;
-
 }
 
 
@@ -191,7 +190,6 @@ form#Database {
     }*/
 
     .item {
-       
         width: 100%;
         float: none;
     }
