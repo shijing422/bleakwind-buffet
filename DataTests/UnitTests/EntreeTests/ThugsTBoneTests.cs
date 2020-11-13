@@ -16,6 +16,14 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
     public class ThugsTBoneTests
     {
         [Fact]
+        public void CheckDescription()
+        {
+            var A = new ThugsTBone();
+
+            string expected = "Juicy T-Bone, not much else to say.";
+            Assert.Equal(expected, A.Description);
+        }
+        [Fact]
         public void ShouldBeAEntree()
         {
             ThugsTBone a = new ThugsTBone();

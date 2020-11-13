@@ -16,6 +16,14 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
     public class ThalmorTripleTests
     {
         [Fact]
+        public void CheckDescription()
+        {
+            var A = new ThalmorTriple();
+
+            string expected = "Think you are strong enough to take on the Thalmor? Inlcudes two 1/4lb patties with a 1/2lb patty inbetween with ketchup, mustard, pickle, cheese, tomato, lettuce, mayo, bacon, and an egg.";
+            Assert.Equal(expected, A.Description);
+        }
+        [Fact]
         public void ChangingBunNotifiesProperty()
         {
             var A = new ThalmorTriple();
